@@ -1,0 +1,39 @@
+{
+    "Obligation": [
+        "I must",
+        "I ought to",
+        "I’m supposed to",
+        "I have to",
+        "I need to",
+        "I should",
+        "I’ve got to",
+        "Gotta"
+    ],
+    "Reminders": [
+        "Make sure to",
+        "Be sure to",
+        "Don’t forget to",
+        "Do not forget to",
+        "Remember to",
+        "Set a reminder to",
+        "Don’t miss"
+    ],
+    "Planning & Scheduling": [
+        "I was planning to",
+        "I scheduled",
+        "It’s on my list to",
+        "I booked",
+        "Scheduled a",
+        "Marked my calendar for"
+    ],
+    "Deadlines": [
+        "It’s time to",
+        "My {task} is due"
+    ],
+    "Casual Mentions": [
+        "There’s a",
+        "Got a",
+        "Need to",
+        "I promised to"
+    ]
+}
