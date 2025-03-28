@@ -45,10 +45,15 @@ def generate_task_original(openings, tasks, connectors, time_refs, fillers):
             task = task.replace(f"{{{placeholder}}}", random.choice(options))
         if f"{{{placeholder}}}" in time_ref:
             time_ref = time_ref.replace(f"{{{placeholder}}}", str(random.choice(options)))
-    
-    # Combine into a sentence
-    sentence = f"{opening} {task} {connector} {time_ref}".capitalize()
-    return sentence
+            
+    if "{task}" in opening:
+        opening = opening.replace(f"{{task}}", task)
+        sentence = f"{opening}{connector} {time_ref}".capitalize()
+        return sentence       
+    else:
+        # Combine into a sentence
+        sentence = f"{opening} {task} {connector} {time_ref}".capitalize()
+        return sentence
 
 def generate_task_from_ms_latte(task_entry, openings, tasks, connectors, time_refs, fillers):
     """Generate a task using the MS-LaTTE data."""
