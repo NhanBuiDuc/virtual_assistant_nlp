@@ -1,0 +1,36 @@
+{
+  "description": "Specific days of the week as commonly spoken",
+  "examples": [
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+    "Sunday"
+  ],
+  "values": {
+    "Monday": "Monday",
+    "Tuesday": "Tuesday",
+    "Wednesday": "Wednesday",
+    "Thursday": "Thursday",
+    "Friday": "Friday",
+    "Saturday": "Saturday",
+    "Sunday": "Sunday",
+    "Mon": "Monday",
+    "Tue": "Tuesday",
+    "Tues": "Tuesday",
+    "Wed": "Wednesday",
+    "Weds": "Wednesday",
+    "Thu": "Thursday",
+    "Thur": "Thursday",
+    "Thurs": "Thursday",
+    "Fri": "Friday",
+    "Sat": "Saturday",
+    "Sun": "Sunday",
+    "weekday": "weekday",
+    "weekend": "weekend",
+    "workday": "workday",
+    "business day": "business day"
+  }
+}

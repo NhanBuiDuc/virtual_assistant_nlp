@@ -1,0 +1,366 @@
+{
+  "description": "Administrative tasks as commonly expressed in workplace conversation",
+  "examples": [
+    "paperwork",
+    "expense report",
+    "timesheet",
+    "budget review"
+  ],
+  "values": {
+    "complete required forms": {
+      "description": "paperwork",
+      "priority": 3
+    },
+    "fill out necessary documentation": {
+      "description": "documentation",
+      "priority": 3
+    },
+    "process incoming documents": {
+      "description": "document processing",
+      "priority": 3
+    },
+    "organize office files": {
+      "description": "file organization",
+      "priority": 2
+    },
+    "prepare legal documents": {
+      "description": "legal paperwork",
+      "priority": 5
+    },
+    "maintain physical records": {
+      "description": "record keeping",
+      "priority": 3
+    },
+    "update company policies": {
+      "description": "policy updates",
+      "priority": 4
+    },
+    "digitize paper documents": {
+      "description": "document digitization",
+      "priority": 2
+    },
+    "archive old files": {
+      "description": "archiving",
+      "priority": 2
+    },
+    "submit expense report": {
+      "description": "expense report",
+      "priority": 3
+    },
+    "reconcile credit card statements": {
+      "description": "card reconciliation",
+      "priority": 3
+    },
+    "process reimbursement claims": {
+      "description": "reimbursements",
+      "priority": 3
+    },
+    "create financial reports": {
+      "description": "financial reporting",
+      "priority": 4
+    },
+    "review department budget": {
+      "description": "budget review",
+      "priority": 4
+    },
+    "prepare budget forecast": {
+      "description": "budget forecasting",
+      "priority": 4
+    },
+    "approve team expenses": {
+      "description": "expense approval",
+      "priority": 3
+    },
+    "track project spending": {
+      "description": "cost tracking",
+      "priority": 4
+    },
+    "process accounts payable": {
+      "description": "accounts payable",
+      "priority": 4
+    },
+    "manage accounts receivable": {
+      "description": "accounts receivable",
+      "priority": 4
+    },
+    "create invoices for clients": {
+      "description": "invoicing",
+      "priority": 4
+    },
+    "process incoming payments": {
+      "description": "payment processing",
+      "priority": 4
+    },
+    "prepare tax documentation": {
+      "description": "tax preparation",
+      "priority": 5
+    },
+    "submit timesheet": {
+      "description": "timesheet",
+      "priority": 3
+    },
+    "track billable hours": {
+      "description": "time tracking",
+      "priority": 4
+    },
+    "log project hours": {
+      "description": "time logging",
+      "priority": 3
+    },
+    "review employee time entries": {
+      "description": "timesheet review",
+      "priority": 3
+    },
+    "approve team timesheets": {
+      "description": "timesheet approval",
+      "priority": 3
+    },
+    "report overtime hours": {
+      "description": "overtime reporting",
+      "priority": 3
+    },
+    "allocate time to projects": {
+      "description": "time allocation",
+      "priority": 3
+    },
+    "update employee records": {
+      "description": "employee records",
+      "priority": 4
+    },
+    "process new hire paperwork": {
+      "description": "onboarding paperwork",
+      "priority": 4
+    },
+    "manage benefits enrollment": {
+      "description": "benefits administration",
+      "priority": 4
+    },
+    "coordinate performance reviews": {
+      "description": "review coordination",
+      "priority": 4
+    },
+    "update org chart": {
+      "description": "org chart update",
+      "priority": 2
+    },
+    "track employee attendance": {
+      "description": "attendance tracking",
+      "priority": 3
+    },
+    "process leave requests": {
+      "description": "leave processing",
+      "priority": 3
+    },
+    "document disciplinary actions": {
+      "description": "disciplinary documentation",
+      "priority": 5
+    },
+    "coordinate offboarding process": {
+      "description": "offboarding",
+      "priority": 4
+    },
+    "manage employee training records": {
+      "description": "training records",
+      "priority": 3
+    },
+    "verify employment eligibility": {
+      "description": "eligibility verification",
+      "priority": 5
+    },
+    "order office supplies": {
+      "description": "supply ordering",
+      "priority": 2
+    },
+    "manage office inventory": {
+      "description": "inventory management",
+      "priority": 2
+    },
+    "coordinate office maintenance": {
+      "description": "maintenance coordination",
+      "priority": 3
+    },
+    "manage office seating plan": {
+      "description": "seating management",
+      "priority": 2
+    },
+    "book meeting rooms": {
+      "description": "room booking",
+      "priority": 2
+    },
+    "arrange catering for meetings": {
+      "description": "catering arrangement",
+      "priority": 2
+    },
+    "coordinate office events": {
+      "description": "event coordination",
+      "priority": 3
+    },
+    "manage office subscriptions": {
+      "description": "subscription management",
+      "priority": 2
+    },
+    "update office equipment": {
+      "description": "equipment updates",
+      "priority": 3
+    },
+    "manage office access cards": {
+      "description": "access management",
+      "priority": 3
+    },
+    "manage email distribution lists": {
+      "description": "list management",
+      "priority": 2
+    },
+    "update contact information": {
+      "description": "contact updates",
+      "priority": 2
+    },
+    "coordinate internal communications": {
+      "description": "internal comms",
+      "priority": 3
+    },
+    "distribute company announcements": {
+      "description": "announcements",
+      "priority": 3
+    },
+    "take meeting minutes": {
+      "description": "minute taking",
+      "priority": 3
+    },
+    "maintain company directory": {
+      "description": "directory maintenance",
+      "priority": 2
+    },
+    "manage shared calendars": {
+      "description": "calendar management",
+      "priority": 3
+    },
+    "book business travel": {
+      "description": "travel booking",
+      "priority": 3
+    },
+    "arrange accommodations": {
+      "description": "accommodation booking",
+      "priority": 3
+    },
+    "process travel authorizations": {
+      "description": "travel authorization",
+      "priority": 3
+    },
+    "coordinate international travel documents": {
+      "description": "travel documents",
+      "priority": 4
+    },
+    "reconcile travel expenses": {
+      "description": "travel reconciliation",
+      "priority": 3
+    },
+    "create travel itineraries": {
+      "description": "itinerary creation",
+      "priority": 3
+    },
+    "arrange ground transportation": {
+      "description": "transport arrangement",
+      "priority": 3
+    },
+    "complete compliance training": {
+      "description": "compliance training",
+      "priority": 4
+    },
+    "submit regulatory reports": {
+      "description": "regulatory reporting",
+      "priority": 5
+    },
+    "document safety procedures": {
+      "description": "safety documentation",
+      "priority": 4
+    },
+    "manage audit documentation": {
+      "description": "audit preparation",
+      "priority": 5
+    },
+    "maintain license renewals": {
+      "description": "license maintenance",
+      "priority": 5
+    },
+    "track compliance deadlines": {
+      "description": "compliance tracking",
+      "priority": 4
+    },
+    "create compliance reports": {
+      "description": "compliance reporting",
+      "priority": 5
+    },
+    "maintain contract records": {
+      "description": "contract management",
+      "priority": 4
+    },
+    "update project tracking system": {
+      "description": "project updates",
+      "priority": 3
+    },
+    "collect project metrics": {
+      "description": "metrics collection",
+      "priority": 3
+    },
+    "prepare status reports": {
+      "description": "status reporting",
+      "priority": 3
+    },
+    "document project changes": {
+      "description": "change documentation",
+      "priority": 4
+    },
+    "maintain project documentation": {
+      "description": "project documentation",
+      "priority": 3
+    },
+    "update task management system": {
+      "description": "task updates",
+      "priority": 3
+    },
+    "track project milestones": {
+      "description": "milestone tracking",
+      "priority": 4
+    },
+    "prepare project presentations": {
+      "description": "presentation prep",
+      "priority": 4
+    },
+    "request system access": {
+      "description": "access request",
+      "priority": 3
+    },
+    "reset user passwords": {
+      "description": "password reset",
+      "priority": 3
+    },
+    "update software licenses": {
+      "description": "license updates",
+      "priority": 3
+    },
+    "manage user accounts": {
+      "description": "account management",
+      "priority": 3
+    },
+    "track IT assets": {
+      "description": "asset tracking",
+      "priority": 3
+    },
+    "document system configurations": {
+      "description": "system documentation",
+      "priority": 4
+    },
+    "coordinate software updates": {
+      "description": "update coordination",
+      "priority": 3
+    }
+  },
+  "priority_scale": {
+    "1": "Very Low - Optional administrative tasks",
+    "2": "Low - Routine maintenance tasks",
+    "3": "Medium - Regular operational administrative tasks",
+    "4": "High - Important administrative requirements",
+    "5": "Very High - Critical compliance or regulatory tasks"
+  }
+}

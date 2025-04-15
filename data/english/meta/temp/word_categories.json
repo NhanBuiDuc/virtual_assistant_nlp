@@ -1,0 +1,99 @@
+{
+    "Parts_of_Speech": {
+        "Nouns": {
+            "Definition": "Words that name people, places, things, or ideas.",
+            "Types": {
+                "Common Nouns": ["dog", "city", "car"],
+                "Proper Nouns": ["John", "Paris", "Toyota"],
+                "Countable Nouns": ["apple", "book", "chair"],
+                "Uncountable Nouns": ["water", "air", "rice"],
+                "Abstract Nouns": ["happiness", "freedom", "love"],
+                "Concrete Nouns": ["table", "mountain", "phone"],
+                "Collective Nouns": ["team", "family", "flock"]
+            }
+        },
+        "Pronouns": {
+            "Definition": "Words that replace nouns.",
+            "Types": {
+                "Personal Pronouns": ["I", "you", "he", "she", "it", "we", "they"],
+                "Possessive Pronouns": ["mine", "yours", "his", "hers", "theirs"],
+                "Reflexive Pronouns": ["myself", "yourself", "himself"],
+                "Demonstrative Pronouns": ["this", "that", "these", "those"],
+                "Indefinite Pronouns": ["someone", "anything", "everybody"],
+                "Relative Pronouns": ["who", "which", "that"],
+                "Interrogative Pronouns": ["who", "what", "where"]
+            }
+        },
+        "Verbs": {
+            "Definition": "Words that express actions or states.",
+            "Types": {
+                "Action Verbs": ["run", "write", "eat"],
+                "Stative Verbs": ["be", "seem", "believe"],
+                "Transitive Verbs": ["eat an apple", "read a book"],
+                "Intransitive Verbs": ["sleep", "cry"],
+                "Auxiliary Verbs": ["be", "have", "do", "will"],
+                "Modal Verbs": ["can", "could", "must", "should", "would"],
+                "Phrasal Verbs": ["give up", "take off", "look after"]
+            }
+        },
+        "Adjectives": {
+            "Definition": "Words that describe nouns or pronouns.",
+            "Types": {
+                "Descriptive Adjectives": ["big", "blue", "happy"],
+                "Quantitative Adjectives": ["some", "many", "few"],
+                "Demonstrative Adjectives": ["this", "that", "these", "those"],
+                "Possessive Adjectives": ["my", "your", "his", "her", "our"],
+                "Comparative Adjectives": ["bigger", "smarter"],
+                "Superlative Adjectives": ["biggest", "smartest"]
+            }
+        },
+        "Adverbs": {
+            "Definition": "Words that describe verbs, adjectives, or other adverbs.",
+            "Types": {
+                "Adverbs of Manner": ["quickly", "slowly", "well"],
+                "Adverbs of Place": ["here", "there", "everywhere"],
+                "Adverbs of Time": ["now", "yesterday", "soon"],
+                "Adverbs of Frequency": ["always", "never", "sometimes"],
+                "Adverbs of Degree": ["very", "quite", "too"],
+                "Adverbs of Purpose": ["accordingly", "consequently", "hence"],
+                "Adverbs of Certainty": ["certainly", "absolutely", "clearly"],
+                "Adverbs of Viewpoint": ["apparently", "generally", "honestly"]
+            }
+        },
+        "Prepositions": {
+            "Definition": "Words that show relationships between nouns/pronouns and other words.",
+            "Examples": {
+                "Location": ["in", "on", "at"],
+                "Time": ["before", "after", "during"],
+                "Direction": ["to", "into", "onto"],
+                "Cause/Reason": ["because of", "due to"]
+            }
+        },
+        "Conjunctions": {
+            "Definition": "Words that connect clauses, phrases, or words.",
+            "Types": {
+                "Coordinating Conjunctions": ["and", "but", "or", "nor", "for", "so", "yet"],
+                "Subordinating Conjunctions": ["because", "although", "if", "when"],
+                "Correlative Conjunctions": ["either/or", "neither/nor", "not only/but also"]
+            }
+        },
+        "Articles": {
+            "Definition": "Words that define nouns as specific or unspecific.",
+            "Examples": {
+                "Definite Article": ["the"],
+                "Indefinite Articles": ["a", "an"]
+            }
+        },
+        "Determiners": {
+            "Definition": "Words that introduce and clarify nouns.",
+            "Examples": {
+                "Demonstratives": ["this", "that"],
+                "Quantifiers": ["some", "many", "few"]
+            }
+        },
+        "Phrasal Verbs": {
+            "Definition": "Verbs combined with prepositions or adverbs to create a new meaning.",
+            "Examples": ["take off", "look after", "give up"]
+        }
+    }
+}

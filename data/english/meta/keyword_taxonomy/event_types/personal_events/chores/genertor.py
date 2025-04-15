@@ -1,0 +1,164 @@
+import json
+
+def generate_household_chores_json():
+    """
+    Generate a JSON file with household chore expressions as commonly spoken.
+    Each key is a longer verbal reference to a household chore, and the value is an object
+    containing a description (shorter standardized term) and a priority level.
+    """
+    household_chores = {
+        # Cleaning
+        "vacuum the floors and carpets": {"description": "vacuuming", "priority": 3},
+        "sweep the floors": {"description": "sweeping", "priority": 3},
+        "mop the floor surfaces": {"description": "mopping", "priority": 3},
+        "dust the furniture and surfaces": {"description": "dusting", "priority": 2},
+        "wipe down kitchen counters": {"description": "countertop cleaning", "priority": 3},
+        "scrub the bathtub and shower": {"description": "bathtub cleaning", "priority": 3},
+        "clean the bathroom toilet": {"description": "toilet cleaning", "priority": 4},
+        "wash the bathroom sink": {"description": "sink cleaning", "priority": 3},
+        "wipe down bathroom surfaces": {"description": "bathroom cleaning", "priority": 3},
+        "clean the kitchen appliances": {"description": "appliance cleaning", "priority": 2},
+        "clean inside the refrigerator": {"description": "fridge cleaning", "priority": 2},
+        "wipe down the stove and oven": {"description": "stove cleaning", "priority": 3},
+        "clean the microwave inside and out": {"description": "microwave cleaning", "priority": 2},
+        "clean the windows and mirrors": {"description": "glass cleaning", "priority": 2},
+        "deep clean the entire house": {"description": "deep cleaning", "priority": 4},
+        "tidy up cluttered areas": {"description": "tidying", "priority": 3},
+        "organize messy spaces": {"description": "organizing", "priority": 2},
+        "declutter living spaces": {"description": "decluttering", "priority": 2},
+        "sanitize high-touch surfaces": {"description": "sanitizing", "priority": 4},
+        
+        # Laundry
+        "wash dirty clothes": {"description": "laundry washing", "priority": 4},
+        "dry clean delicate clothing": {"description": "dry cleaning", "priority": 2},
+        "fold clean clothes": {"description": "folding laundry", "priority": 2},
+        "iron wrinkled clothing": {"description": "ironing", "priority": 2},
+        "put away clean clothes": {"description": "laundry storage", "priority": 2},
+        "wash bed sheets and linens": {"description": "bedding laundry", "priority": 3},
+        "wash bath towels": {"description": "towel washing", "priority": 3},
+        "sort laundry by color and type": {"description": "laundry sorting", "priority": 2},
+        "treat stains on clothing": {"description": "stain removal", "priority": 3},
+        "mend torn clothing": {"description": "clothing repair", "priority": 1},
+        
+        # Kitchen Tasks
+        "wash dirty dishes": {"description": "dish washing", "priority": 4},
+        "load the dishwasher": {"description": "dishwasher loading", "priority": 3},
+        "unload clean dishes": {"description": "dishwasher unloading", "priority": 2},
+        "prepare meals for the family": {"description": "cooking", "priority": 4},
+        "bake bread or desserts": {"description": "baking", "priority": 2},
+        "meal prep for the week": {"description": "meal prepping", "priority": 3},
+        "clean out expired food": {"description": "fridge purging", "priority": 3},
+        "take out kitchen garbage": {"description": "garbage disposal", "priority": 4},
+        "wipe down kitchen cabinets": {"description": "cabinet cleaning", "priority": 2},
+        "clean kitchen sink": {"description": "sink cleaning", "priority": 3},
+        "descale coffee maker": {"description": "coffee maker cleaning", "priority": 2},
+        "organize food pantry": {"description": "pantry organization", "priority": 2},
+        
+        # Shopping
+        "buy groceries for the week": {"description": "grocery shopping", "priority": 4},
+        "pick up household essentials": {"description": "essentials shopping", "priority": 4},
+        "shop for cleaning supplies": {"description": "supply shopping", "priority": 3},
+        "restock personal care items": {"description": "toiletry shopping", "priority": 3},
+        "purchase items for special occasions": {"description": "special shopping", "priority": 3},
+        "buy replacement household items": {"description": "replacement shopping", "priority": 3},
+        
+        # Yard and Outdoor
+        "mow the lawn": {"description": "lawn mowing", "priority": 3},
+        "rake fallen leaves": {"description": "leaf raking", "priority": 2},
+        "shovel snow from walkways": {"description": "snow shoveling", "priority": 4},
+        "water plants and garden": {"description": "plant watering", "priority": 3},
+        "trim hedges and bushes": {"description": "hedge trimming", "priority": 2},
+        "pull weeds from garden": {"description": "weeding", "priority": 2},
+        "clean gutters": {"description": "gutter cleaning", "priority": 3},
+        "sweep porch or patio": {"description": "porch sweeping", "priority": 2},
+        "clean outdoor furniture": {"description": "outdoor furniture cleaning", "priority": 2},
+        "pick up yard debris": {"description": "yard cleanup", "priority": 2},
+        
+        # Pet Care
+        "feed household pets": {"description": "pet feeding", "priority": 5},
+        "walk the dog": {"description": "dog walking", "priority": 4},
+        "clean pet areas": {"description": "pet area cleaning", "priority": 3},
+        "change pet bedding": {"description": "pet bedding change", "priority": 3},
+        "clean litter box": {"description": "litter box cleaning", "priority": 4},
+        "groom pets": {"description": "pet grooming", "priority": 2},
+        "give pets medication": {"description": "pet medication", "priority": 5},
+        
+        # Home Maintenance
+        "change air filters": {"description": "filter changing", "priority": 3},
+        "replace light bulbs": {"description": "bulb replacement", "priority": 3},
+        "unclog drains": {"description": "drain unclogging", "priority": 4},
+        "fix minor household issues": {"description": "minor repairs", "priority": 3},
+        "assemble furniture": {"description": "furniture assembly", "priority": 2},
+        "change smoke detector batteries": {"description": "battery replacement", "priority": 4},
+        "check and reset circuit breakers": {"description": "electrical checks", "priority": 3},
+        "fix leaky faucets": {"description": "faucet repair", "priority": 3},
+        
+        # Waste Management
+        "take out household trash": {"description": "trash removal", "priority": 4},
+        "take out recycling": {"description": "recycling", "priority": 3},
+        "dispose of food waste": {"description": "compost", "priority": 3},
+        "take trash bins to curb": {"description": "trash bin placement", "priority": 4},
+        "bring in empty trash bins": {"description": "bin retrieval", "priority": 2},
+        "shred and dispose of documents": {"description": "document disposal", "priority": 2},
+        "dispose of hazardous waste": {"description": "hazardous waste disposal", "priority": 4},
+        
+        # Seasonal Tasks
+        "put up holiday decorations": {"description": "holiday decorating", "priority": 2},
+        "take down seasonal decorations": {"description": "decoration removal", "priority": 2},
+        "prepare home for winter": {"description": "winterizing", "priority": 3},
+        "clean and store seasonal items": {"description": "seasonal storage", "priority": 2},
+        "prepare yard for changing seasons": {"description": "seasonal yard prep", "priority": 3},
+        "clean and cover outdoor furniture": {"description": "furniture winterizing", "priority": 2},
+        
+        # Child-Related Chores
+        "tidy up children's toys": {"description": "toy cleanup", "priority": 3},
+        "organize children's clothes": {"description": "kids' clothing organization", "priority": 2},
+        "clean children's rooms": {"description": "kids' room cleaning", "priority": 3},
+        "wash children's laundry": {"description": "kids' laundry", "priority": 3},
+        "pack school lunches": {"description": "lunch packing", "priority": 4},
+        "help with homework": {"description": "homework help", "priority": 4},
+        "clean and sanitize toys": {"description": "toy sanitizing", "priority": 3}
+    }
+    
+    # Create the final JSON object
+    household_chores_json = {
+        "description": "Routine household tasks as commonly expressed in conversation",
+        "examples": ["cleaning", "laundry", "grocery shopping", "cooking"],
+        "values": household_chores,
+        "priority_scale": {
+            "1": "Very Low - Optional tasks that improve quality of life",
+            "2": "Low - Regular maintenance tasks that can be delayed",
+            "3": "Medium - Normal recurring household tasks",
+            "4": "High - Essential tasks for health and daily functioning",
+            "5": "Very High - Critical tasks that affect health and safety"
+        }
+    }
+    
+    return household_chores_json
+
+# Generate the JSON data
+json_data = generate_household_chores_json()
+
+# Write to a file
+with open('data/english/meta/keyword_taxonomy/event_types/personal_events/celebrations/vocabulary/household_chores.json', 'w', encoding='utf-8') as f:
+    json.dump(json_data, f, indent=2)
+
+print(f"Generated {len(json_data['values'])} household chore expressions and saved to household_chores.json")
+
+# Print some examples
+print("\nSample entries:")
+sample_keys = ["vacuum the floors and carpets", "wash dirty clothes", "buy groceries for the week", 
+               "feed household pets", "take out household trash"]
+for key in sample_keys:
+    if key in json_data["values"]:
+        print(f'"{key}": {json.dumps(json_data["values"][key], indent=2)}')
+
+# If you want to see the raw JSON output
+print("\nFull JSON structure:")
+print(json.dumps({"personal_events": {
+    "chores": {
+        "description": "Routine household tasks",
+        "examples": ["cleaning", "laundry", "grocery shopping", "cooking"],
+        "vocab": "household_chores.json"
+    }
+}}, indent=2))

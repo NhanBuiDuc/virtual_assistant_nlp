@@ -1,0 +1,112 @@
+{
+  "Obligation": {
+    "I must": [
+      {"pattern": "I must {verb}", "example": "I must work"},
+      {"pattern": "I must be {verb-ing}", "example": "I must be studying"},
+      {"pattern": "I must have {verb-ed}", "example": "I must have completed"},
+      {"pattern": "I must get {noun} {verb-ed}", "example": "I must get report submitted"},
+      {"pattern": "I must {verb} {noun}", "example": "I must finish project"},
+      {"pattern": "I must {verb} {noun} {preposition} {noun}", "example": "I must send files to client"},
+      {"pattern": "I must {verb} by {time-reference}", "example": "I must leave by noon"},
+      {"pattern": "I must {verb} on {date-reference}", "example": "I must present on Monday"},
+      {"pattern": "I must {verb} at {specific-time}", "example": "I must arrive at 9:00 AM"},
+      {"pattern": "I must {verb} before {event/time-reference}", "example": "I must prepare before meeting"},
+      {"pattern": "I must {verb} after {event/time-reference}", "example": "I must follow up after presentation"},
+      {"pattern": "I must {verb} during {period-reference}", "example": "I must focus during work hours"},
+      {"pattern": "I must {verb} until {time/event-reference}", "example": "I must wait until approval"},
+      {"pattern": "I must {verb} within {time-frame}", "example": "I must respond within 24 hours"},
+      {"pattern": "I must {verb} {adverb}", "example": "I must work diligently"},
+      {"pattern": "I must {verb} when {condition}", "example": "I must call when available"},
+      {"pattern": "I must {verb} if {condition}", "example": "I must reschedule if delayed"},
+      {"pattern": "I must {verb} while {simultaneous-action}", "example": "I must take notes while listening"},
+      {"pattern": "I must {verb} for {duration}", "example": "I must train for two hours"},
+      {"pattern": "I must {verb} {frequency-adverb}", "example": "I must check daily"},
+      {"pattern": "I must have {noun} {verb-ed} by {time-reference}", "example": "I must have report finished by Friday"},
+      {"pattern": "I must {verb} as soon as {condition}", "example": "I must start as soon as possible"},
+      {"pattern": "I must {verb} {noun} in order to {purpose}", "example": "I must complete task in order to proceed"},
+      {"pattern": "I must {verb} despite {obstacle}", "example": "I must continue despite challenges"},
+      {"pattern": "I must {verb} because {reason}", "example": "I must hurry because deadline is approaching"}
+    ],
+    "I ought to": [
+      {"pattern": "I ought to {verb}", "example": "I ought to attend"},
+      {"pattern": "I ought to be {verb-ing}", "example": "I ought to be preparing"},
+      {"pattern": "I ought to get {noun} {verb-ed}", "example": "I ought to get documents organized"},
+      {"pattern": "I ought to {verb} before {time}", "example": "I ought to arrive before noon"}
+    ],
+    "I am supposed to": [
+      {"pattern": "I am supposed to {verb}", "example": "I am supposed to confirm"},
+      {"pattern": "I am supposed to be {verb-ing}", "example": "I am supposed to be working"},
+      {"pattern": "I am supposed to {verb} with {person}", "example": "I am supposed to meet with manager"},
+      {"pattern": "I am supposed to {verb} for {event}", "example": "I am supposed to prepare for presentation"}
+    ],
+    "I have to": [
+      {"pattern": "I have to {verb}", "example": "I have to call"},
+      {"pattern": "I have to be {verb-ing}", "example": "I have to be attending"},
+      {"pattern": "I have to get this {verb-ed}", "example": "I have to get this completed"},
+      {"pattern": "I have to {verb} this {noun}", "example": "I have to review this proposal"}
+    ],
+    "I need to": [
+      {"pattern": "I need to {verb}", "example": "I need to email"},
+      {"pattern": "I need to be {verb-ing}", "example": "I need to be focusing"},
+      {"pattern": "I need to get this {noun} {verb-ed}", "example": "I need to get this report submitted"},
+      {"pattern": "I need to {verb} by {time}", "example": "I need to finish by tomorrow"}
+    ],
+    "I should": [
+      {"pattern": "I should {verb}", "example": "I should attend"},
+      {"pattern": "I should be {verb-ing}", "example": "I should be preparing"},
+      {"pattern": "I should get this {noun} {verb-ed}", "example": "I should get this task completed"},
+      {"pattern": "I should {verb} soon", "example": "I should respond soon"}
+    ],
+    "I've got to": [
+      {"pattern": "I've got to {verb}", "example": "I've got to finish"},
+      {"pattern": "I've got to be {verb-ing}", "example": "I've got to be leaving"},
+      {"pattern": "I've got to get this {verb-ed}", "example": "I've got to get this approved"},
+      {"pattern": "I've got to {verb} this {noun}", "example": "I've got to update this schedule"}
+    ],
+    "Gotta": [
+      {"pattern": "Gotta {verb}", "example": "Gotta run"},
+      {"pattern": "Gotta be {verb-ing}", "example": "Gotta be going"},
+      {"pattern": "Gotta get this {verb-ed}", "example": "Gotta get this done"},
+      {"pattern": "Gotta {verb} this {noun}", "example": "Gotta finish this report"}
+    ]
+  },
+  "Reminders": [
+    {"pattern": "Make sure to {verb}", "example": "Make sure to confirm"},
+    {"pattern": "Be sure to {verb}", "example": "Be sure to respond"},
+    {"pattern": "Don't forget to {verb}", "example": "Don't forget to call"},
+    {"pattern": "Remember to {verb}", "example": "Remember to submit"},
+    {"pattern": "Set a reminder to {verb}", "example": "Set a reminder to review"},
+    {"pattern": "Don't miss {verb-ing}", "example": "Don't miss attending"},
+    {"pattern": "Reminder: {verb}", "example": "Reminder: update"},
+    {"pattern": "Note to self: {verb}", "example": "Note to self: follow-up"}
+  ],
+  "Planning & Scheduling": [
+    {"pattern": "I was planning to {verb}", "example": "I was planning to attend"},
+    {"pattern": "I scheduled {noun} for {time}", "example": "I scheduled meeting for 3 PM"},
+    {"pattern": "It's on my list to {verb}", "example": "It's on my list to call"},
+    {"pattern": "I booked {noun} for {time}", "example": "I booked conference room for tomorrow"},
+    {"pattern": "Scheduled a {noun} for {day}", "example": "Scheduled a call for Wednesday"},
+    {"pattern": "Marked my calendar for {event}", "example": "Marked my calendar for team lunch"},
+    {"pattern": "Put {noun} on my schedule", "example": "Put presentation on my schedule"},
+    {"pattern": "Added {noun} to my agenda", "example": "Added project review to my agenda"}
+  ],
+  "Deadlines": [
+    {"pattern": "It's time to {verb}", "example": "It's time to submit"},
+    {"pattern": "My {task} is due {time}", "example": "My report is due Friday"},
+    {"pattern": "Deadline for {task} is {time}", "example": "Deadline for proposal is tomorrow"},
+    {"pattern": "Need to finish {task} by {time}", "example": "Need to finish draft by 5 PM"},
+    {"pattern": "The {task} is due soon", "example": "The presentation is due soon"},
+    {"pattern": "Running out of time to {verb}", "example": "Running out of time to prepare"},
+    {"pattern": "Last day to {verb}", "example": "Last day to register"}
+  ],
+  "Casual Mentions": [
+    {"pattern": "There's a {noun} {time}", "example": "There's a meeting tomorrow"},
+    {"pattern": "Got a {noun} {time}", "example": "Got a call at 3 PM"},
+    {"pattern": "Need to {verb}", "example": "Need to respond"},
+    {"pattern": "I promised to {verb}", "example": "I promised to help"},
+    {"pattern": "Thinking about {verb-ing}", "example": "Thinking about joining"},
+    {"pattern": "Might {verb} later", "example": "Might review later"},
+    {"pattern": "Could {verb} soon", "example": "Could finish soon"},
+    {"pattern": "Probably should {verb}", "example": "Probably should check"}
+  ]
+}

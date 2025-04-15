@@ -1,0 +1,92 @@
+{
+  "time_elements": {
+    "specific_times": {
+      "description": "Precise time points",
+      "examples": ["8:30 am", "noon", "midnight", "3 pm", "15:45"],
+      "vocab": "specific_times.json"
+    },
+    "time_periods": {
+      "description": "General parts of the day",
+      "examples": ["morning", "afternoon", "evening", "night", "dawn", "dusk"],
+      "vocab": "time_periods.json"
+    },
+    "dates": {
+      "absolute_dates": {
+        "description": "Specific calendar dates",
+        "examples": ["January 15", "12/25/2024", "2024-05-01"],
+        "vocab": "absolute_dates.json"
+      },
+      "relative_dates": {
+        "description": "Dates relative to today",
+        "examples": ["tomorrow", "yesterday", "next week", "in two days", "last month"],
+        "vocab": "relative_dates.json"
+      },
+      "days_of_week": {
+        "description": "Specific days",
+        "examples": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        "vocab": "days_of_week.json"
+      },
+      "months": {
+        "description": "Calendar months",
+        "examples": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+        "vocab": "months.json"
+      },
+      "special_days": {
+        "description": "Holidays and special occasions",
+        "examples": ["Christmas", "New Year's", "birthday", "anniversary", "Valentine's Day"],
+        "vocab": "special_days.json"
+      }
+    },
+    "durations": {
+      "description": "Time spans",
+      "examples": ["for an hour", "30 minutes", "all day", "overnight", "for a week", "two-hour"],
+      "vocab": "durations.json"
+    },
+    "frequency": {
+      "description": "How often something occurs",
+      "examples": ["daily", "weekly", "every Monday", "twice a month", "annually", "frequently"],
+      "vocab": "frequency.json"
+    },
+    "deadlines": {
+      "description": "Time limits for completion",
+      "examples": ["by Friday", "due tomorrow", "before noon", "deadline", "EOD", "ASAP"],
+      "vocab": "deadlines.json"
+    }
+  },
+  "event_types": {
+    "work_events": {
+      "meetings": {
+        "description": "Professional gatherings",
+        "examples": ["meeting", "conference call", "presentation", "workshop", "interview"],
+        "vocab": "work_meetings.json"
+      },
+      "deadlines": {
+        "description": "Work due dates",
+        "examples": ["project deadline", "submission due date", "quarterly review"],
+        "vocab": "work_deadlines.json"
+      },
+      "administrative": {
+        "description": "Work administration tasks",
+        "examples": ["paperwork", "expense report", "timesheet", "budget review"],
+        "vocab": "administrative_tasks.json"
+      }
+    },
+    "personal_events": {
+      "chores": {
+        "description": "Routine household tasks",
+        "examples": ["cleaning", "laundry", "grocery shopping", "cooking"],
+        "vocab": "household_chores.json"
+      },
+      "errands": {
+        "description": "Tasks that require going out",
+        "examples": ["pick up", "drop off", "return item", "banking"],
+        "vocab": "errands.json"
+      },
+      "celebrations": {
+        "description": "Special personal occasions",
+        "examples": ["birthday party", "anniversary dinner", "graduation celebration"],
+        "vocab": "celebrations.json"
+      }
+    }
+  }
+}

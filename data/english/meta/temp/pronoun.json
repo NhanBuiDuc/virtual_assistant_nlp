@@ -1,0 +1,111 @@
+{
+    "Personal Pronouns": [
+      "I",
+      "you",
+      "he",
+      "she",
+      "it",
+      "we",
+      "they",
+      "me",
+      "him",
+      "her",
+      "us",
+      "them"
+    ],
+    "Possessive Pronouns": [
+      "my",
+      "your",
+      "his",
+      "her",
+      "its",
+      "our",
+      "their",
+      "mine",
+      "yours",
+      "hers",
+      "ours",
+      "theirs"
+    ],
+    "Reflexive Pronouns": [
+      "myself",
+      "yourself",
+      "himself",
+      "herself",
+      "itself",
+      "ourselves",
+      "yourselves",
+      "themselves"
+    ],
+    "Reciprocal Pronouns": [
+      "each other",
+      "one another"
+    ],
+    "Demonstrative Pronouns": [
+      "this",
+      "that",
+      "these",
+      "those"
+    ],
+    "Indefinite Pronouns": [
+      "all",
+      "another",
+      "any",
+      "anybody",
+      "anyone",
+      "anything",
+      "both",
+      "each",
+      "either",
+      "everybody",
+      "everyone",
+      "everything",
+      "few",
+      "many",
+      "most",
+      "neither",
+      "nobody",
+      "none",
+      "no one",
+      "nothing",
+      "one",
+      "other",
+      "others",
+      "several",
+      "some",
+      "somebody",
+      "someone",
+      "something"
+    ],
+    "Relative Pronouns": [
+      "who",
+      "whom",
+      "whose",
+      "which",
+      "that"
+    ],
+    "Interrogative Pronouns": [
+      "who",
+      "whom",
+      "whose",
+      "which",
+      "what"
+    ],
+    "Distributive Pronouns": [
+      "each",
+      "either",
+      "neither",
+      "every",
+      "none"
+    ],
+    "Intensive Pronouns": [
+      "myself",
+      "yourself",
+      "himself",
+      "herself",
+      "itself",
+      "ourselves",
+      "yourselves",
+      "themselves"
+    ]
+  }
