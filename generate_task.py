@@ -46,35 +46,46 @@ fillers = {
 
 # Example usage
 def main(ms_latte_source=None):
+
     """Generate sample tasks using either MS-LaTTE data or original method.
     
     Args:
         ms_latte_source: Path to MS-LaTTE JSON file or JSON string
     """
+
     count=100
+
     use_ms_latte_ratio=0.0
     
     # Try to load data from the source
     ms_latte_data = []
+
     if ms_latte_source:
         ms_latte_data = load_ms_latte_data(file_path=ms_latte_source)
     
     task_list = []
+
     for _ in range(count):
+
         random_entry = ms_latte_data.pop(random.randrange(len(ms_latte_data)))
+
         if random_entry and random.random() < use_ms_latte_ratio:
             task = generate_task_from_ms_latte(random_entry, openings, tasks, connectors, time_refs, fillers)
         else:
             task = generate_task_original(openings, tasks, connectors, time_refs, fillers)
+
         task_list.append(task)
     
     # Print the tasks
     print("=== Generated Tasks ===")
+
     for i, task in enumerate(task_list, 1):
         print(f"{i}. {task}")
 
 if __name__ == "__main__":
+
     # Run with MS-LaTTE data file path
     # You can modify this to your actual file path
     
     main(ms_latte_path)
+    
