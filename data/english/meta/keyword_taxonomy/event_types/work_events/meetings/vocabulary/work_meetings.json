@@ -9,440 +9,424 @@
   ],
   "values": {
     "general business meeting": {
-      "description": "meeting",
-      "priority": 3
+      "id": 1,
+      "title": "Business Meeting",
+      "description": "Standard professional meeting for business purposes",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "meeting with team members": {
-      "description": "team meeting",
-      "priority": 4
+      "id": 2,
+      "title": "Team Meeting",
+      "description": "Meeting with immediate team or workgroup",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "meeting with staff": {
-      "description": "staff meeting",
-      "priority": 4
+      "id": 3,
+      "title": "Staff Meeting",
+      "description": "Meeting with staff members reporting to you",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "meeting with department": {
-      "description": "department meeting",
-      "priority": 4
+      "id": 4,
+      "title": "Department Meeting",
+      "description": "Meeting involving all members of a department",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": true,
+      "frequency": "monthly",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "meeting with entire company": {
-      "description": "company meeting",
-      "priority": 5
-    },
-    "meeting with internal stakeholders": {
-      "description": "internal meeting",
-      "priority": 4
-    },
-    "meeting with external parties": {
-      "description": "external meeting",
-      "priority": 5
+      "id": 5,
+      "title": "Company Meeting",
+      "description": "Meeting including all company employees",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": true,
+      "frequency": "quarterly",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "meeting with clients": {
-      "description": "client meeting",
-      "priority": 5
+      "id": 6,
+      "title": "Client Meeting",
+      "description": "Meeting with external clients or customers",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "meeting with vendors": {
-      "description": "vendor meeting",
-      "priority": 3
-    },
-    "meeting with business partners": {
-      "description": "partner meeting",
-      "priority": 4
-    },
-    "formal professional meeting": {
-      "description": "business meeting",
-      "priority": 3
+      "id": 7,
+      "title": "Vendor Meeting",
+      "description": "Meeting with suppliers or service providers",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "meeting with project stakeholders": {
-      "description": "stakeholder meeting",
-      "priority": 5
-    },
-    "participate in a meeting": {
-      "description": "attend",
-      "priority": 3
-    },
-    "be present at a meeting": {
-      "description": "attend",
-      "priority": 3
-    },
-    "lead or facilitate a meeting": {
-      "description": "run",
-      "priority": 4
-    },
-    "organize and lead a meeting": {
-      "description": "host",
-      "priority": 4
-    },
-    "direct and guide a meeting": {
-      "description": "lead",
-      "priority": 4
-    },
-    "become a participant in a meeting": {
-      "description": "join",
-      "priority": 3
-    },
-    "arrange a time for a meeting": {
-      "description": "schedule",
-      "priority": 2
-    },
-    "reserve time for a meeting": {
-      "description": "book",
-      "priority": 2
-    },
-    "arrange and prepare for a meeting": {
-      "description": "set up",
-      "priority": 3
-    },
-    "plan and coordinate a meeting": {
-      "description": "organize",
-      "priority": 3
-    },
-    "help a meeting run smoothly": {
-      "description": "facilitate",
-      "priority": 4
-    },
-    "preside over a formal meeting": {
-      "description": "chair",
-      "priority": 5
-    },
-    "control the flow of a meeting": {
-      "description": "moderate",
-      "priority": 4
-    },
-    "change the time of a planned meeting": {
-      "description": "reschedule",
-      "priority": 2
-    },
-    "call off a planned meeting": {
-      "description": "cancel",
-      "priority": 2
-    },
-    "delay a planned meeting": {
-      "description": "postpone",
-      "priority": 2
+      "id": 8,
+      "title": "Stakeholder Meeting",
+      "description": "Meeting with all parties interested in a project",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": true,
+      "frequency": "biweekly",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "multi-person phone meeting": {
-      "description": "conference call",
-      "priority": 3
+      "id": 9,
+      "title": "Conference Call",
+      "description": "Meeting conducted via telephone with multiple participants",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "participate in a multi-person phone meeting": {
-      "description": "join call",
-      "priority": 3
-    },
-    "connect to a multi-person phone meeting": {
-      "description": "dial in",
-      "priority": 3
+      "id": 10,
+      "title": "Join Conference Call",
+      "description": "Connect to and attend a telephone meeting",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "organize and lead a multi-person phone meeting": {
-      "description": "host call",
-      "priority": 4
-    },
-    "arrange a multi-person phone meeting": {
-      "description": "set up call",
-      "priority": 3
-    },
-    "connect to a multi-person phone meeting remotely": {
-      "description": "call in",
-      "priority": 3
+      "id": 11,
+      "title": "Host Conference Call",
+      "description": "Set up and facilitate a telephone meeting",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "meeting via video conferencing": {
-      "description": "video call",
-      "priority": 3
+      "id": 12,
+      "title": "Video Call",
+      "description": "Meeting conducted through video technology",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "formal meeting via video technology": {
-      "description": "video conference",
-      "priority": 4
-    },
-    "meeting conducted through video technology": {
-      "description": "video meeting",
-      "priority": 3
+      "id": 13,
+      "title": "Video Conference",
+      "description": "Formal meeting conducted through video platform",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "meeting held online rather than in person": {
-      "description": "virtual meeting",
-      "priority": 3
-    },
-    "meeting using Zoom video conferencing platform": {
-      "description": "Zoom",
-      "priority": 3
-    },
-    "meeting using Microsoft Teams platform": {
-      "description": "Teams",
-      "priority": 3
-    },
-    "meeting using Google Meet platform": {
-      "description": "Meet",
-      "priority": 3
-    },
-    "meeting using Cisco Webex platform": {
-      "description": "Webex",
-      "priority": 3
-    },
-    "participate in a video conference": {
-      "description": "join video",
-      "priority": 3
-    },
-    "connect to a video-based meeting": {
-      "description": "join video",
-      "priority": 3
-    },
-    "organize and lead an online meeting": {
-      "description": "host video",
-      "priority": 4
+      "id": 14,
+      "title": "Virtual Meeting",
+      "description": "Remote meeting conducted through digital means",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "formal display of information to an audience": {
-      "description": "presentation",
-      "priority": 4
-    },
-    "deliver information to an audience": {
-      "description": "present",
-      "priority": 4
-    },
-    "present information formally to a group": {
-      "description": "present",
-      "priority": 4
-    },
-    "create and deliver a presentation": {
-      "description": "present",
-      "priority": 4
-    },
-    "deliver information to a specific audience": {
-      "description": "present",
-      "priority": 4
-    },
-    "perform a formal information delivery": {
-      "description": "present",
-      "priority": 4
+      "id": 15,
+      "title": "Presentation",
+      "description": "Delivery of prepared information to a group",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "presentation to sell an idea or product": {
-      "description": "pitch",
-      "priority": 5
-    },
-    "deliver a persuasive presentation": {
-      "description": "pitch",
-      "priority": 5
-    },
-    "present a persuasive proposal": {
-      "description": "pitch",
-      "priority": 5
-    },
-    "presentation to sell products or services": {
-      "description": "sales pitch",
-      "priority": 5
+      "id": 16,
+      "title": "Pitch",
+      "description": "Persuasive presentation to gain support or sales",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "presentation to potential investors": {
-      "description": "investor pitch",
-      "priority": 5
-    },
-    "presentation to potential clients": {
-      "description": "client pitch",
-      "priority": 5
+      "id": 17,
+      "title": "Investor Pitch",
+      "description": "Presentation seeking financial investment",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "very high"
     },
     "interactive learning or planning session": {
-      "description": "workshop",
-      "priority": 4
+      "id": 18,
+      "title": "Workshop",
+      "description": "Collaborative session focused on learning or creating",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "lead an interactive learning session": {
-      "description": "run workshop",
-      "priority": 4
-    },
-    "facilitate an interactive group session": {
-      "description": "run workshop",
-      "priority": 4
-    },
-    "organize and lead a workshop": {
-      "description": "host workshop",
-      "priority": 4
-    },
-    "take part in an interactive learning session": {
-      "description": "attend workshop",
-      "priority": 3
-    },
-    "be present at an interactive learning session": {
-      "description": "attend workshop",
-      "priority": 3
-    },
-    "interactive session focused on skill development": {
-      "description": "training",
-      "priority": 4
-    },
-    "interactive session focused on creating plans": {
-      "description": "planning session",
-      "priority": 4
+      "id": 19,
+      "title": "Run Workshop",
+      "description": "Facilitate a collaborative learning experience",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "interactive session focused on developing strategy": {
-      "description": "strategy session",
-      "priority": 5
+      "id": 20,
+      "title": "Strategy Session",
+      "description": "Collaborative meeting to develop strategic plans",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": true,
+      "frequency": "quarterly",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "formal meeting to assess a candidate": {
-      "description": "interview",
-      "priority": 5
-    },
-    "evaluate a candidate through questioning": {
-      "description": "conduct interview",
-      "priority": 5
-    },
-    "participate in an evaluation meeting as a candidate": {
-      "description": "interview",
-      "priority": 5
-    },
-    "attend a meeting where one will be evaluated": {
-      "description": "interview",
-      "priority": 5
-    },
-    "candidate evaluation conducted by telephone": {
-      "description": "phone interview",
-      "priority": 4
+      "id": 21,
+      "title": "Interview",
+      "description": "Meeting to evaluate a person for a position",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "candidate evaluation conducted by video call": {
-      "description": "video interview",
-      "priority": 5
-    },
-    "preliminary candidate evaluation": {
-      "description": "screening",
-      "priority": 4
-    },
-    "candidate evaluation by multiple interviewers": {
-      "description": "panel interview",
-      "priority": 5
-    },
-    "evaluation of multiple candidates simultaneously": {
-      "description": "group interview",
-      "priority": 5
+      "id": 22,
+      "title": "Video Interview",
+      "description": "Remote candidate assessment using video technology",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "meeting to evaluate a candidate for employment": {
-      "description": "job interview",
-      "priority": 5
-    },
-    "meeting to gather career or industry information": {
-      "description": "informational interview",
-      "priority": 3
+      "id": 23,
+      "title": "Job Interview",
+      "description": "Assessment of potential employee's qualifications",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "meeting focused on generating ideas": {
-      "description": "brainstorm",
-      "priority": 4
-    },
-    "collaborative idea generation meeting": {
-      "description": "brainstorm",
-      "priority": 4
-    },
-    "participate in idea generation": {
-      "description": "brainstorm",
-      "priority": 4
-    },
-    "meeting to develop plans": {
-      "description": "planning",
-      "priority": 4
-    },
-    "meeting to develop strategic direction": {
-      "description": "strategy session",
-      "priority": 5
+      "id": 24,
+      "title": "Brainstorm",
+      "description": "Collaborative session to develop new ideas",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "meeting between two individuals": {
-      "description": "one-on-one",
-      "priority": 4
-    },
-    "individual meeting between two people": {
-      "description": "1:1",
-      "priority": 4
-    },
-    "meet individually with someone": {
-      "description": "one-on-one",
-      "priority": 4
+      "id": 25,
+      "title": "One-on-One",
+      "description": "Private meeting between two people",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "brief alignment meeting": {
-      "description": "sync",
-      "priority": 3
-    },
-    "short alignment meeting": {
-      "description": "quick sync",
-      "priority": 2
-    },
-    "participate in an alignment meeting": {
-      "description": "sync",
-      "priority": 3
+      "id": 26,
+      "title": "Sync",
+      "description": "Short meeting to align on priorities or status",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": true,
+      "frequency": "daily",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "brief status update meeting": {
-      "description": "check-in",
-      "priority": 3
-    },
-    "participate in a status update meeting": {
-      "description": "check-in",
-      "priority": 3
-    },
-    "meeting to update on progress": {
-      "description": "status meeting",
-      "priority": 3
-    },
-    "meeting to review advancement of work": {
-      "description": "progress meeting",
-      "priority": 3
+      "id": 27,
+      "title": "Check-in",
+      "description": "Short meeting to provide progress updates",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": true,
+      "frequency": "daily",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "initial meeting to start a project": {
-      "description": "kickoff",
-      "priority": 5
-    },
-    "hold an initial project meeting": {
-      "description": "kickoff",
-      "priority": 5
+      "id": 28,
+      "title": "Kickoff",
+      "description": "First meeting to launch a project or initiative",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "project start",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "meeting to review completed activities": {
-      "description": "debrief",
-      "priority": 3
-    },
-    "participate in a review of completed activities": {
-      "description": "debrief",
-      "priority": 3
+      "id": 29,
+      "title": "Debrief",
+      "description": "Post-activity discussion to review outcomes",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "low"
     },
     "meeting to analyze a completed project": {
-      "description": "post-mortem",
-      "priority": 4
-    },
-    "meeting to evaluate work": {
-      "description": "review",
-      "priority": 4
+      "id": 30,
+      "title": "Post-mortem",
+      "description": "Analysis of a completed project to identify learnings",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": false,
+      "frequency": "project end",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "low"
     },
     "meeting with all staff or team members": {
-      "description": "all-hands",
-      "priority": 5
-    },
-    "large informational meeting for all employees": {
-      "description": "town hall",
-      "priority": 5
+      "id": 31,
+      "title": "All-hands",
+      "description": "Meeting including all employees in an organization",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": true,
+      "frequency": "quarterly",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "formal meeting of board members": {
-      "description": "board meeting",
-      "priority": 5
+      "id": 32,
+      "title": "Board Meeting",
+      "description": "Official meeting of company board of directors",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": true,
+      "frequency": "quarterly",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "very high"
     },
     "meeting of a designated committee": {
-      "description": "committee meeting",
-      "priority": 4
-    },
-    "meeting of a special group assigned to a specific task": {
-      "description": "task force",
-      "priority": 5
+      "id": 33,
+      "title": "Committee Meeting",
+      "description": "Meeting of a specific working group or committee",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": true,
+      "frequency": "monthly",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "meeting of company executives": {
-      "description": "executive meeting",
-      "priority": 5
-    },
-    "meeting of organizational leaders": {
-      "description": "leadership meeting",
-      "priority": 5
+      "id": 34,
+      "title": "Executive Meeting",
+      "description": "Meeting of organization's leadership team",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "yearly formal meeting of shareholders": {
-      "description": "AGM",
-      "priority": 5
-    },
-    "annual general meeting of shareholders": {
-      "description": "AGM",
-      "priority": 5
-    },
-    "special shareholder meeting": {
-      "description": "EGM",
-      "priority": 5
-    },
-    "extraordinary general meeting": {
-      "description": "EGM",
-      "priority": 5
+      "id": 35,
+      "title": "AGM",
+      "description": "Annual General Meeting for company shareholders",
+      "category": "work",
+      "event_type": "meeting",
+      "is_recurring": true,
+      "frequency": "annually",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "very high"
     }
   },
   "priority_scale": {
@@ -451,5 +435,7 @@
     "3": "Medium - Standard business activity",
     "4": "High - Important for project success",
     "5": "Very High - Critical for business outcomes"
-  }
+  },
+  "schema_version": "1.0",
+  "last_updated": "2025-05-10"
 }

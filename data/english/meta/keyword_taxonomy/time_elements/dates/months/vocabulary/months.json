@@ -15,112 +15,542 @@
     "December"
   ],
   "values": {
-    "January": "January",
-    "February": "February",
-    "March": "March",
-    "April": "April",
-    "May": "May",
-    "June": "June",
-    "July": "July",
-    "August": "August",
-    "September": "September",
-    "October": "October",
-    "November": "November",
-    "December": "December",
-    "Jan": "January",
-    "Feb": "February",
-    "Mar": "March",
-    "Apr": "April",
-    "Jun": "June",
-    "Jul": "July",
-    "Aug": "August",
-    "Sep": "September",
-    "Sept": "September",
-    "Oct": "October",
-    "Nov": "November",
-    "Dec": "December",
-    "first month": "January",
-    "first month of the year": "January",
-    "the first month": "January",
-    "the first month of the year": "January",
-    "second month": "February",
-    "second month of the year": "February",
-    "the second month": "February",
-    "the second month of the year": "February",
-    "third month": "March",
-    "third month of the year": "March",
-    "the third month": "March",
-    "the third month of the year": "March",
-    "fourth month": "April",
-    "fourth month of the year": "April",
-    "the fourth month": "April",
-    "the fourth month of the year": "April",
-    "fifth month": "May",
-    "fifth month of the year": "May",
-    "the fifth month": "May",
-    "the fifth month of the year": "May",
-    "sixth month": "June",
-    "sixth month of the year": "June",
-    "the sixth month": "June",
-    "the sixth month of the year": "June",
-    "seventh month": "July",
-    "seventh month of the year": "July",
-    "the seventh month": "July",
-    "the seventh month of the year": "July",
-    "eighth month": "August",
-    "eighth month of the year": "August",
-    "the eighth month": "August",
-    "the eighth month of the year": "August",
-    "ninth month": "September",
-    "ninth month of the year": "September",
-    "the ninth month": "September",
-    "the ninth month of the year": "September",
-    "tenth month": "October",
-    "tenth month of the year": "October",
-    "the tenth month": "October",
-    "the tenth month of the year": "October",
-    "eleventh month": "November",
-    "eleventh month of the year": "November",
-    "the eleventh month": "November",
-    "the eleventh month of the year": "November",
-    "twelfth month": "December",
-    "twelfth month of the year": "December",
-    "the twelfth month": "December",
-    "the twelfth month of the year": "December",
-    "month 1": "January",
-    "month 1 of the year": "January",
-    "month 2": "February",
-    "month 2 of the year": "February",
-    "month 3": "March",
-    "month 3 of the year": "March",
-    "month 4": "April",
-    "month 4 of the year": "April",
-    "month 5": "May",
-    "month 5 of the year": "May",
-    "month 6": "June",
-    "month 6 of the year": "June",
-    "month 7": "July",
-    "month 7 of the year": "July",
-    "month 8": "August",
-    "month 8 of the year": "August",
-    "month 9": "September",
-    "month 9 of the year": "September",
-    "month 10": "October",
-    "month 10 of the year": "October",
-    "month 11": "November",
-    "month 11 of the year": "November",
-    "month 12": "December",
-    "month 12 of the year": "December",
-    "last month of the year": "December",
-    "last month": "December",
-    "middle of the year": "June",
-    "mid-year": "June",
-    "beginning of the year": "January",
-    "end of the year": "December",
-    "winter": "January",
-    "spring": "April",
-    "summer": "July",
-    "fall": "October",
-    "autumn": "October"
-  }
+    "January": {
+      "id": 1,
+      "standard_form": "January",
+      "month_in_year": 1
+    },
+    "February": {
+      "id": 2,
+      "standard_form": "February",
+      "month_in_year": 2
+    },
+    "March": {
+      "id": 3,
+      "standard_form": "March",
+      "month_in_year": 3
+    },
+    "April": {
+      "id": 4,
+      "standard_form": "April",
+      "month_in_year": 4
+    },
+    "May": {
+      "id": 17,
+      "standard_form": "May",
+      "month_in_year": 5
+    },
+    "June": {
+      "id": 6,
+      "standard_form": "June",
+      "month_in_year": 6
+    },
+    "July": {
+      "id": 7,
+      "standard_form": "July",
+      "month_in_year": 7
+    },
+    "August": {
+      "id": 8,
+      "standard_form": "August",
+      "month_in_year": 8
+    },
+    "September": {
+      "id": 9,
+      "standard_form": "September",
+      "month_in_year": 9
+    },
+    "October": {
+      "id": 10,
+      "standard_form": "October",
+      "month_in_year": 10
+    },
+    "November": {
+      "id": 11,
+      "standard_form": "November",
+      "month_in_year": 11
+    },
+    "December": {
+      "id": 12,
+      "standard_form": "December",
+      "month_in_year": 12
+    },
+    "Jan": {
+      "id": 13,
+      "standard_form": "January",
+      "month_in_year": 1
+    },
+    "Feb": {
+      "id": 14,
+      "standard_form": "February",
+      "month_in_year": 2
+    },
+    "Mar": {
+      "id": 15,
+      "standard_form": "March",
+      "month_in_year": 3
+    },
+    "Apr": {
+      "id": 16,
+      "standard_form": "April",
+      "month_in_year": 4
+    },
+    "Jun": {
+      "id": 18,
+      "standard_form": "June",
+      "month_in_year": 6
+    },
+    "Jul": {
+      "id": 19,
+      "standard_form": "July",
+      "month_in_year": 7
+    },
+    "Aug": {
+      "id": 20,
+      "standard_form": "August",
+      "month_in_year": 8
+    },
+    "Sep": {
+      "id": 21,
+      "standard_form": "September",
+      "month_in_year": 9
+    },
+    "Sept": {
+      "id": 22,
+      "standard_form": "September",
+      "month_in_year": 9
+    },
+    "Oct": {
+      "id": 23,
+      "standard_form": "October",
+      "month_in_year": 10
+    },
+    "Nov": {
+      "id": 24,
+      "standard_form": "November",
+      "month_in_year": 11
+    },
+    "Dec": {
+      "id": 25,
+      "standard_form": "December",
+      "month_in_year": 12
+    },
+    "first month": {
+      "id": 26,
+      "standard_form": "January",
+      "month_in_year": 1
+    },
+    "first month of the year": {
+      "id": 98,
+      "standard_form": "January",
+      "month_in_year": 1
+    },
+    "the first month": {
+      "id": 28,
+      "standard_form": "January",
+      "month_in_year": 1
+    },
+    "the first month of the year": {
+      "id": 29,
+      "standard_form": "January",
+      "month_in_year": 1
+    },
+    "second month": {
+      "id": 30,
+      "standard_form": "February",
+      "month_in_year": 2
+    },
+    "second month of the year": {
+      "id": 31,
+      "standard_form": "February",
+      "month_in_year": 2
+    },
+    "the second month": {
+      "id": 32,
+      "standard_form": "February",
+      "month_in_year": 2
+    },
+    "the second month of the year": {
+      "id": 33,
+      "standard_form": "February",
+      "month_in_year": 2
+    },
+    "third month": {
+      "id": 34,
+      "standard_form": "March",
+      "month_in_year": 3
+    },
+    "third month of the year": {
+      "id": 35,
+      "standard_form": "March",
+      "month_in_year": 3
+    },
+    "the third month": {
+      "id": 36,
+      "standard_form": "March",
+      "month_in_year": 3
+    },
+    "the third month of the year": {
+      "id": 37,
+      "standard_form": "March",
+      "month_in_year": 3
+    },
+    "fourth month": {
+      "id": 38,
+      "standard_form": "April",
+      "month_in_year": 4
+    },
+    "fourth month of the year": {
+      "id": 39,
+      "standard_form": "April",
+      "month_in_year": 4
+    },
+    "the fourth month": {
+      "id": 40,
+      "standard_form": "April",
+      "month_in_year": 4
+    },
+    "the fourth month of the year": {
+      "id": 41,
+      "standard_form": "April",
+      "month_in_year": 4
+    },
+    "fifth month": {
+      "id": 42,
+      "standard_form": "May",
+      "month_in_year": 5
+    },
+    "fifth month of the year": {
+      "id": 43,
+      "standard_form": "May",
+      "month_in_year": 5
+    },
+    "the fifth month": {
+      "id": 44,
+      "standard_form": "May",
+      "month_in_year": 5
+    },
+    "the fifth month of the year": {
+      "id": 45,
+      "standard_form": "May",
+      "month_in_year": 5
+    },
+    "sixth month": {
+      "id": 46,
+      "standard_form": "June",
+      "month_in_year": 6
+    },
+    "sixth month of the year": {
+      "id": 47,
+      "standard_form": "June",
+      "month_in_year": 6
+    },
+    "the sixth month": {
+      "id": 48,
+      "standard_form": "June",
+      "month_in_year": 6
+    },
+    "the sixth month of the year": {
+      "id": 49,
+      "standard_form": "June",
+      "month_in_year": 6
+    },
+    "seventh month": {
+      "id": 50,
+      "standard_form": "July",
+      "month_in_year": 7
+    },
+    "seventh month of the year": {
+      "id": 51,
+      "standard_form": "July",
+      "month_in_year": 7
+    },
+    "the seventh month": {
+      "id": 52,
+      "standard_form": "July",
+      "month_in_year": 7
+    },
+    "the seventh month of the year": {
+      "id": 53,
+      "standard_form": "July",
+      "month_in_year": 7
+    },
+    "eighth month": {
+      "id": 54,
+      "standard_form": "August",
+      "month_in_year": 8
+    },
+    "eighth month of the year": {
+      "id": 55,
+      "standard_form": "August",
+      "month_in_year": 8
+    },
+    "the eighth month": {
+      "id": 56,
+      "standard_form": "August",
+      "month_in_year": 8
+    },
+    "the eighth month of the year": {
+      "id": 57,
+      "standard_form": "August",
+      "month_in_year": 8
+    },
+    "ninth month": {
+      "id": 58,
+      "standard_form": "September",
+      "month_in_year": 9
+    },
+    "ninth month of the year": {
+      "id": 59,
+      "standard_form": "September",
+      "month_in_year": 9
+    },
+    "the ninth month": {
+      "id": 60,
+      "standard_form": "September",
+      "month_in_year": 9
+    },
+    "the ninth month of the year": {
+      "id": 61,
+      "standard_form": "September",
+      "month_in_year": 9
+    },
+    "tenth month": {
+      "id": 62,
+      "standard_form": "October",
+      "month_in_year": 10
+    },
+    "tenth month of the year": {
+      "id": 63,
+      "standard_form": "October",
+      "month_in_year": 10
+    },
+    "the tenth month": {
+      "id": 64,
+      "standard_form": "October",
+      "month_in_year": 10
+    },
+    "the tenth month of the year": {
+      "id": 65,
+      "standard_form": "October",
+      "month_in_year": 10
+    },
+    "eleventh month": {
+      "id": 66,
+      "standard_form": "November",
+      "month_in_year": 11
+    },
+    "eleventh month of the year": {
+      "id": 67,
+      "standard_form": "November",
+      "month_in_year": 11
+    },
+    "the eleventh month": {
+      "id": 68,
+      "standard_form": "November",
+      "month_in_year": 11
+    },
+    "the eleventh month of the year": {
+      "id": 69,
+      "standard_form": "November",
+      "month_in_year": 11
+    },
+    "twelfth month": {
+      "id": 70,
+      "standard_form": "December",
+      "month_in_year": 12
+    },
+    "twelfth month of the year": {
+      "id": 71,
+      "standard_form": "December",
+      "month_in_year": 12
+    },
+    "the twelfth month": {
+      "id": 72,
+      "standard_form": "December",
+      "month_in_year": 12
+    },
+    "the twelfth month of the year": {
+      "id": 73,
+      "standard_form": "December",
+      "month_in_year": 12
+    },
+    "month 1": {
+      "id": 74,
+      "standard_form": "January",
+      "month_in_year": 1
+    },
+    "month 1 of the year": {
+      "id": 75,
+      "standard_form": "January",
+      "month_in_year": 1
+    },
+    "month 2": {
+      "id": 76,
+      "standard_form": "February",
+      "month_in_year": 2
+    },
+    "month 2 of the year": {
+      "id": 77,
+      "standard_form": "February",
+      "month_in_year": 2
+    },
+    "month 3": {
+      "id": 78,
+      "standard_form": "March",
+      "month_in_year": 3
+    },
+    "month 3 of the year": {
+      "id": 79,
+      "standard_form": "March",
+      "month_in_year": 3
+    },
+    "month 4": {
+      "id": 80,
+      "standard_form": "April",
+      "month_in_year": 4
+    },
+    "month 4 of the year": {
+      "id": 81,
+      "standard_form": "April",
+      "month_in_year": 4
+    },
+    "month 5": {
+      "id": 82,
+      "standard_form": "May",
+      "month_in_year": 5
+    },
+    "month 5 of the year": {
+      "id": 83,
+      "standard_form": "May",
+      "month_in_year": 5
+    },
+    "month 6": {
+      "id": 84,
+      "standard_form": "June",
+      "month_in_year": 6
+    },
+    "month 6 of the year": {
+      "id": 85,
+      "standard_form": "June",
+      "month_in_year": 6
+    },
+    "month 7": {
+      "id": 86,
+      "standard_form": "July",
+      "month_in_year": 7
+    },
+    "month 7 of the year": {
+      "id": 87,
+      "standard_form": "July",
+      "month_in_year": 7
+    },
+    "month 8": {
+      "id": 88,
+      "standard_form": "August",
+      "month_in_year": 8
+    },
+    "month 8 of the year": {
+      "id": 89,
+      "standard_form": "August",
+      "month_in_year": 8
+    },
+    "month 9": {
+      "id": 90,
+      "standard_form": "September",
+      "month_in_year": 9
+    },
+    "month 9 of the year": {
+      "id": 91,
+      "standard_form": "September",
+      "month_in_year": 9
+    },
+    "month 10": {
+      "id": 92,
+      "standard_form": "October",
+      "month_in_year": 10
+    },
+    "month 10 of the year": {
+      "id": 93,
+      "standard_form": "October",
+      "month_in_year": 10
+    },
+    "month 11": {
+      "id": 94,
+      "standard_form": "November",
+      "month_in_year": 11
+    },
+    "month 11 of the year": {
+      "id": 95,
+      "standard_form": "November",
+      "month_in_year": 11
+    },
+    "month 12": {
+      "id": 96,
+      "standard_form": "December",
+      "month_in_year": 12
+    },
+    "month 12 of the year": {
+      "id": 97,
+      "standard_form": "December",
+      "month_in_year": 12
+    },
+    "last month of the year": {
+      "id": 99,
+      "standard_form": "December",
+      "month_in_year": 12
+    },
+    "last month": {
+      "id": 100,
+      "standard_form": "December",
+      "month_in_year": 12
+    },
+    "middle of the year": {
+      "id": 101,
+      "standard_form": "June",
+      "month_in_year": 6
+    },
+    "mid-year": {
+      "id": 102,
+      "standard_form": "June",
+      "month_in_year": 6
+    },
+    "beginning of the year": {
+      "id": 103,
+      "standard_form": "January",
+      "month_in_year": 1
+    },
+    "end of the year": {
+      "id": 104,
+      "standard_form": "December",
+      "month_in_year": 12
+    },
+    "winter": {
+      "id": 105,
+      "standard_form": "January",
+      "month_in_year": 1
+    },
+    "spring": {
+      "id": 106,
+      "standard_form": "April",
+      "month_in_year": 4
+    },
+    "summer": {
+      "id": 107,
+      "standard_form": "July",
+      "month_in_year": 7
+    },
+    "fall": {
+      "id": 108,
+      "standard_form": "October",
+      "month_in_year": 10
+    },
+    "autumn": {
+      "id": 109,
+      "standard_form": "October",
+      "month_in_year": 10
+    }
+  },
+  "schema_version": "1.0",
+  "last_updated": "2025-05-10"
 }

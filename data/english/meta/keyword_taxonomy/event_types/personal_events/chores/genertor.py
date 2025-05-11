@@ -1,124 +1,392 @@
 import json
+import os
+from datetime import datetime
 
 def generate_household_chores_json():
     """
     Generate a JSON file with household chore expressions as commonly spoken.
     Each key is a longer verbal reference to a household chore, and the value is an object
-    containing a description (shorter standardized term) and a priority level.
+    containing the primary task attributes requested.
     """
-    household_chores = {
-        # Cleaning
-        "vacuum the floors and carpets": {"description": "vacuuming", "priority": 3},
-        "sweep the floors": {"description": "sweeping", "priority": 3},
-        "mop the floor surfaces": {"description": "mopping", "priority": 3},
-        "dust the furniture and surfaces": {"description": "dusting", "priority": 2},
-        "wipe down kitchen counters": {"description": "countertop cleaning", "priority": 3},
-        "scrub the bathtub and shower": {"description": "bathtub cleaning", "priority": 3},
-        "clean the bathroom toilet": {"description": "toilet cleaning", "priority": 4},
-        "wash the bathroom sink": {"description": "sink cleaning", "priority": 3},
-        "wipe down bathroom surfaces": {"description": "bathroom cleaning", "priority": 3},
-        "clean the kitchen appliances": {"description": "appliance cleaning", "priority": 2},
-        "clean inside the refrigerator": {"description": "fridge cleaning", "priority": 2},
-        "wipe down the stove and oven": {"description": "stove cleaning", "priority": 3},
-        "clean the microwave inside and out": {"description": "microwave cleaning", "priority": 2},
-        "clean the windows and mirrors": {"description": "glass cleaning", "priority": 2},
-        "deep clean the entire house": {"description": "deep cleaning", "priority": 4},
-        "tidy up cluttered areas": {"description": "tidying", "priority": 3},
-        "organize messy spaces": {"description": "organizing", "priority": 2},
-        "declutter living spaces": {"description": "decluttering", "priority": 2},
-        "sanitize high-touch surfaces": {"description": "sanitizing", "priority": 4},
-        
-        # Laundry
-        "wash dirty clothes": {"description": "laundry washing", "priority": 4},
-        "dry clean delicate clothing": {"description": "dry cleaning", "priority": 2},
-        "fold clean clothes": {"description": "folding laundry", "priority": 2},
-        "iron wrinkled clothing": {"description": "ironing", "priority": 2},
-        "put away clean clothes": {"description": "laundry storage", "priority": 2},
-        "wash bed sheets and linens": {"description": "bedding laundry", "priority": 3},
-        "wash bath towels": {"description": "towel washing", "priority": 3},
-        "sort laundry by color and type": {"description": "laundry sorting", "priority": 2},
-        "treat stains on clothing": {"description": "stain removal", "priority": 3},
-        "mend torn clothing": {"description": "clothing repair", "priority": 1},
-        
-        # Kitchen Tasks
-        "wash dirty dishes": {"description": "dish washing", "priority": 4},
-        "load the dishwasher": {"description": "dishwasher loading", "priority": 3},
-        "unload clean dishes": {"description": "dishwasher unloading", "priority": 2},
-        "prepare meals for the family": {"description": "cooking", "priority": 4},
-        "bake bread or desserts": {"description": "baking", "priority": 2},
-        "meal prep for the week": {"description": "meal prepping", "priority": 3},
-        "clean out expired food": {"description": "fridge purging", "priority": 3},
-        "take out kitchen garbage": {"description": "garbage disposal", "priority": 4},
-        "wipe down kitchen cabinets": {"description": "cabinet cleaning", "priority": 2},
-        "clean kitchen sink": {"description": "sink cleaning", "priority": 3},
-        "descale coffee maker": {"description": "coffee maker cleaning", "priority": 2},
-        "organize food pantry": {"description": "pantry organization", "priority": 2},
-        
-        # Shopping
-        "buy groceries for the week": {"description": "grocery shopping", "priority": 4},
-        "pick up household essentials": {"description": "essentials shopping", "priority": 4},
-        "shop for cleaning supplies": {"description": "supply shopping", "priority": 3},
-        "restock personal care items": {"description": "toiletry shopping", "priority": 3},
-        "purchase items for special occasions": {"description": "special shopping", "priority": 3},
-        "buy replacement household items": {"description": "replacement shopping", "priority": 3},
-        
-        # Yard and Outdoor
-        "mow the lawn": {"description": "lawn mowing", "priority": 3},
-        "rake fallen leaves": {"description": "leaf raking", "priority": 2},
-        "shovel snow from walkways": {"description": "snow shoveling", "priority": 4},
-        "water plants and garden": {"description": "plant watering", "priority": 3},
-        "trim hedges and bushes": {"description": "hedge trimming", "priority": 2},
-        "pull weeds from garden": {"description": "weeding", "priority": 2},
-        "clean gutters": {"description": "gutter cleaning", "priority": 3},
-        "sweep porch or patio": {"description": "porch sweeping", "priority": 2},
-        "clean outdoor furniture": {"description": "outdoor furniture cleaning", "priority": 2},
-        "pick up yard debris": {"description": "yard cleanup", "priority": 2},
-        
-        # Pet Care
-        "feed household pets": {"description": "pet feeding", "priority": 5},
-        "walk the dog": {"description": "dog walking", "priority": 4},
-        "clean pet areas": {"description": "pet area cleaning", "priority": 3},
-        "change pet bedding": {"description": "pet bedding change", "priority": 3},
-        "clean litter box": {"description": "litter box cleaning", "priority": 4},
-        "groom pets": {"description": "pet grooming", "priority": 2},
-        "give pets medication": {"description": "pet medication", "priority": 5},
-        
-        # Home Maintenance
-        "change air filters": {"description": "filter changing", "priority": 3},
-        "replace light bulbs": {"description": "bulb replacement", "priority": 3},
-        "unclog drains": {"description": "drain unclogging", "priority": 4},
-        "fix minor household issues": {"description": "minor repairs", "priority": 3},
-        "assemble furniture": {"description": "furniture assembly", "priority": 2},
-        "change smoke detector batteries": {"description": "battery replacement", "priority": 4},
-        "check and reset circuit breakers": {"description": "electrical checks", "priority": 3},
-        "fix leaky faucets": {"description": "faucet repair", "priority": 3},
-        
-        # Waste Management
-        "take out household trash": {"description": "trash removal", "priority": 4},
-        "take out recycling": {"description": "recycling", "priority": 3},
-        "dispose of food waste": {"description": "compost", "priority": 3},
-        "take trash bins to curb": {"description": "trash bin placement", "priority": 4},
-        "bring in empty trash bins": {"description": "bin retrieval", "priority": 2},
-        "shred and dispose of documents": {"description": "document disposal", "priority": 2},
-        "dispose of hazardous waste": {"description": "hazardous waste disposal", "priority": 4},
-        
-        # Seasonal Tasks
-        "put up holiday decorations": {"description": "holiday decorating", "priority": 2},
-        "take down seasonal decorations": {"description": "decoration removal", "priority": 2},
-        "prepare home for winter": {"description": "winterizing", "priority": 3},
-        "clean and store seasonal items": {"description": "seasonal storage", "priority": 2},
-        "prepare yard for changing seasons": {"description": "seasonal yard prep", "priority": 3},
-        "clean and cover outdoor furniture": {"description": "furniture winterizing", "priority": 2},
-        
-        # Child-Related Chores
-        "tidy up children's toys": {"description": "toy cleanup", "priority": 3},
-        "organize children's clothes": {"description": "kids' clothing organization", "priority": 2},
-        "clean children's rooms": {"description": "kids' room cleaning", "priority": 3},
-        "wash children's laundry": {"description": "kids' laundry", "priority": 3},
-        "pack school lunches": {"description": "lunch packing", "priority": 4},
-        "help with homework": {"description": "homework help", "priority": 4},
-        "clean and sanitize toys": {"description": "toy sanitizing", "priority": 3}
-    }
+    # Counter for simple ID generation
+    id_counter = 1
+    
+    household_chores = {}
+    
+    # Helper function to add an item with incremented ID
+    def add_chore(key, title, description, category, event_type, is_recurring, frequency, priority, importance, urgency):
+        nonlocal id_counter
+        household_chores[key] = {
+            "id": id_counter,
+            "title": title,
+            "description": description,
+            "category": category,
+            "event_type": event_type,
+            "is_recurring": is_recurring,
+            "frequency": frequency,
+            "priority": priority,
+            "importance": importance,
+            "urgency": urgency
+        }
+        id_counter += 1
+    
+    # Cleaning
+    add_chore(
+        "vacuum the floors and carpets",
+        "Vacuum Floors and Carpets",
+        "Clean floors and carpets using a vacuum cleaner",
+        "personal",
+        "chore",
+        True,
+        "weekly",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_chore(
+        "sweep the floors",
+        "Sweep Floors",
+        "Clean hard floor surfaces using a broom",
+        "personal",
+        "chore",
+        True,
+        "biweekly",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_chore(
+        "mop the floor surfaces",
+        "Mop Floors",
+        "Clean hard floor surfaces using a mop and cleaning solution",
+        "personal",
+        "chore",
+        True,
+        "weekly",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_chore(
+        "dust the furniture and surfaces",
+        "Dust Furniture",
+        "Remove dust from furniture and household surfaces",
+        "personal",
+        "chore",
+        True,
+        "weekly",
+        2,
+        "low",
+        "low"
+    )
+    
+    add_chore(
+        "clean the bathroom toilet",
+        "Clean Toilet",
+        "Sanitize and clean the bathroom toilet",
+        "personal",
+        "chore",
+        True,
+        "weekly",
+        4,
+        "high",
+        "high"
+    )
+    
+    add_chore(
+        "deep clean the entire house",
+        "Deep Clean House",
+        "Thoroughly clean all areas of the house",
+        "personal",
+        "chore",
+        True,
+        "monthly",
+        4,
+        "high",
+        "medium"
+    )
+    
+    add_chore(
+        "sanitize high-touch surfaces",
+        "Sanitize Surfaces",
+        "Clean and disinfect frequently touched surfaces",
+        "personal",
+        "chore",
+        True,
+        "daily",
+        4,
+        "high",
+        "high"
+    )
+    
+    # Laundry
+    add_chore(
+        "wash dirty clothes",
+        "Wash Clothes",
+        "Wash clothing in washing machine or by hand",
+        "personal",
+        "chore",
+        True,
+        "weekly",
+        4,
+        "high",
+        "high"
+    )
+    
+    add_chore(
+        "fold clean clothes",
+        "Fold Laundry",
+        "Fold clean clothes and prepare for storage",
+        "personal",
+        "chore",
+        True,
+        "weekly",
+        2,
+        "medium",
+        "low"
+    )
+    
+    add_chore(
+        "iron wrinkled clothing",
+        "Iron Clothes",
+        "Remove wrinkles from clothing using an iron",
+        "personal",
+        "chore",
+        True,
+        "weekly",
+        2,
+        "low",
+        "low"
+    )
+    
+    add_chore(
+        "wash bed sheets and linens",
+        "Wash Bedding",
+        "Launder bed sheets, pillowcases, and other bedding",
+        "personal",
+        "chore",
+        True,
+        "biweekly",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    # Kitchen Tasks
+    add_chore(
+        "wash dirty dishes",
+        "Wash Dishes",
+        "Clean dirty dishes, utensils, and cookware",
+        "personal",
+        "chore",
+        True,
+        "daily",
+        4,
+        "high",
+        "high"
+    )
+    
+    add_chore(
+        "prepare meals for the family",
+        "Cook Meals",
+        "Prepare and cook food for household members",
+        "personal",
+        "chore",
+        True,
+        "daily",
+        4,
+        "high",
+        "high"
+    )
+    
+    add_chore(
+        "meal prep for the week",
+        "Meal Prep",
+        "Prepare portions of meals in advance for the week",
+        "personal",
+        "chore",
+        True,
+        "weekly",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_chore(
+        "clean out expired food",
+        "Clean Refrigerator",
+        "Remove and dispose of expired food items",
+        "personal",
+        "chore",
+        True,
+        "weekly",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_chore(
+        "take out kitchen garbage",
+        "Take Out Trash",
+        "Remove and dispose of kitchen garbage",
+        "personal",
+        "chore",
+        True,
+        "daily",
+        4,
+        "high",
+        "high"
+    )
+    
+    # Shopping
+    add_chore(
+        "buy groceries for the week",
+        "Grocery Shopping",
+        "Purchase food and household essentials",
+        "personal",
+        "chore",
+        True,
+        "weekly",
+        4,
+        "high",
+        "high"
+    )
+    
+    add_chore(
+        "pick up household essentials",
+        "Buy Household Items",
+        "Purchase necessary household supplies",
+        "personal",
+        "chore",
+        True,
+        "monthly",
+        4,
+        "high",
+        "medium"
+    )
+    
+    # Yard and Outdoor
+    add_chore(
+        "mow the lawn",
+        "Mow Lawn",
+        "Cut grass in yard using lawn mower",
+        "personal",
+        "chore",
+        True,
+        "weekly",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_chore(
+        "shovel snow from walkways",
+        "Shovel Snow",
+        "Clear snow from walkways and driveway",
+        "personal",
+        "chore",
+        True,
+        "as needed",
+        4,
+        "high",
+        "high"
+    )
+    
+    add_chore(
+        "water plants and garden",
+        "Water Plants",
+        "Provide water to indoor and outdoor plants",
+        "personal",
+        "chore",
+        True,
+        "biweekly",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    # Pet Care
+    add_chore(
+        "feed household pets",
+        "Feed Pets",
+        "Provide food and water to household pets",
+        "personal",
+        "chore",
+        True,
+        "daily",
+        5,
+        "very high",
+        "very high"
+    )
+    
+    add_chore(
+        "walk the dog",
+        "Walk Dog",
+        "Take dog outside for exercise and bathroom needs",
+        "personal",
+        "chore",
+        True,
+        "daily",
+        4,
+        "high",
+        "high"
+    )
+    
+    add_chore(
+        "clean litter box",
+        "Clean Litter Box",
+        "Remove waste and replace litter in cat litter box",
+        "personal",
+        "chore",
+        True,
+        "daily",
+        4,
+        "high",
+        "high"
+    )
+    
+    # Home Maintenance
+    add_chore(
+        "change air filters",
+        "Change Air Filters",
+        "Replace HVAC system air filters",
+        "personal",
+        "chore",
+        True,
+        "monthly",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_chore(
+        "replace light bulbs",
+        "Replace Light Bulbs",
+        "Change burned-out light bulbs",
+        "personal",
+        "chore",
+        False,
+        "as needed",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_chore(
+        "change smoke detector batteries",
+        "Replace Smoke Detector Batteries",
+        "Change batteries in smoke and carbon monoxide detectors",
+        "personal",
+        "chore",
+        True,
+        "annually",
+        4,
+        "high",
+        "medium"
+    )
     
     # Create the final JSON object
     household_chores_json = {
@@ -131,7 +399,9 @@ def generate_household_chores_json():
             "3": "Medium - Normal recurring household tasks",
             "4": "High - Essential tasks for health and daily functioning",
             "5": "Very High - Critical tasks that affect health and safety"
-        }
+        },
+        "schema_version": "1.0",
+        "last_updated": datetime.now().strftime("%Y-%m-%d")
     }
     
     return household_chores_json
@@ -140,7 +410,9 @@ def generate_household_chores_json():
 json_data = generate_household_chores_json()
 
 # Write to a file
-with open('data/english/meta/keyword_taxonomy/event_types/personal_events/celebrations/vocabulary/household_chores.json', 'w', encoding='utf-8') as f:
+output_path = 'data/english/meta/keyword_taxonomy/event_types/personal_events/chores/vocabulary/household_chores.json'
+os.makedirs(os.path.dirname(output_path), exist_ok=True)  # Create directories if they don't exist
+with open(output_path, 'w', encoding='utf-8') as f:
     json.dump(json_data, f, indent=2)
 
 print(f"Generated {len(json_data['values'])} household chore expressions and saved to household_chores.json")
@@ -148,17 +420,7 @@ print(f"Generated {len(json_data['values'])} household chore expressions and sav
 # Print some examples
 print("\nSample entries:")
 sample_keys = ["vacuum the floors and carpets", "wash dirty clothes", "buy groceries for the week", 
-               "feed household pets", "take out household trash"]
+               "feed household pets", "take out kitchen garbage"]
 for key in sample_keys:
     if key in json_data["values"]:
         print(f'"{key}": {json.dumps(json_data["values"][key], indent=2)}')
-
-# If you want to see the raw JSON output
-print("\nFull JSON structure:")
-print(json.dumps({"personal_events": {
-    "chores": {
-        "description": "Routine household tasks",
-        "examples": ["cleaning", "laundry", "grocery shopping", "cooking"],
-        "vocab": "household_chores.json"
-    }
-}}, indent=2))

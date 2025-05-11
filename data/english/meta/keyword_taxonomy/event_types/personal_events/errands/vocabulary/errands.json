@@ -8,316 +8,328 @@
   ],
   "values": {
     "pick up dry cleaning": {
-      "description": "dry cleaning pickup",
-      "priority": 3
+      "id": 1,
+      "title": "Pick Up Dry Cleaning",
+      "description": "Collect cleaned clothes from dry cleaner",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "pick up prescription medication": {
-      "description": "prescription pickup",
-      "priority": 5
+      "id": 2,
+      "title": "Get Prescription",
+      "description": "Collect prescribed medication from pharmacy",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": true,
+      "frequency": "monthly",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "pick up package from post office": {
-      "description": "package pickup",
-      "priority": 3
-    },
-    "pick up takeout food": {
-      "description": "food pickup",
-      "priority": 2
+      "id": 3,
+      "title": "Pick Up Package",
+      "description": "Collect package from post office or delivery center",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "pick up kids from school": {
-      "description": "school pickup",
-      "priority": 5
+      "id": 4,
+      "title": "School Pickup",
+      "description": "Collect children from school at the end of the day",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": true,
+      "frequency": "weekdays",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "very high"
     },
-    "pick up children from daycare": {
-      "description": "daycare pickup",
-      "priority": 5
-    },
-    "pick up children from extracurricular activities": {
-      "description": "activity pickup",
-      "priority": 4
-    },
-    "pick up ordered items from store": {
-      "description": "store pickup",
-      "priority": 3
-    },
-    "pick up party supplies": {
-      "description": "supply pickup",
-      "priority": 3
-    },
-    "pick up pet from groomer": {
-      "description": "pet pickup",
-      "priority": 3
-    },
-    "pick up gift for special occasion": {
-      "description": "gift pickup",
-      "priority": 3
+    "pick up takeout food": {
+      "id": 5,
+      "title": "Takeout Pickup",
+      "description": "Collect pre-ordered food from restaurant",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 2,
+      "importance": "low",
+      "urgency": "medium"
     },
     "drop off package at post office": {
-      "description": "mail dropoff",
-      "priority": 3
+      "id": 6,
+      "title": "Mail Package",
+      "description": "Send package via postal service or carrier",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "drop off library books": {
-      "description": "library return",
-      "priority": 2
-    },
-    "drop off dry cleaning": {
-      "description": "laundry dropoff",
-      "priority": 2
+      "id": 7,
+      "title": "Return Library Books",
+      "description": "Return borrowed books to the library",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 2,
+      "importance": "low",
+      "urgency": "medium"
     },
     "drop off children at school": {
-      "description": "school dropoff",
-      "priority": 5
-    },
-    "drop off kids at daycare": {
-      "description": "daycare dropoff",
-      "priority": 5
-    },
-    "drop off children at activities": {
-      "description": "activity dropoff",
-      "priority": 4
-    },
-    "drop off rental items": {
-      "description": "rental return",
-      "priority": 4
-    },
-    "drop off payment or check": {
-      "description": "payment dropoff",
-      "priority": 4
-    },
-    "drop off donation items": {
-      "description": "donation dropoff",
-      "priority": 2
-    },
-    "drop off recycling": {
-      "description": "recycling dropoff",
-      "priority": 3
-    },
-    "drop off pet at groomer": {
-      "description": "pet dropoff",
-      "priority": 3
+      "id": 8,
+      "title": "School Dropoff",
+      "description": "Take children to school in the morning",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": true,
+      "frequency": "weekdays",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "very high"
     },
     "drop off car for service": {
-      "description": "car service dropoff",
-      "priority": 4
+      "id": 9,
+      "title": "Car Service Dropoff",
+      "description": "Leave car at service center for maintenance or repair",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": true,
+      "frequency": "quarterly",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "return purchased item to store": {
-      "description": "store return",
-      "priority": 3
+      "id": 10,
+      "title": "Store Return",
+      "description": "Return item to retail location for refund or exchange",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "return online purchase": {
-      "description": "online return",
-      "priority": 3
+      "id": 11,
+      "title": "Online Order Return",
+      "description": "Return item purchased online via shipping service",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "low"
     },
     "return borrowed item to friend": {
-      "description": "borrowed item return",
-      "priority": 3
-    },
-    "return rented equipment": {
-      "description": "equipment return",
-      "priority": 4
-    },
-    "return defective product": {
-      "description": "defective return",
-      "priority": 3
-    },
-    "return unwanted gift": {
-      "description": "gift return",
-      "priority": 2
-    },
-    "return textbooks at end of term": {
-      "description": "textbook return",
-      "priority": 3
+      "id": 12,
+      "title": "Return Borrowed Item",
+      "description": "Give back item borrowed from friend or family member",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "deposit check at bank": {
-      "description": "check deposit",
-      "priority": 4
+      "id": 13,
+      "title": "Bank Deposit",
+      "description": "Deposit check at bank branch or ATM",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "withdraw cash from ATM": {
-      "description": "cash withdrawal",
-      "priority": 3
+      "id": 14,
+      "title": "ATM Withdrawal",
+      "description": "Get cash from automated teller machine",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "meet with bank representative": {
-      "description": "bank appointment",
-      "priority": 4
-    },
-    "apply for loan in person": {
-      "description": "loan application",
-      "priority": 4
-    },
-    "make loan payment in person": {
-      "description": "loan payment",
-      "priority": 4
-    },
-    "get cashier's check": {
-      "description": "cashier's check",
-      "priority": 4
-    },
-    "exchange currency": {
-      "description": "currency exchange",
-      "priority": 3
-    },
-    "open new account": {
-      "description": "account opening",
-      "priority": 3
-    },
-    "address account issues": {
-      "description": "account servicing",
-      "priority": 4
-    },
-    "get documents notarized": {
-      "description": "notary service",
-      "priority": 4
-    },
-    "access safe deposit box": {
-      "description": "safe deposit access",
-      "priority": 3
+      "id": 15,
+      "title": "Bank Appointment",
+      "description": "Scheduled meeting with banking staff",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "purchase groceries at store": {
-      "description": "grocery run",
-      "priority": 4
+      "id": 16,
+      "title": "Grocery Shopping",
+      "description": "Buy food and household necessities at supermarket",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "buy specific item at specialty store": {
-      "description": "specialty shopping",
-      "priority": 3
+      "id": 17,
+      "title": "Specialty Shopping",
+      "description": "Purchase specific item from a specialized retailer",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "shop for clothing": {
-      "description": "clothes shopping",
-      "priority": 2
-    },
-    "purchase personal care items": {
-      "description": "personal care shopping",
-      "priority": 3
-    },
-    "buy gift for specific event": {
-      "description": "gift shopping",
-      "priority": 3
-    },
-    "shop for home improvement supplies": {
-      "description": "hardware store run",
-      "priority": 3
-    },
-    "purchase electronics or appliances": {
-      "description": "electronics shopping",
-      "priority": 2
-    },
-    "shop for seasonal items": {
-      "description": "seasonal shopping",
-      "priority": 2
+      "id": 18,
+      "title": "Clothes Shopping",
+      "description": "Purchase apparel, shoes, or accessories",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 2,
+      "importance": "low",
+      "urgency": "low"
     },
     "attend medical appointment": {
-      "description": "medical appointment",
-      "priority": 5
+      "id": 19,
+      "title": "Medical Appointment",
+      "description": "Visit doctor, specialist, or healthcare provider",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": true,
+      "frequency": "quarterly",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "go to dental checkup": {
-      "description": "dental appointment",
-      "priority": 4
-    },
-    "visit hair salon": {
-      "description": "hair appointment",
-      "priority": 2
+      "id": 20,
+      "title": "Dental Appointment",
+      "description": "Visit dentist for examination or procedure",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": true,
+      "frequency": "biannually",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "get vehicle serviced": {
-      "description": "car service",
-      "priority": 4
-    },
-    "meet with tax preparer": {
-      "description": "tax appointment",
-      "priority": 4
-    },
-    "attend legal consultation": {
-      "description": "legal appointment",
-      "priority": 5
-    },
-    "go to therapy session": {
-      "description": "therapy appointment",
-      "priority": 4
-    },
-    "attend parent-teacher conference": {
-      "description": "school conference",
-      "priority": 4
-    },
-    "visit government office": {
-      "description": "government office visit",
-      "priority": 4
-    },
-    "get car washed": {
-      "description": "car wash",
-      "priority": 1
-    },
-    "get vehicle emissions test": {
-      "description": "emissions test",
-      "priority": 4
+      "id": 21,
+      "title": "Car Service",
+      "description": "Take vehicle for maintenance or repairs",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": true,
+      "frequency": "quarterly",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "renew driver's license": {
-      "description": "license renewal",
-      "priority": 5
+      "id": 22,
+      "title": "License Renewal",
+      "description": "Update driver's license at government office",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": true,
+      "frequency": "every few years",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "register to vote": {
-      "description": "voter registration",
-      "priority": 4
-    },
-    "apply for passport": {
-      "description": "passport application",
-      "priority": 4
+      "id": 23,
+      "title": "Voter Registration",
+      "description": "Complete voter registration process",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": false,
+      "frequency": "once",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "renew vehicle registration": {
-      "description": "vehicle registration",
-      "priority": 5
-    },
-    "apply for permits": {
-      "description": "permit application",
-      "priority": 4
-    },
-    "pay traffic ticket": {
-      "description": "ticket payment",
-      "priority": 4
-    },
-    "attend court appearance": {
-      "description": "court appearance",
-      "priority": 5
-    },
-    "file paperwork at city hall": {
-      "description": "document filing",
-      "priority": 4
+      "id": 24,
+      "title": "Vehicle Registration",
+      "description": "Update vehicle registration with government",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": true,
+      "frequency": "annually",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "fill car with gas": {
-      "description": "gas fillup",
-      "priority": 4
-    },
-    "take item for repair": {
-      "description": "repair dropoff",
-      "priority": 3
-    },
-    "mail letters or packages": {
-      "description": "mailing items",
-      "priority": 3
-    },
-    "purchase postage stamps": {
-      "description": "stamp purchase",
-      "priority": 2
-    },
-    "collect contact lenses": {
-      "description": "contact lens pickup",
-      "priority": 4
-    },
-    "go to gym or fitness class": {
-      "description": "fitness visit",
-      "priority": 2
-    },
-    "attend religious service": {
-      "description": "religious service",
-      "priority": 3
-    },
-    "pick up tickets for event": {
-      "description": "ticket pickup",
-      "priority": 3
+      "id": 25,
+      "title": "Gas Fillup",
+      "description": "Refuel vehicle at gas station",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "take pet to veterinarian": {
-      "description": "vet visit",
-      "priority": 5
+      "id": 26,
+      "title": "Vet Visit",
+      "description": "Bring pet for medical examination or treatment",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": true,
+      "frequency": "annually",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "medium"
     },
-    "charge electric vehicle": {
-      "description": "vehicle charging",
-      "priority": 4
+    "attend court appearance": {
+      "id": 27,
+      "title": "Court Appearance",
+      "description": "Appear in court for legal proceedings",
+      "category": "personal",
+      "event_type": "errand",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "very high"
     }
   },
   "priority_scale": {
@@ -326,5 +338,7 @@
     "3": "Medium - Should be completed in a reasonable timeframe",
     "4": "High - Important errands with potential consequences if delayed",
     "5": "Very High - Critical errands that affect health, legal status, or major responsibilities"
-  }
+  },
+  "schema_version": "1.0",
+  "last_updated": "2025-05-10"
 }

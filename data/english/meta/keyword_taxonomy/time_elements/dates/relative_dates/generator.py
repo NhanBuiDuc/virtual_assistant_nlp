@@ -1,188 +1,310 @@
 import json
+import os
+import re
+from datetime import datetime
 
-def generate_relative_dates_with_minutes():
+def generate_relative_dates_json():
     """
-    Generate a JSON dictionary with relative date expressions as keys
-    and approximate number of minutes relative to today as values.
-    Positive values represent future dates, negative values represent past dates.
+    Generate a JSON file with relative date expressions as commonly spoken.
+    Each key is a verbal reference to a relative date, and the value is an object
+    containing the breakdown of time units (seconds, minutes, hours, days, weeks, months, years).
     """
-    relative_dates_dict = {}
+    # Counter for simple ID generation
+    id_counter = 1
     
-    # Constants for time calculations
-    MINUTES_PER_DAY = 24 * 60  # 1440 minutes in a day
-    MINUTES_PER_WEEK = 7 * MINUTES_PER_DAY  # 10080 minutes in a week
-    MINUTES_PER_MONTH = 30 * MINUTES_PER_DAY  # ~43200 minutes in a month (approximation)
-    MINUTES_PER_YEAR = 365 * MINUTES_PER_DAY  # ~525600 minutes in a year (approximation)
+    relative_dates = {}
     
-    # Basic date units with their minute values
-    date_unit_minutes = {
-        "day": MINUTES_PER_DAY,
-        "week": MINUTES_PER_WEEK,
-        "month": MINUTES_PER_MONTH,
-        "year": MINUTES_PER_YEAR,
-        "days": MINUTES_PER_DAY,
-        "weeks": MINUTES_PER_WEEK,
-        "months": MINUTES_PER_MONTH,
-        "years": MINUTES_PER_YEAR
-    }
+    # Helper function to add a relative date with incremented ID
+    def add_relative_date(key, second=0, minute=0, hour=0, day=0, week=0, month=0, year=0, direction=1):
+        """
+        Add a relative date with specified time units.
+        direction: 1 for future, -1 for past, 0 for present
+        """
+        nonlocal id_counter
+        relative_dates[key] = {
+            "id": id_counter,
+            "second": second * direction,
+            "minute": minute * direction,
+            "hour": hour * direction,
+            "day": day * direction,
+            "week": week * direction,
+            "month": month * direction,
+            "year": year * direction
+        }
+        id_counter += 1
     
-    # Number words with their numeric values
-    number_word_values = {
+    # Constants for readability
+    FUTURE = 1
+    PAST = -1
+    PRESENT = 0
+    
+    # Common specific relative dates
+    
+    # Today/Now references
+    add_relative_date("today", direction=PRESENT)
+    add_relative_date("now", direction=PRESENT)
+    add_relative_date("at present", direction=PRESENT)
+    add_relative_date("currently", direction=PRESENT)
+    add_relative_date("at the moment", direction=PRESENT)
+    
+    # Tomorrow/Yesterday
+    add_relative_date("tomorrow", day=1, direction=FUTURE)
+    add_relative_date("yesterday", day=1, direction=PAST)
+    add_relative_date("day after tomorrow", day=2, direction=FUTURE)
+    add_relative_date("day before yesterday", day=2, direction=PAST)
+    add_relative_date("the day after", day=1, direction=FUTURE)
+    add_relative_date("the day before", day=1, direction=PAST)
+    add_relative_date("the following day", day=1, direction=FUTURE)
+    add_relative_date("the previous day", day=1, direction=PAST)
+    
+    # This week/month/year
+    add_relative_date("this week", direction=PRESENT)
+    add_relative_date("this month", direction=PRESENT)
+    add_relative_date("this year", direction=PRESENT)
+    
+    # Next/Last time periods
+    add_relative_date("next week", week=1, direction=FUTURE)
+    add_relative_date("next month", month=1, direction=FUTURE)
+    add_relative_date("next year", year=1, direction=FUTURE)
+    add_relative_date("last week", week=1, direction=PAST)
+    add_relative_date("last month", month=1, direction=PAST)
+    add_relative_date("last year", year=1, direction=PAST)
+    
+    # Beginning/End of periods
+    # These are approximations
+    add_relative_date("beginning of the week", day=3, direction=PAST)
+    add_relative_date("end of the week", day=3, direction=FUTURE)
+    add_relative_date("beginning of the month", day=15, direction=PAST)
+    add_relative_date("end of the month", day=15, direction=FUTURE)
+    add_relative_date("beginning of the year", month=6, direction=PAST)
+    add_relative_date("end of the year", month=6, direction=FUTURE)
+    
+    # Earlier/Later this period
+    add_relative_date("earlier this week", day=2, direction=PAST)
+    add_relative_date("later this week", day=2, direction=FUTURE)
+    add_relative_date("earlier this month", day=10, direction=PAST)
+    add_relative_date("later this month", day=10, direction=FUTURE)
+    add_relative_date("earlier this year", month=3, direction=PAST)
+    add_relative_date("later this year", month=3, direction=FUTURE)
+    
+    # Specific future time intervals (minutes)
+    for i in range(1, 21):  # 1 to 20 minutes
+        add_relative_date(f"in {i} minutes", minute=i, direction=FUTURE)
+        add_relative_date(f"{i} minutes from now", minute=i, direction=FUTURE)
+        add_relative_date(f"{i} minutes ago", minute=i, direction=PAST)
+    
+    add_relative_date("in half an hour", minute=30, direction=FUTURE)
+    add_relative_date("half an hour ago", minute=30, direction=PAST)
+    add_relative_date("half hour from now", minute=30, direction=FUTURE)
+    
+    add_relative_date("in an hour", hour=1, direction=FUTURE)
+    add_relative_date("an hour from now", hour=1, direction=FUTURE)
+    add_relative_date("an hour ago", hour=1, direction=PAST)
+    
+    # Specific future time intervals (hours)
+    for i in range(1, 13):  # 1 to 12 hours
+        add_relative_date(f"in {i} hours", hour=i, direction=FUTURE)
+        add_relative_date(f"{i} hours from now", hour=i, direction=FUTURE)
+        add_relative_date(f"{i} hours ago", hour=i, direction=PAST)
+    
+    # Hours and minutes combinations
+    for h in range(1, 6):  # 1 to 5 hours
+        for m in [15, 30, 45]:  # Common minute increments
+            add_relative_date(f"in {h} hours and {m} minutes", hour=h, minute=m, direction=FUTURE)
+            add_relative_date(f"{h} hours and {m} minutes from now", hour=h, minute=m, direction=FUTURE)
+            add_relative_date(f"{h} hours {m} minutes ago", hour=h, minute=m, direction=PAST)
+    
+    # Specific future time intervals (days)
+    for i in range(1, 8):  # 1 to 7 days
+        add_relative_date(f"in {i} days", day=i, direction=FUTURE)
+        add_relative_date(f"{i} days from now", day=i, direction=FUTURE)
+        add_relative_date(f"{i} days ago", day=i, direction=PAST)
+    
+    # Week-based intervals
+    for i in range(1, 5):  # 1 to 4 weeks
+        add_relative_date(f"in {i} weeks", week=i, direction=FUTURE)
+        add_relative_date(f"{i} weeks from now", week=i, direction=FUTURE)
+        add_relative_date(f"{i} weeks ago", week=i, direction=PAST)
+    
+    # Month-based intervals
+    for i in range(1, 13):  # 1 to 12 months
+        add_relative_date(f"in {i} months", month=i, direction=FUTURE)
+        add_relative_date(f"{i} months from now", month=i, direction=FUTURE)
+        add_relative_date(f"{i} months ago", month=i, direction=PAST)
+    
+    # Year-based intervals
+    for i in range(1, 11):  # 1 to 10 years
+        add_relative_date(f"in {i} years", year=i, direction=FUTURE)
+        add_relative_date(f"{i} years from now", year=i, direction=FUTURE)
+        add_relative_date(f"{i} years ago", year=i, direction=PAST)
+    
+    # Special cases with text numbers
+    number_words = {
         "one": 1, "two": 2, "three": 3, "four": 4, "five": 5,
         "six": 6, "seven": 7, "eight": 8, "nine": 9, "ten": 10,
-        "eleven": 11, "twelve": 12, "thirteen": 13, "fourteen": 14, "fifteen": 15,
-        "sixteen": 16, "seventeen": 17, "eighteen": 18, "nineteen": 19, "twenty": 20,
-        "thirty": 30, "forty": 40, "fifty": 50, "sixty": 60,
-        "seventy": 70, "eighty": 80, "ninety": 90, "hundred": 100,
         "a": 1, "an": 1
     }
     
-    # Common specific relative dates
-    specific_dates = {
-        "today": 0,
-        "tomorrow": MINUTES_PER_DAY,
-        "yesterday": -MINUTES_PER_DAY,
-        "day after tomorrow": 2 * MINUTES_PER_DAY,
-        "day before yesterday": -2 * MINUTES_PER_DAY,
-        "this week": 0,
-        "this month": 0,
-        "this year": 0,
-        "next week": MINUTES_PER_WEEK,
-        "next month": MINUTES_PER_MONTH,
-        "next year": MINUTES_PER_YEAR,
-        "last week": -MINUTES_PER_WEEK,
-        "last month": -MINUTES_PER_MONTH,
-        "last year": -MINUTES_PER_YEAR,
-        "beginning of the week": -MINUTES_PER_DAY * 3,  # Approximation (middle of week to beginning)
-        "end of the week": MINUTES_PER_DAY * 3,  # Approximation (middle of week to end)
-        "beginning of the month": -MINUTES_PER_DAY * 15,  # Approximation
-        "end of the month": MINUTES_PER_DAY * 15,  # Approximation
-        "beginning of the year": -MINUTES_PER_DAY * 182,  # Approximation
-        "end of the year": MINUTES_PER_DAY * 182,  # Approximation
-        "earlier this week": -MINUTES_PER_DAY * 2,  # Approximation
-        "later this week": MINUTES_PER_DAY * 2,  # Approximation
-        "earlier this month": -MINUTES_PER_DAY * 10,  # Approximation
-        "later this month": MINUTES_PER_DAY * 10,  # Approximation
-        "earlier this year": -MINUTES_PER_DAY * 90,  # Approximation
-        "later this year": MINUTES_PER_DAY * 90,  # Approximation
-        "the day after": MINUTES_PER_DAY,
-        "the day before": -MINUTES_PER_DAY,
-        "the following day": MINUTES_PER_DAY,
-        "the previous day": -MINUTES_PER_DAY
-    }
-    relative_dates_dict.update(specific_dates)
-    
-    # Weekday references (approximation - assume the middle of the week is "today")
-    weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"]
-    weekday_offsets = {
-        "Monday": -3, "Tuesday": -2, "Wednesday": -1, 
-        "Thursday": 0, "Friday": 1, "Saturday": 2, "Sunday": 3
-    }
-    
-    for day in weekdays:
-        offset_days = weekday_offsets[day]
-        relative_dates_dict[f"next {day}"] = (offset_days + 7) * MINUTES_PER_DAY
-        relative_dates_dict[f"last {day}"] = (offset_days - 7) * MINUTES_PER_DAY
-        relative_dates_dict[f"this {day}"] = offset_days * MINUTES_PER_DAY
-        relative_dates_dict[f"coming {day}"] = (offset_days + 7) * MINUTES_PER_DAY
-        relative_dates_dict[f"previous {day}"] = (offset_days - 7) * MINUTES_PER_DAY
-    
-    # Generate expressions with numbers and date units
-    # Format: "X [date unit] ago", "X [date unit] from now", "in X [date unit]"
-    for unit, minutes in date_unit_minutes.items():
-        # Using number words
-        for word, value in number_word_values.items():
-            unit_value = minutes * value
-            relative_dates_dict[f"{word} {unit} ago"] = -unit_value
-            relative_dates_dict[f"{word} {unit} from now"] = unit_value
-            relative_dates_dict[f"in {word} {unit}"] = unit_value
+    # Text numbers for minutes
+    for word, value in number_words.items():
+        add_relative_date(f"in {word} minute", minute=value, direction=FUTURE)
+        add_relative_date(f"{word} minute from now", minute=value, direction=FUTURE)
+        add_relative_date(f"{word} minute ago", minute=value, direction=PAST)
         
-        # Using digits
-        for digit in range(1, 101):
-            if digit <= 20 or digit % 10 == 0:  # Keep the set reasonable
-                unit_value = minutes * digit
-                relative_dates_dict[f"{digit} {unit} ago"] = -unit_value
-                relative_dates_dict[f"{digit} {unit} from now"] = unit_value
-                relative_dates_dict[f"in {digit} {unit}"] = unit_value
+        if word not in ["a", "an"]:  # Plural forms
+            add_relative_date(f"in {word} minutes", minute=value, direction=FUTURE)
+            add_relative_date(f"{word} minutes from now", minute=value, direction=FUTURE)
+            add_relative_date(f"{word} minutes ago", minute=value, direction=PAST)
+    
+    # Text numbers for hours
+    for word, value in number_words.items():
+        add_relative_date(f"in {word} hour", hour=value, direction=FUTURE)
+        add_relative_date(f"{word} hour from now", hour=value, direction=FUTURE)
+        add_relative_date(f"{word} hour ago", hour=value, direction=PAST)
         
-        # Add with direction indicators
-        if not unit.endswith('s'):  # Singular forms
-            relative_dates_dict[f"last {unit}"] = -minutes
-            relative_dates_dict[f"next {unit}"] = minutes
-            relative_dates_dict[f"this {unit}"] = 0
-            relative_dates_dict[f"coming {unit}"] = minutes
-            relative_dates_dict[f"previous {unit}"] = -minutes
-            relative_dates_dict[f"following {unit}"] = minutes
-            relative_dates_dict[f"upcoming {unit}"] = minutes
-            relative_dates_dict[f"past {unit}"] = -minutes
+        if word not in ["a", "an"]:  # Plural forms
+            add_relative_date(f"in {word} hours", hour=value, direction=FUTURE)
+            add_relative_date(f"{word} hours from now", hour=value, direction=FUTURE)
+            add_relative_date(f"{word} hours ago", hour=value, direction=PAST)
     
-    # Add expressions with "few" (approximate as 3)
-    for unit, minutes in date_unit_minutes.items():
-        if unit.endswith('s'):  # Only use plural forms
-            few_value = minutes * 3
-            relative_dates_dict[f"a few {unit} ago"] = -few_value
-            relative_dates_dict[f"a few {unit} from now"] = few_value
-            relative_dates_dict[f"in a few {unit}"] = few_value
+    # Text numbers for days
+    for word, value in number_words.items():
+        add_relative_date(f"in {word} day", day=value, direction=FUTURE)
+        add_relative_date(f"{word} day from now", day=value, direction=FUTURE)
+        add_relative_date(f"{word} day ago", day=value, direction=PAST)
+        
+        if word not in ["a", "an"]:  # Plural forms
+            add_relative_date(f"in {word} days", day=value, direction=FUTURE)
+            add_relative_date(f"{word} days from now", day=value, direction=FUTURE)
+            add_relative_date(f"{word} days ago", day=value, direction=PAST)
     
-    # Add expressions with "couple" (approximate as 2)
-    for unit, minutes in date_unit_minutes.items():
-        if unit.endswith('s'):  # Only use plural forms
-            couple_value = minutes * 2
-            relative_dates_dict[f"a couple of {unit} ago"] = -couple_value
-            relative_dates_dict[f"a couple of {unit} from now"] = couple_value
-            relative_dates_dict[f"in a couple of {unit}"] = couple_value
-            relative_dates_dict[f"couple of {unit} ago"] = -couple_value
-            relative_dates_dict[f"couple of {unit} from now"] = couple_value
-            relative_dates_dict[f"in couple of {unit}"] = couple_value
+    # Text numbers for weeks
+    for word, value in number_words.items():
+        add_relative_date(f"in {word} week", week=value, direction=FUTURE)
+        add_relative_date(f"{word} week from now", week=value, direction=FUTURE)
+        add_relative_date(f"{word} week ago", week=value, direction=PAST)
+        
+        if word not in ["a", "an"]:  # Plural forms
+            add_relative_date(f"in {word} weeks", week=value, direction=FUTURE)
+            add_relative_date(f"{word} weeks from now", week=value, direction=FUTURE)
+            add_relative_date(f"{word} weeks ago", week=value, direction=PAST)
     
-    # More complex expressions for singular units
-    for unit, minutes in date_unit_minutes.items():
-        if not unit.endswith('s'):  # Only use singular forms
-            # Approximation: earlier/later in a period means about 1/3 of the period
-            period_third = minutes // 3
-            relative_dates_dict[f"earlier this {unit}"] = -period_third
-            relative_dates_dict[f"later this {unit}"] = period_third
-            relative_dates_dict[f"beginning of this {unit}"] = -(minutes // 2)
-            relative_dates_dict[f"end of this {unit}"] = (minutes // 2)
-            relative_dates_dict[f"middle of this {unit}"] = 0
-            relative_dates_dict[f"start of the {unit}"] = -(minutes // 2)
-            relative_dates_dict[f"end of the {unit}"] = (minutes // 2)
+    # Text numbers for months
+    for word, value in number_words.items():
+        add_relative_date(f"in {word} month", month=value, direction=FUTURE)
+        add_relative_date(f"{word} month from now", month=value, direction=FUTURE)
+        add_relative_date(f"{word} month ago", month=value, direction=PAST)
+        
+        if word not in ["a", "an"]:  # Plural forms
+            add_relative_date(f"in {word} months", month=value, direction=FUTURE)
+            add_relative_date(f"{word} months from now", month=value, direction=FUTURE)
+            add_relative_date(f"{word} months ago", month=value, direction=PAST)
     
-    # Add some date range expressions (using approximations)
-    relative_dates_dict["over the next few days"] = MINUTES_PER_DAY * 3
-    relative_dates_dict["over the past few days"] = -MINUTES_PER_DAY * 3
-    relative_dates_dict["over the next few weeks"] = MINUTES_PER_WEEK * 3
-    relative_dates_dict["over the past few weeks"] = -MINUTES_PER_WEEK * 3
-    relative_dates_dict["over the coming months"] = MINUTES_PER_MONTH * 3
-    relative_dates_dict["over the past months"] = -MINUTES_PER_MONTH * 3
-    relative_dates_dict["in the coming days"] = MINUTES_PER_DAY * 3
-    relative_dates_dict["in the past days"] = -MINUTES_PER_DAY * 3
-    relative_dates_dict["within the next week"] = MINUTES_PER_WEEK // 2
-    relative_dates_dict["within the past week"] = -MINUTES_PER_WEEK // 2
+    # Text numbers for years
+    for word, value in number_words.items():
+        add_relative_date(f"in {word} year", year=value, direction=FUTURE)
+        add_relative_date(f"{word} year from now", year=value, direction=FUTURE)
+        add_relative_date(f"{word} year ago", year=value, direction=PAST)
+        
+        if word not in ["a", "an"]:  # Plural forms
+            add_relative_date(f"in {word} years", year=value, direction=FUTURE)
+            add_relative_date(f"{word} years from now", year=value, direction=FUTURE)
+            add_relative_date(f"{word} years ago", year=value, direction=PAST)
+    
+    # A few combinations of text numbers and time units
+    for hour_word, hour_val in number_words.items():
+        for min_word, min_val in number_words.items():
+            if hour_val <= 5 and min_val <= 45 and min_val % 15 == 0:  # Keep it reasonable
+                add_relative_date(f"in {hour_word} hour and {min_word} minutes", 
+                                 hour=hour_val, minute=min_val, direction=FUTURE)
+                add_relative_date(f"{hour_word} hour and {min_word} minutes from now", 
+                                 hour=hour_val, minute=min_val, direction=FUTURE)
+                add_relative_date(f"{hour_word} hour and {min_word} minutes ago", 
+                                 hour=hour_val, minute=min_val, direction=PAST)
+    
+    # Expressions with "few" (approximate as 3)
+    add_relative_date("in a few seconds", second=3, direction=FUTURE)
+    add_relative_date("a few seconds from now", second=3, direction=FUTURE)
+    add_relative_date("a few seconds ago", second=3, direction=PAST)
+    
+    add_relative_date("in a few minutes", minute=3, direction=FUTURE)
+    add_relative_date("a few minutes from now", minute=3, direction=FUTURE)
+    add_relative_date("a few minutes ago", minute=3, direction=PAST)
+    
+    add_relative_date("in a few hours", hour=3, direction=FUTURE)
+    add_relative_date("a few hours from now", hour=3, direction=FUTURE)
+    add_relative_date("a few hours ago", hour=3, direction=PAST)
+    
+    add_relative_date("in a few days", day=3, direction=FUTURE)
+    add_relative_date("a few days from now", day=3, direction=FUTURE)
+    add_relative_date("a few days ago", day=3, direction=PAST)
+    
+    add_relative_date("in a few weeks", week=3, direction=FUTURE)
+    add_relative_date("a few weeks from now", week=3, direction=FUTURE)
+    add_relative_date("a few weeks ago", week=3, direction=PAST)
+    
+    add_relative_date("in a few months", month=3, direction=FUTURE)
+    add_relative_date("a few months from now", month=3, direction=FUTURE)
+    add_relative_date("a few months ago", month=3, direction=PAST)
+    
+    add_relative_date("in a few years", year=3, direction=FUTURE)
+    add_relative_date("a few years from now", year=3, direction=FUTURE)
+    add_relative_date("a few years ago", year=3, direction=PAST)
+    
+    # Expressions with "couple" (approximate as 2)
+    add_relative_date("in a couple of seconds", second=2, direction=FUTURE)
+    add_relative_date("a couple of seconds from now", second=2, direction=FUTURE)
+    add_relative_date("a couple of seconds ago", second=2, direction=PAST)
+    
+    add_relative_date("in a couple of minutes", minute=2, direction=FUTURE)
+    add_relative_date("a couple of minutes from now", minute=2, direction=FUTURE)
+    add_relative_date("a couple of minutes ago", minute=2, direction=PAST)
+    
+    add_relative_date("in a couple of hours", hour=2, direction=FUTURE)
+    add_relative_date("a couple of hours from now", hour=2, direction=FUTURE)
+    add_relative_date("a couple of hours ago", hour=2, direction=PAST)
+    
+    add_relative_date("in a couple of days", day=2, direction=FUTURE)
+    add_relative_date("a couple of days from now", day=2, direction=FUTURE)
+    add_relative_date("a couple of days ago", day=2, direction=PAST)
+    
+    add_relative_date("in a couple of weeks", week=2, direction=FUTURE)
+    add_relative_date("a couple of weeks from now", week=2, direction=FUTURE)
+    add_relative_date("a couple of weeks ago", week=2, direction=PAST)
+    
+    add_relative_date("in a couple of months", month=2, direction=FUTURE)
+    add_relative_date("a couple of months from now", month=2, direction=FUTURE)
+    add_relative_date("a couple of months ago", month=2, direction=PAST)
+    
+    add_relative_date("in a couple of years", year=2, direction=FUTURE)
+    add_relative_date("a couple of years from now", year=2, direction=FUTURE)
+    add_relative_date("a couple of years ago", year=2, direction=PAST)
     
     # Create the final JSON object
     relative_dates_json = {
-        "description": "Dates relative to today, with keys as the verbal and values are number in minutes",
-        "examples": {
-            "tomorrow": MINUTES_PER_DAY,
-            "yesterday": -MINUTES_PER_DAY,
-            "next week": MINUTES_PER_WEEK,
-            "in two days": MINUTES_PER_DAY * 2,
-            "last month": -MINUTES_PER_MONTH
-        },
-        "values": relative_dates_dict
+        "description": "Relative dates as commonly expressed, with breakdown into time units",
+        "examples": ["tomorrow", "in 3 hours", "next week", "two days ago"],
+        "values": relative_dates,
+        "schema_version": "1.0",
+        "last_updated": datetime.now().strftime("%Y-%m-%d")
     }
     
     return relative_dates_json
 
 # Generate the JSON data
-json_data = generate_relative_dates_with_minutes()
+json_data = generate_relative_dates_json()
 
 # Write to a file
-with open('data/english/meta/keyword_taxonomy/time_elements/dates/relative_dates/vocabulary/relative_dates.json', 'w', encoding='utf-8') as f:
+output_path = 'data/english/meta/keyword_taxonomy/time_elements/dates/relative_dates/vocabulary/relative_dates.json'
+os.makedirs(os.path.dirname(output_path), exist_ok=True)  # Create directories if they don't exist
+with open(output_path, 'w', encoding='utf-8') as f:
     json.dump(json_data, f, indent=2)
 
-print(f"Generated {len(json_data['values'])} relative date expressions with minute values and saved to relative_dates.json")
+print(f"Generated {len(json_data['values'])} relative date expressions and saved to relative_dates.json")
 
-# If you want to see the output in the console as well
-# print(json.dumps(json_data, indent=2))
+# Print some examples
+print("\nSample entries:")
+sample_keys = ["tomorrow", "in 30 minutes", "2 hours ago", "next week", "in 1 hour and 30 minutes"]
+for key in sample_keys:
+    if key in json_data["values"]:
+        print(f'"{key}": {json.dumps(json_data["values"][key], indent=2)}')

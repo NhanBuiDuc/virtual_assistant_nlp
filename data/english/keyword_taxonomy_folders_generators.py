@@ -68,7 +68,7 @@ def process_taxonomy(data, current_path):
                 print(f"Created vocabulary directory: {vocab_dir}")
 
 def main():
-    create_taxonomy_directories("data/english/meta/keyword_taxonomy.json", "data/english/meta")
+    create_taxonomy_directories("data/english/meta/1_keyword_taxonomy.json", "data/english/meta")
 
 if __name__ == "__main__":
     main()

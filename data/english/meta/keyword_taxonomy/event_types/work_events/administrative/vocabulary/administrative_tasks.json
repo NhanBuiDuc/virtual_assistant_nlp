@@ -8,352 +8,388 @@
   ],
   "values": {
     "complete required forms": {
-      "description": "paperwork",
-      "priority": 3
+      "id": 1,
+      "title": "Complete Forms",
+      "description": "Fill out necessary forms and documentation",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "fill out necessary documentation": {
-      "description": "documentation",
-      "priority": 3
+      "id": 2,
+      "title": "Complete Documentation",
+      "description": "Prepare and fill out required documentation",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "process incoming documents": {
-      "description": "document processing",
-      "priority": 3
+      "id": 3,
+      "title": "Process Documents",
+      "description": "Review and process incoming documents and files",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "daily",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "organize office files": {
-      "description": "file organization",
-      "priority": 2
+      "id": 4,
+      "title": "Organize Files",
+      "description": "Sort, label, and arrange office files and documents",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "monthly",
+      "priority": 2,
+      "importance": "low",
+      "urgency": "low"
     },
     "prepare legal documents": {
-      "description": "legal paperwork",
-      "priority": 5
-    },
-    "maintain physical records": {
-      "description": "record keeping",
-      "priority": 3
-    },
-    "update company policies": {
-      "description": "policy updates",
-      "priority": 4
-    },
-    "digitize paper documents": {
-      "description": "document digitization",
-      "priority": 2
-    },
-    "archive old files": {
-      "description": "archiving",
-      "priority": 2
+      "id": 5,
+      "title": "Prepare Legal Documents",
+      "description": "Draft or complete legal forms and documentation",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "submit expense report": {
-      "description": "expense report",
-      "priority": 3
+      "id": 6,
+      "title": "Submit Expenses",
+      "description": "Complete and submit expense report for reimbursement",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "monthly",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "reconcile credit card statements": {
-      "description": "card reconciliation",
-      "priority": 3
-    },
-    "process reimbursement claims": {
-      "description": "reimbursements",
-      "priority": 3
+      "id": 7,
+      "title": "Reconcile Credit Cards",
+      "description": "Check and verify credit card transactions against records",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "monthly",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "create financial reports": {
-      "description": "financial reporting",
-      "priority": 4
+      "id": 8,
+      "title": "Financial Reporting",
+      "description": "Generate reports on financial performance and metrics",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "monthly",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "review department budget": {
-      "description": "budget review",
-      "priority": 4
-    },
-    "prepare budget forecast": {
-      "description": "budget forecasting",
-      "priority": 4
-    },
-    "approve team expenses": {
-      "description": "expense approval",
-      "priority": 3
-    },
-    "track project spending": {
-      "description": "cost tracking",
-      "priority": 4
-    },
-    "process accounts payable": {
-      "description": "accounts payable",
-      "priority": 4
-    },
-    "manage accounts receivable": {
-      "description": "accounts receivable",
-      "priority": 4
-    },
-    "create invoices for clients": {
-      "description": "invoicing",
-      "priority": 4
-    },
-    "process incoming payments": {
-      "description": "payment processing",
-      "priority": 4
+      "id": 9,
+      "title": "Budget Review",
+      "description": "Analyze and evaluate departmental spending against budget",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "quarterly",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "prepare tax documentation": {
-      "description": "tax preparation",
-      "priority": 5
+      "id": 10,
+      "title": "Tax Preparation",
+      "description": "Gather and organize documents needed for tax filing",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "annually",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "submit timesheet": {
-      "description": "timesheet",
-      "priority": 3
+      "id": 11,
+      "title": "Submit Timesheet",
+      "description": "Record and submit hours worked for payment processing",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "high"
     },
     "track billable hours": {
-      "description": "time tracking",
-      "priority": 4
-    },
-    "log project hours": {
-      "description": "time logging",
-      "priority": 3
-    },
-    "review employee time entries": {
-      "description": "timesheet review",
-      "priority": 3
+      "id": 12,
+      "title": "Track Billable Hours",
+      "description": "Record time spent on client or billable project work",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "daily",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "approve team timesheets": {
-      "description": "timesheet approval",
-      "priority": 3
-    },
-    "report overtime hours": {
-      "description": "overtime reporting",
-      "priority": 3
-    },
-    "allocate time to projects": {
-      "description": "time allocation",
-      "priority": 3
+      "id": 13,
+      "title": "Approve Timesheets",
+      "description": "Review and approve time records for team members",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "high"
     },
     "update employee records": {
-      "description": "employee records",
-      "priority": 4
+      "id": 14,
+      "title": "Update Employee Records",
+      "description": "Maintain current information in employee files and systems",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "as needed",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "process new hire paperwork": {
-      "description": "onboarding paperwork",
-      "priority": 4
+      "id": 15,
+      "title": "Process Onboarding",
+      "description": "Complete documentation for newly hired employees",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "manage benefits enrollment": {
-      "description": "benefits administration",
-      "priority": 4
-    },
-    "coordinate performance reviews": {
-      "description": "review coordination",
-      "priority": 4
-    },
-    "update org chart": {
-      "description": "org chart update",
-      "priority": 2
-    },
-    "track employee attendance": {
-      "description": "attendance tracking",
-      "priority": 3
-    },
-    "process leave requests": {
-      "description": "leave processing",
-      "priority": 3
+      "id": 16,
+      "title": "Manage Benefits",
+      "description": "Administer employee benefits program and enrollment",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "annually",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "document disciplinary actions": {
-      "description": "disciplinary documentation",
-      "priority": 5
-    },
-    "coordinate offboarding process": {
-      "description": "offboarding",
-      "priority": 4
-    },
-    "manage employee training records": {
-      "description": "training records",
-      "priority": 3
-    },
-    "verify employment eligibility": {
-      "description": "eligibility verification",
-      "priority": 5
+      "id": 17,
+      "title": "Document Disciplinary Actions",
+      "description": "Record formal disciplinary measures taken with employees",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "order office supplies": {
-      "description": "supply ordering",
-      "priority": 2
-    },
-    "manage office inventory": {
-      "description": "inventory management",
-      "priority": 2
+      "id": 18,
+      "title": "Order Supplies",
+      "description": "Purchase necessary supplies for office operations",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "monthly",
+      "priority": 2,
+      "importance": "low",
+      "urgency": "low"
     },
     "coordinate office maintenance": {
-      "description": "maintenance coordination",
-      "priority": 3
-    },
-    "manage office seating plan": {
-      "description": "seating management",
-      "priority": 2
+      "id": 19,
+      "title": "Coordinate Maintenance",
+      "description": "Schedule and oversee office repairs and maintenance",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "book meeting rooms": {
-      "description": "room booking",
-      "priority": 2
-    },
-    "arrange catering for meetings": {
-      "description": "catering arrangement",
-      "priority": 2
-    },
-    "coordinate office events": {
-      "description": "event coordination",
-      "priority": 3
-    },
-    "manage office subscriptions": {
-      "description": "subscription management",
-      "priority": 2
-    },
-    "update office equipment": {
-      "description": "equipment updates",
-      "priority": 3
-    },
-    "manage office access cards": {
-      "description": "access management",
-      "priority": 3
-    },
-    "manage email distribution lists": {
-      "description": "list management",
-      "priority": 2
-    },
-    "update contact information": {
-      "description": "contact updates",
-      "priority": 2
-    },
-    "coordinate internal communications": {
-      "description": "internal comms",
-      "priority": 3
-    },
-    "distribute company announcements": {
-      "description": "announcements",
-      "priority": 3
+      "id": 20,
+      "title": "Book Meeting Rooms",
+      "description": "Reserve appropriate spaces for meetings and events",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "as needed",
+      "priority": 2,
+      "importance": "low",
+      "urgency": "medium"
     },
     "take meeting minutes": {
-      "description": "minute taking",
-      "priority": 3
+      "id": 21,
+      "title": "Take Minutes",
+      "description": "Record discussions and decisions during meetings",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
-    "maintain company directory": {
-      "description": "directory maintenance",
-      "priority": 2
-    },
-    "manage shared calendars": {
-      "description": "calendar management",
-      "priority": 3
+    "distribute company announcements": {
+      "id": 22,
+      "title": "Distribute Announcements",
+      "description": "Share important company information with employees",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "high"
     },
     "book business travel": {
-      "description": "travel booking",
-      "priority": 3
-    },
-    "arrange accommodations": {
-      "description": "accommodation booking",
-      "priority": 3
-    },
-    "process travel authorizations": {
-      "description": "travel authorization",
-      "priority": 3
+      "id": 23,
+      "title": "Book Travel",
+      "description": "Arrange transportation for business trips",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "coordinate international travel documents": {
-      "description": "travel documents",
-      "priority": 4
-    },
-    "reconcile travel expenses": {
-      "description": "travel reconciliation",
-      "priority": 3
-    },
-    "create travel itineraries": {
-      "description": "itinerary creation",
-      "priority": 3
-    },
-    "arrange ground transportation": {
-      "description": "transport arrangement",
-      "priority": 3
+      "id": 24,
+      "title": "Coordinate Travel Documents",
+      "description": "Ensure proper documentation for international business travel",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "complete compliance training": {
-      "description": "compliance training",
-      "priority": 4
+      "id": 25,
+      "title": "Complete Compliance Training",
+      "description": "Finish required regulatory or compliance education",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "annually",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "submit regulatory reports": {
-      "description": "regulatory reporting",
-      "priority": 5
-    },
-    "document safety procedures": {
-      "description": "safety documentation",
-      "priority": 4
-    },
-    "manage audit documentation": {
-      "description": "audit preparation",
-      "priority": 5
+      "id": 26,
+      "title": "Submit Regulatory Reports",
+      "description": "File required reports with governing agencies",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "quarterly",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "maintain license renewals": {
-      "description": "license maintenance",
-      "priority": 5
-    },
-    "track compliance deadlines": {
-      "description": "compliance tracking",
-      "priority": 4
-    },
-    "create compliance reports": {
-      "description": "compliance reporting",
-      "priority": 5
-    },
-    "maintain contract records": {
-      "description": "contract management",
-      "priority": 4
+      "id": 27,
+      "title": "Maintain Licenses",
+      "description": "Ensure timely renewal of required business licenses",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "annually",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "update project tracking system": {
-      "description": "project updates",
-      "priority": 3
-    },
-    "collect project metrics": {
-      "description": "metrics collection",
-      "priority": 3
+      "id": 28,
+      "title": "Update Project Tracking",
+      "description": "Maintain current information in project management tools",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "prepare status reports": {
-      "description": "status reporting",
-      "priority": 3
-    },
-    "document project changes": {
-      "description": "change documentation",
-      "priority": 4
-    },
-    "maintain project documentation": {
-      "description": "project documentation",
-      "priority": 3
-    },
-    "update task management system": {
-      "description": "task updates",
-      "priority": 3
+      "id": 29,
+      "title": "Prepare Status Reports",
+      "description": "Create updates on project progress and metrics",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "high"
     },
     "track project milestones": {
-      "description": "milestone tracking",
-      "priority": 4
-    },
-    "prepare project presentations": {
-      "description": "presentation prep",
-      "priority": 4
-    },
-    "request system access": {
-      "description": "access request",
-      "priority": 3
-    },
-    "reset user passwords": {
-      "description": "password reset",
-      "priority": 3
+      "id": 30,
+      "title": "Track Milestones",
+      "description": "Monitor and record project progress against key milestones",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "update software licenses": {
-      "description": "license updates",
-      "priority": 3
+      "id": 31,
+      "title": "Update Software Licenses",
+      "description": "Renew and maintain software licensing for organization",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "annually",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "manage user accounts": {
-      "description": "account management",
-      "priority": 3
-    },
-    "track IT assets": {
-      "description": "asset tracking",
-      "priority": 3
-    },
-    "document system configurations": {
-      "description": "system documentation",
-      "priority": 4
-    },
-    "coordinate software updates": {
-      "description": "update coordination",
-      "priority": 3
+      "id": 32,
+      "title": "Manage User Accounts",
+      "description": "Create, update, or deactivate system user accounts",
+      "category": "work",
+      "event_type": "administrative",
+      "is_recurring": true,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     }
   },
   "priority_scale": {
@@ -362,5 +398,7 @@
     "3": "Medium - Regular operational administrative tasks",
     "4": "High - Important administrative requirements",
     "5": "Very High - Critical compliance or regulatory tasks"
-  }
+  },
+  "schema_version": "1.0",
+  "last_updated": "2025-05-10"
 }

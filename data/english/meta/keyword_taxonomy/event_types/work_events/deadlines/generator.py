@@ -1,111 +1,511 @@
 import json
+import os
+from datetime import datetime
 
 def generate_work_deadlines_json():
     """
     Generate a JSON file with work deadline expressions as commonly spoken.
     Each key is a longer verbal reference to a work deadline, and the value is an object
-    containing a description (shorter standardized term) and a priority level.
+    containing the primary task attributes requested.
     """
-    deadline_types = {
-        # Project deadlines
-        "final date for project completion": {"description": "project deadline", "priority": 5},
-        "last day to submit project deliverables": {"description": "project due date", "priority": 5},
-        "cutoff date for project submission": {"description": "project cutoff", "priority": 5},
-        "target date for finishing project": {"description": "project target", "priority": 4},
-        "date by which project must be completed": {"description": "project completion date", "priority": 5},
-        "end of project timeline": {"description": "project end date", "priority": 5},
-        "approaching project completion date": {"description": "upcoming deadline", "priority": 4},
-        "date approaching for project submission": {"description": "deadline approaching", "priority": 4},
-        "time remaining until project is due": {"description": "time left", "priority": 3},
-        
-        # Delivery deadlines
-        "last date for client deliverable": {"description": "delivery deadline", "priority": 5},
-        "date promised to deliver work": {"description": "promised delivery", "priority": 5},
-        "contractual date for delivery": {"description": "contractual deadline", "priority": 5},
-        "final submission time for deliverable": {"description": "submission deadline", "priority": 5},
-        "date work must be handed over": {"description": "handover date", "priority": 5},
-        "target for client delivery": {"description": "delivery target", "priority": 4},
-        "timeframe to deliver all requirements": {"description": "delivery window", "priority": 4},
-        
-        # Review deadlines
-        "end of quarterly review period": {"description": "quarterly review", "priority": 4},
-        "annual review submission deadline": {"description": "annual review", "priority": 4},
-        "performance review due date": {"description": "performance review", "priority": 4},
-        "deadline for peer reviews": {"description": "peer review deadline", "priority": 3},
-        "last day to submit feedback": {"description": "feedback deadline", "priority": 3},
-        "code review response timeframe": {"description": "code review deadline", "priority": 4},
-        "document review turnaround time": {"description": "review turnaround", "priority": 3},
-        
-        # Application deadlines
-        "final date for job application": {"description": "application deadline", "priority": 5},
-        "grant proposal submission date": {"description": "grant deadline", "priority": 5},
-        "last day to apply for position": {"description": "application cutoff", "priority": 5},
-        "deadline to submit resume": {"description": "resume deadline", "priority": 5},
-        "closing date for job posting": {"description": "posting closure", "priority": 4},
-        "application window closing date": {"description": "application window", "priority": 4},
-        
-        # Financial deadlines
-        "tax filing due date": {"description": "tax deadline", "priority": 5},
-        "invoice payment due date": {"description": "payment due", "priority": 5},
-        "expense report submission deadline": {"description": "expense deadline", "priority": 4},
-        "budget request cutoff date": {"description": "budget deadline", "priority": 4},
-        "fiscal year close date": {"description": "fiscal close", "priority": 5},
-        "quarterly financial report due": {"description": "quarterly filing", "priority": 5},
-        "annual financial statement deadline": {"description": "annual filing", "priority": 5},
-        "reimbursement claim deadline": {"description": "reimbursement deadline", "priority": 3},
-        
-        # Academic deadlines
-        "assignment due date": {"description": "assignment deadline", "priority": 4},
-        "paper submission deadline": {"description": "paper deadline", "priority": 5},
-        "research proposal due date": {"description": "proposal deadline", "priority": 5},
-        "thesis submission deadline": {"description": "thesis deadline", "priority": 5},
-        "coursework completion date": {"description": "coursework deadline", "priority": 4},
-        "final exam date": {"description": "exam date", "priority": 5},
-        "application for graduation deadline": {"description": "graduation application", "priority": 4},
-        
-        # Administrative deadlines
-        "timesheet submission deadline": {"description": "timesheet due", "priority": 3},
-        "vacation request deadline": {"description": "vacation request", "priority": 2},
-        "leave application cutoff date": {"description": "leave request", "priority": 2},
-        "benefits enrollment deadline": {"description": "benefits enrollment", "priority": 4},
-        "form submission due date": {"description": "form deadline", "priority": 3},
-        "required training completion date": {"description": "training deadline", "priority": 4},
-        "certification renewal deadline": {"description": "certification deadline", "priority": 5},
-        "compliance document due date": {"description": "compliance deadline", "priority": 5},
-        
-        # Publication deadlines
-        "publication submission deadline": {"description": "submission deadline", "priority": 5},
-        "abstract submission due date": {"description": "abstract deadline", "priority": 4},
-        "journal article submission cutoff": {"description": "article deadline", "priority": 5},
-        "book manuscript due date": {"description": "manuscript deadline", "priority": 5},
-        "editorial revisions due date": {"description": "revisions deadline", "priority": 4},
-        "conference paper deadline": {"description": "conference deadline", "priority": 5},
-        "print material submission date": {"description": "print deadline", "priority": 5},
-        
-        # Time-related expressions
-        "fast approaching deadline": {"description": "urgent deadline", "priority": 5},
-        "immediate deliverable required": {"description": "immediate deadline", "priority": 5},
-        "time-sensitive deliverable": {"description": "time-sensitive", "priority": 5},
-        "work due as soon as possible": {"description": "ASAP", "priority": 5},
-        "work needed by end of day": {"description": "EOD", "priority": 4},
-        "due by close of business today": {"description": "COB", "priority": 4},
-        "needed by end of business": {"description": "EOB", "priority": 4},
-        "work required by end of week": {"description": "EOW", "priority": 3},
-        "deadline extended by one week": {"description": "extended deadline", "priority": 3},
-        "hard deadline with no extensions": {"description": "hard deadline", "priority": 5},
-        "flexible completion date": {"description": "soft deadline", "priority": 2},
-        "target date rather than deadline": {"description": "target date", "priority": 2},
-        "approaching point of no return": {"description": "critical deadline", "priority": 5},
-        
-        # Group deadlines
-        "team submission deadline": {"description": "team deadline", "priority": 4},
-        "department reporting deadline": {"description": "department deadline", "priority": 4},
-        "organization-wide deadline": {"description": "company deadline", "priority": 5},
-        "multi-team project deadline": {"description": "cross-team deadline", "priority": 5},
-        "deadline affecting all stakeholders": {"description": "stakeholder deadline", "priority": 5},
-        "client-imposed deadline": {"description": "client deadline", "priority": 5},
-        "regulatory compliance deadline": {"description": "regulatory deadline", "priority": 5}
-    }
+    # Counter for simple ID generation
+    id_counter = 1
+    
+    deadline_types = {}
+    
+    # Helper function to add an item with incremented ID
+    def add_deadline(key, title, description, category, event_type, is_recurring, frequency, priority, importance, urgency):
+        nonlocal id_counter
+        deadline_types[key] = {
+            "id": id_counter,
+            "title": title,
+            "description": description,
+            "category": category,
+            "event_type": event_type,
+            "is_recurring": is_recurring,
+            "frequency": frequency,
+            "priority": priority,
+            "importance": importance,
+            "urgency": urgency
+        }
+        id_counter += 1
+    
+    # Project deadlines
+    add_deadline(
+        "final date for project completion",
+        "Project Deadline",
+        "Date by which all project deliverables must be completed",
+        "work",
+        "deadline",
+        False,
+        "project-based",
+        5,
+        "very high",
+        "very high"
+    )
+    
+    add_deadline(
+        "last day to submit project deliverables",
+        "Project Submission",
+        "Final day for submitting completed project work",
+        "work",
+        "deadline",
+        False,
+        "project-based",
+        5,
+        "very high",
+        "very high"
+    )
+    
+    add_deadline(
+        "cutoff date for project submission",
+        "Project Cutoff",
+        "Final acceptable date for project completion",
+        "work",
+        "deadline",
+        False,
+        "project-based",
+        5,
+        "very high",
+        "very high"
+    )
+    
+    add_deadline(
+        "target date for finishing project",
+        "Project Target",
+        "Desired completion date for project work",
+        "work",
+        "deadline",
+        False,
+        "project-based",
+        4,
+        "high",
+        "high"
+    )
+    
+    add_deadline(
+        "approaching project completion date",
+        "Upcoming Deadline",
+        "Project deadline that is coming up soon",
+        "work",
+        "deadline",
+        False,
+        "project-based",
+        4,
+        "high",
+        "high"
+    )
+    
+    # Delivery deadlines
+    add_deadline(
+        "last date for client deliverable",
+        "Delivery Deadline",
+        "Final date for providing deliverables to client",
+        "work",
+        "deadline",
+        False,
+        "project-based",
+        5,
+        "very high",
+        "very high"
+    )
+    
+    add_deadline(
+        "date promised to deliver work",
+        "Promised Delivery",
+        "Date committed to client for work completion",
+        "work",
+        "deadline",
+        False,
+        "project-based",
+        5,
+        "very high",
+        "high"
+    )
+    
+    add_deadline(
+        "contractual date for delivery",
+        "Contractual Deadline",
+        "Legally binding date for work completion",
+        "work",
+        "deadline",
+        False,
+        "contract-based",
+        5,
+        "very high",
+        "very high"
+    )
+    
+    # Review deadlines
+    add_deadline(
+        "end of quarterly review period",
+        "Quarterly Review",
+        "Deadline for quarterly performance or business evaluation",
+        "work",
+        "deadline",
+        True,
+        "quarterly",
+        4,
+        "high",
+        "medium"
+    )
+    
+    add_deadline(
+        "annual review submission deadline",
+        "Annual Review",
+        "Deadline for yearly performance review documentation",
+        "work",
+        "deadline",
+        True,
+        "annually",
+        4,
+        "high",
+        "medium"
+    )
+    
+    add_deadline(
+        "performance review due date",
+        "Performance Review",
+        "Date for completing employee performance evaluation",
+        "work",
+        "deadline",
+        True,
+        "annually",
+        4,
+        "high",
+        "medium"
+    )
+    
+    add_deadline(
+        "deadline for peer reviews",
+        "Peer Review Deadline",
+        "Final date to submit peer evaluation feedback",
+        "work",
+        "deadline",
+        True,
+        "quarterly",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    # Application deadlines
+    add_deadline(
+        "final date for job application",
+        "Application Deadline",
+        "Last day to submit job application materials",
+        "work",
+        "deadline",
+        False,
+        "as needed",
+        5,
+        "very high",
+        "high"
+    )
+    
+    add_deadline(
+        "grant proposal submission date",
+        "Grant Deadline",
+        "Due date for submitting grant application",
+        "work",
+        "deadline",
+        False,
+        "grant cycle",
+        5,
+        "very high",
+        "high"
+    )
+    
+    # Financial deadlines
+    add_deadline(
+        "tax filing due date",
+        "Tax Deadline",
+        "Required date for tax document submission",
+        "work",
+        "deadline",
+        True,
+        "annually",
+        5,
+        "very high",
+        "very high"
+    )
+    
+    add_deadline(
+        "invoice payment due date",
+        "Payment Due",
+        "Date by which payment must be received",
+        "work",
+        "deadline",
+        True,
+        "monthly",
+        5,
+        "very high",
+        "high"
+    )
+    
+    add_deadline(
+        "expense report submission deadline",
+        "Expense Deadline",
+        "Final date to submit expense documentation",
+        "work",
+        "deadline",
+        True,
+        "monthly",
+        4,
+        "high",
+        "medium"
+    )
+    
+    add_deadline(
+        "fiscal year close date",
+        "Fiscal Close",
+        "End of financial reporting year",
+        "work",
+        "deadline",
+        True,
+        "annually",
+        5,
+        "very high",
+        "very high"
+    )
+    
+    add_deadline(
+        "quarterly financial report due",
+        "Quarterly Filing",
+        "Due date for quarterly financial statements",
+        "work",
+        "deadline",
+        True,
+        "quarterly",
+        5,
+        "very high",
+        "high"
+    )
+    
+    # Administrative deadlines
+    add_deadline(
+        "timesheet submission deadline",
+        "Timesheet Due",
+        "Date by which work hours must be reported",
+        "work",
+        "deadline",
+        True,
+        "weekly",
+        3,
+        "medium",
+        "high"
+    )
+    
+    add_deadline(
+        "vacation request deadline",
+        "Vacation Request",
+        "Last day to submit time-off requests",
+        "work",
+        "deadline",
+        False,
+        "as needed",
+        2,
+        "low",
+        "low"
+    )
+    
+    add_deadline(
+        "benefits enrollment deadline",
+        "Benefits Enrollment",
+        "Final date to select employee benefits options",
+        "work",
+        "deadline",
+        True,
+        "annually",
+        4,
+        "high",
+        "high"
+    )
+    
+    add_deadline(
+        "certification renewal deadline",
+        "Certification Deadline",
+        "Date by which professional certification must be renewed",
+        "work",
+        "deadline",
+        True,
+        "annually",
+        5,
+        "very high",
+        "high"
+    )
+    
+    # Publication deadlines
+    add_deadline(
+        "publication submission deadline",
+        "Submission Deadline",
+        "Final date for submitting content for publication",
+        "work",
+        "deadline",
+        False,
+        "as needed",
+        5,
+        "very high",
+        "high"
+    )
+    
+    add_deadline(
+        "conference paper deadline",
+        "Conference Deadline",
+        "Due date for academic conference submission",
+        "work",
+        "deadline",
+        False,
+        "annual conference",
+        5,
+        "very high",
+        "high"
+    )
+    
+    # Time-related expressions
+    add_deadline(
+        "fast approaching deadline",
+        "Urgent Deadline",
+        "Any deadline requiring immediate attention",
+        "work",
+        "deadline",
+        False,
+        "as needed",
+        5,
+        "very high",
+        "very high"
+    )
+    
+    add_deadline(
+        "time-sensitive deliverable",
+        "Time-Sensitive",
+        "Task with tight time constraints",
+        "work",
+        "deadline",
+        False,
+        "as needed",
+        5,
+        "very high",
+        "very high"
+    )
+    
+    add_deadline(
+        "work due as soon as possible",
+        "ASAP",
+        "Task requiring immediate completion",
+        "work",
+        "deadline",
+        False,
+        "as needed",
+        5,
+        "very high",
+        "very high"
+    )
+    
+    add_deadline(
+        "work needed by end of day",
+        "EOD",
+        "Task that must be completed by day's end",
+        "work",
+        "deadline",
+        False,
+        "as needed",
+        4,
+        "high",
+        "high"
+    )
+    
+    add_deadline(
+        "deadline extended by one week",
+        "Extended Deadline",
+        "Task with deadline pushed to a later date",
+        "work",
+        "deadline",
+        False,
+        "as needed",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_deadline(
+        "hard deadline with no extensions",
+        "Hard Deadline",
+        "Absolutely final date with no possibility of extension",
+        "work",
+        "deadline",
+        False,
+        "as needed",
+        5,
+        "very high",
+        "very high"
+    )
+    
+    add_deadline(
+        "flexible completion date",
+        "Soft Deadline",
+        "Target date that can be adjusted if needed",
+        "work",
+        "deadline",
+        False,
+        "as needed",
+        2,
+        "low",
+        "low"
+    )
+    
+    # Group deadlines
+    add_deadline(
+        "team submission deadline",
+        "Team Deadline",
+        "Due date for work from an entire team",
+        "work",
+        "deadline",
+        False,
+        "project-based",
+        4,
+        "high",
+        "high"
+    )
+    
+    add_deadline(
+        "organization-wide deadline",
+        "Company Deadline",
+        "Deadline affecting the entire organization",
+        "work",
+        "deadline",
+        False,
+        "as needed",
+        5,
+        "very high",
+        "high"
+    )
+    
+    add_deadline(
+        "client-imposed deadline",
+        "Client Deadline",
+        "Due date set by client requirements",
+        "work",
+        "deadline",
+        False,
+        "client-determined",
+        5,
+        "very high",
+        "high"
+    )
+    
+    add_deadline(
+        "regulatory compliance deadline",
+        "Regulatory Deadline",
+        "Due date mandated by law or regulation",
+        "work",
+        "deadline",
+        True,
+        "varies",
+        5,
+        "very high",
+        "very high"
+    )
     
     # Create the final JSON object
     work_deadlines_json = {
@@ -118,7 +518,9 @@ def generate_work_deadlines_json():
             "3": "Medium - Noticeable impact if missed",
             "4": "High - Significant consequences if not met",
             "5": "Very High - Critical, must not be missed"
-        }
+        },
+        "schema_version": "1.0",
+        "last_updated": datetime.now().strftime("%Y-%m-%d")
     }
     
     return work_deadlines_json
@@ -127,7 +529,9 @@ def generate_work_deadlines_json():
 json_data = generate_work_deadlines_json()
 
 # Write to a file
-with open('data/english/meta/keyword_taxonomy/event_types/work_events/deadlines/vocabulary/work_deadlines.json', 'w', encoding='utf-8') as f:
+output_path = 'data/english/meta/keyword_taxonomy/event_types/work_events/deadlines/vocabulary/work_deadlines.json'
+os.makedirs(os.path.dirname(output_path), exist_ok=True)  # Create directories if they don't exist
+with open(output_path, 'w', encoding='utf-8') as f:
     json.dump(json_data, f, indent=2)
 
 print(f"Generated {len(json_data['values'])} work deadline expressions and saved to work_deadlines.json")
@@ -139,11 +543,3 @@ sample_keys = ["final date for project completion", "work needed by end of day",
 for key in sample_keys:
     if key in json_data["values"]:
         print(f'"{key}": {json.dumps(json_data["values"][key], indent=2)}')
-
-# If you want to see the raw JSON output
-print("\nFull JSON structure:")
-print(json.dumps({"deadlines": {
-    "description": "Work due dates",
-    "examples": ["project deadline", "submission due date", "quarterly review"],
-    "vocab": "work_deadlines.json"
-}}, indent=2))

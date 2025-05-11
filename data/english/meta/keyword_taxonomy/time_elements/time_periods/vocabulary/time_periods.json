@@ -9,97 +9,619 @@
     "dusk"
   ],
   "values": {
-    "morning": "morning",
-    "afternoon": "afternoon",
-    "evening": "evening",
-    "night": "night",
-    "nighttime": "night",
-    "dawn": "dawn",
-    "dusk": "dusk",
-    "sunrise": "dawn",
-    "sunset": "dusk",
-    "daybreak": "dawn",
-    "twilight": "dusk",
-    "sundown": "dusk",
-    "sunup": "dawn",
-    "midnight": "midnight",
-    "noon": "noon",
-    "midday": "noon",
-    "early morning": "early morning",
-    "late morning": "late morning",
-    "early afternoon": "early afternoon",
-    "late afternoon": "late afternoon",
-    "early evening": "early evening",
-    "late evening": "late evening",
-    "early night": "early night",
-    "late night": "late night",
-    "middle of the night": "middle of the night",
-    "dead of night": "middle of the night",
-    "in the morning": "morning",
-    "in the afternoon": "afternoon",
-    "in the evening": "evening",
-    "in the night": "night",
-    "at night": "night",
-    "at dawn": "dawn",
-    "at dusk": "dusk",
-    "at sunrise": "dawn",
-    "at sunset": "dusk",
-    "at daybreak": "dawn",
-    "at twilight": "dusk",
-    "at midnight": "midnight",
-    "at noon": "noon",
-    "beginning of the day": "early morning",
-    "start of the day": "early morning",
-    "end of the day": "late evening",
-    "close of day": "late evening",
-    "start of morning": "early morning",
-    "end of morning": "late morning",
-    "start of afternoon": "early afternoon",
-    "end of afternoon": "late afternoon",
-    "start of evening": "early evening",
-    "end of evening": "late evening",
-    "start of night": "early night",
-    "end of night": "late night",
-    "break of day": "dawn",
-    "crack of dawn": "dawn",
-    "first light": "dawn",
-    "wee hours": "early morning",
-    "small hours": "early morning",
-    "wee hours of the morning": "early morning",
-    "before sunrise": "early morning",
-    "after sunset": "evening",
-    "before midnight": "late evening",
-    "after midnight": "early morning",
-    "pre-dawn": "early morning",
-    "post-dusk": "evening",
-    "breakfast time": "morning",
-    "lunch time": "noon",
-    "dinner time": "evening",
-    "bedtime": "night",
-    "sleeping hours": "night",
-    "working hours": "daytime",
-    "business hours": "daytime",
-    "daytime": "daytime",
-    "day time": "daytime",
-    "night time": "night",
-    "overnight": "night",
-    "during the day": "daytime",
-    "during the night": "night",
-    "witching hour": "midnight",
-    "golden hour": "sunset",
-    "blue hour": "dusk",
-    "gloaming": "dusk",
-    "first thing in the morning": "early morning",
-    "last thing at night": "late night",
-    "bright and early": "early morning",
-    "at the crack of dawn": "dawn",
-    "when the sun comes up": "dawn",
-    "when the sun goes down": "dusk",
-    "after dark": "night",
-    "before dark": "evening",
-    "as the day ends": "evening",
-    "as night falls": "evening",
-    "the stroke of midnight": "midnight",
-    "high noon": "noon"
-  }
+    "morning": {
+      "id": 1,
+      "standard_form": "morning",
+      "start_hour": 6,
+      "end_hour": 12,
+      "qualifier": null,
+      "daylight": true,
+      "description": "Period from sunrise until noon"
+    },
+    "afternoon": {
+      "id": 2,
+      "standard_form": "afternoon",
+      "start_hour": 12,
+      "end_hour": 17,
+      "qualifier": null,
+      "daylight": true,
+      "description": "Period from noon until evening"
+    },
+    "evening": {
+      "id": 3,
+      "standard_form": "evening",
+      "start_hour": 17,
+      "end_hour": 21,
+      "qualifier": null,
+      "daylight": false,
+      "description": "Period from end of afternoon until night"
+    },
+    "night": {
+      "id": 4,
+      "standard_form": "night",
+      "start_hour": 21,
+      "end_hour": 6,
+      "qualifier": null,
+      "daylight": false,
+      "description": "Period from evening until morning"
+    },
+    "nighttime": {
+      "id": 59,
+      "standard_form": "night",
+      "start_hour": 18,
+      "end_hour": 6,
+      "qualifier": null,
+      "daylight": false,
+      "description": "Period when it is dark"
+    },
+    "dawn": {
+      "id": 6,
+      "standard_form": "dawn",
+      "start_hour": 5,
+      "end_hour": 7,
+      "qualifier": null,
+      "daylight": true,
+      "description": "Period of sunrise/first light"
+    },
+    "dusk": {
+      "id": 7,
+      "standard_form": "dusk",
+      "start_hour": 17,
+      "end_hour": 19,
+      "qualifier": null,
+      "daylight": false,
+      "description": "Period of sunset/last light"
+    },
+    "sunrise": {
+      "id": 8,
+      "standard_form": "dawn",
+      "start_hour": 5,
+      "end_hour": 7,
+      "qualifier": null,
+      "daylight": true,
+      "description": "Time when sun appears on the horizon"
+    },
+    "sunset": {
+      "id": 9,
+      "standard_form": "dusk",
+      "start_hour": 17,
+      "end_hour": 19,
+      "qualifier": null,
+      "daylight": false,
+      "description": "Time when sun disappears below the horizon"
+    },
+    "daybreak": {
+      "id": 10,
+      "standard_form": "dawn",
+      "start_hour": 5,
+      "end_hour": 7,
+      "qualifier": null,
+      "daylight": true,
+      "description": "Beginning of day when light first appears"
+    },
+    "twilight": {
+      "id": 11,
+      "standard_form": "dusk",
+      "start_hour": 17,
+      "end_hour": 19,
+      "qualifier": null,
+      "daylight": false,
+      "description": "Soft glowing light before full darkness"
+    },
+    "sundown": {
+      "id": 12,
+      "standard_form": "dusk",
+      "start_hour": 17,
+      "end_hour": 19,
+      "qualifier": null,
+      "daylight": false,
+      "description": "Time when sun sets"
+    },
+    "sunup": {
+      "id": 13,
+      "standard_form": "dawn",
+      "start_hour": 5,
+      "end_hour": 7,
+      "qualifier": null,
+      "daylight": true,
+      "description": "Time when sun rises"
+    },
+    "midnight": {
+      "id": 14,
+      "standard_form": "midnight",
+      "start_hour": 0,
+      "end_hour": 0,
+      "qualifier": null,
+      "daylight": false,
+      "description": "Twelve o'clock at night"
+    },
+    "noon": {
+      "id": 15,
+      "standard_form": "noon",
+      "start_hour": 12,
+      "end_hour": 12,
+      "qualifier": null,
+      "daylight": true,
+      "description": "Twelve o'clock in the day"
+    },
+    "midday": {
+      "id": 16,
+      "standard_form": "noon",
+      "start_hour": 12,
+      "end_hour": 12,
+      "qualifier": null,
+      "daylight": true,
+      "description": "Middle of the day/noon"
+    },
+    "early morning": {
+      "id": 17,
+      "standard_form": "early morning",
+      "start_hour": 6,
+      "end_hour": 9,
+      "qualifier": "early",
+      "daylight": true,
+      "description": "First part of the morning"
+    },
+    "late morning": {
+      "id": 18,
+      "standard_form": "late morning",
+      "start_hour": 9,
+      "end_hour": 12,
+      "qualifier": "late",
+      "daylight": true,
+      "description": "Later part of the morning"
+    },
+    "early afternoon": {
+      "id": 19,
+      "standard_form": "early afternoon",
+      "start_hour": 12,
+      "end_hour": 14,
+      "qualifier": "early",
+      "daylight": true,
+      "description": "First part of the afternoon"
+    },
+    "late afternoon": {
+      "id": 20,
+      "standard_form": "late afternoon",
+      "start_hour": 14,
+      "end_hour": 17,
+      "qualifier": "late",
+      "daylight": true,
+      "description": "Later part of the afternoon"
+    },
+    "early evening": {
+      "id": 21,
+      "standard_form": "early evening",
+      "start_hour": 17,
+      "end_hour": 19,
+      "qualifier": "early",
+      "daylight": false,
+      "description": "First part of the evening"
+    },
+    "late evening": {
+      "id": 22,
+      "standard_form": "late evening",
+      "start_hour": 19,
+      "end_hour": 21,
+      "qualifier": "late",
+      "daylight": false,
+      "description": "Later part of the evening"
+    },
+    "early night": {
+      "id": 23,
+      "standard_form": "early night",
+      "start_hour": 21,
+      "end_hour": 0,
+      "qualifier": "early",
+      "daylight": false,
+      "description": "First part of the night"
+    },
+    "late night": {
+      "id": 24,
+      "standard_form": "late night",
+      "start_hour": 0,
+      "end_hour": 3,
+      "qualifier": "late",
+      "daylight": false,
+      "description": "Later part of the night"
+    },
+    "middle of the night": {
+      "id": 25,
+      "standard_form": "middle of the night",
+      "start_hour": 0,
+      "end_hour": 3,
+      "qualifier": "middle",
+      "daylight": false,
+      "description": "Period in the middle of the night, usually past midnight"
+    },
+    "dead of night": {
+      "id": 26,
+      "standard_form": "middle of the night",
+      "start_hour": 0,
+      "end_hour": 3,
+      "qualifier": "middle",
+      "daylight": false,
+      "description": "Deepest, darkest part of night"
+    },
+    "in the morning": {
+      "id": 27,
+      "standard_form": "morning",
+      "start_hour": 6,
+      "end_hour": 12,
+      "qualifier": null,
+      "daylight": true,
+      "description": "Period from sunrise until noon"
+    },
+    "in the afternoon": {
+      "id": 28,
+      "standard_form": "afternoon",
+      "start_hour": 12,
+      "end_hour": 17,
+      "qualifier": null,
+      "daylight": true,
+      "description": "Period from noon until evening"
+    },
+    "in the evening": {
+      "id": 29,
+      "standard_form": "evening",
+      "start_hour": 17,
+      "end_hour": 21,
+      "qualifier": null,
+      "daylight": false,
+      "description": "Period from end of afternoon until night"
+    },
+    "in the night": {
+      "id": 30,
+      "standard_form": "night",
+      "start_hour": 21,
+      "end_hour": 6,
+      "qualifier": null,
+      "daylight": false,
+      "description": "Period from evening until morning"
+    },
+    "at night": {
+      "id": 31,
+      "standard_form": "night",
+      "start_hour": 21,
+      "end_hour": 6,
+      "qualifier": null,
+      "daylight": false,
+      "description": "Period from evening until morning"
+    },
+    "at dawn": {
+      "id": 32,
+      "standard_form": "dawn",
+      "start_hour": 5,
+      "end_hour": 7,
+      "qualifier": null,
+      "daylight": true,
+      "description": "At the time of sunrise/first light"
+    },
+    "at dusk": {
+      "id": 33,
+      "standard_form": "dusk",
+      "start_hour": 17,
+      "end_hour": 19,
+      "qualifier": null,
+      "daylight": false,
+      "description": "At the time of sunset/last light"
+    },
+    "at sunrise": {
+      "id": 34,
+      "standard_form": "dawn",
+      "start_hour": 5,
+      "end_hour": 7,
+      "qualifier": null,
+      "daylight": true,
+      "description": "At the time when sun appears on horizon"
+    },
+    "at sunset": {
+      "id": 35,
+      "standard_form": "dusk",
+      "start_hour": 17,
+      "end_hour": 19,
+      "qualifier": null,
+      "daylight": false,
+      "description": "At the time when sun disappears below horizon"
+    },
+    "at daybreak": {
+      "id": 36,
+      "standard_form": "dawn",
+      "start_hour": 5,
+      "end_hour": 7,
+      "qualifier": null,
+      "daylight": true,
+      "description": "At the time when light first appears"
+    },
+    "at twilight": {
+      "id": 37,
+      "standard_form": "dusk",
+      "start_hour": 17,
+      "end_hour": 19,
+      "qualifier": null,
+      "daylight": false,
+      "description": "At the time of soft glowing light before darkness"
+    },
+    "at midnight": {
+      "id": 38,
+      "standard_form": "midnight",
+      "start_hour": 0,
+      "end_hour": 0,
+      "qualifier": null,
+      "daylight": false,
+      "description": "At twelve o'clock at night"
+    },
+    "at noon": {
+      "id": 39,
+      "standard_form": "noon",
+      "start_hour": 12,
+      "end_hour": 12,
+      "qualifier": null,
+      "daylight": true,
+      "description": "At twelve o'clock in the day"
+    },
+    "beginning of the day": {
+      "id": 40,
+      "standard_form": "early morning",
+      "start_hour": 6,
+      "end_hour": 8,
+      "qualifier": "early",
+      "daylight": true,
+      "description": "Start of the day, early morning"
+    },
+    "start of the day": {
+      "id": 41,
+      "standard_form": "early morning",
+      "start_hour": 6,
+      "end_hour": 8,
+      "qualifier": "early",
+      "daylight": true,
+      "description": "Start of the day, early morning"
+    },
+    "end of the day": {
+      "id": 42,
+      "standard_form": "late evening",
+      "start_hour": 17,
+      "end_hour": 21,
+      "qualifier": "late",
+      "daylight": false,
+      "description": "Final part of the day before night"
+    },
+    "close of day": {
+      "id": 43,
+      "standard_form": "late evening",
+      "start_hour": 17,
+      "end_hour": 21,
+      "qualifier": "late",
+      "daylight": false,
+      "description": "Final part of the day before night"
+    },
+    "break of day": {
+      "id": 44,
+      "standard_form": "dawn",
+      "start_hour": 5,
+      "end_hour": 7,
+      "qualifier": null,
+      "daylight": true,
+      "description": "First appearance of light in the morning"
+    },
+    "crack of dawn": {
+      "id": 45,
+      "standard_form": "dawn",
+      "start_hour": 5,
+      "end_hour": 6,
+      "qualifier": null,
+      "daylight": true,
+      "description": "Very early morning, as sun begins to rise"
+    },
+    "first light": {
+      "id": 46,
+      "standard_form": "dawn",
+      "start_hour": 5,
+      "end_hour": 6,
+      "qualifier": null,
+      "daylight": true,
+      "description": "Earliest light in the morning"
+    },
+    "wee hours": {
+      "id": 47,
+      "standard_form": "early morning",
+      "start_hour": 1,
+      "end_hour": 4,
+      "qualifier": "early",
+      "daylight": false,
+      "description": "Very early morning hours after midnight"
+    },
+    "small hours": {
+      "id": 48,
+      "standard_form": "early morning",
+      "start_hour": 1,
+      "end_hour": 4,
+      "qualifier": "early",
+      "daylight": false,
+      "description": "Very early morning hours after midnight"
+    },
+    "before sunrise": {
+      "id": 49,
+      "standard_form": "early morning",
+      "start_hour": 4,
+      "end_hour": 6,
+      "qualifier": "early",
+      "daylight": false,
+      "description": "Time just before the sun rises"
+    },
+    "after sunset": {
+      "id": 50,
+      "standard_form": "evening",
+      "start_hour": 18,
+      "end_hour": 20,
+      "qualifier": null,
+      "daylight": false,
+      "description": "Time just after the sun sets"
+    },
+    "breakfast time": {
+      "id": 51,
+      "standard_form": "morning",
+      "start_hour": 7,
+      "end_hour": 9,
+      "qualifier": null,
+      "daylight": true,
+      "description": "Morning time typically for breakfast"
+    },
+    "lunch time": {
+      "id": 52,
+      "standard_form": "noon",
+      "start_hour": 12,
+      "end_hour": 13,
+      "qualifier": null,
+      "daylight": true,
+      "description": "Midday time typically for lunch"
+    },
+    "dinner time": {
+      "id": 53,
+      "standard_form": "evening",
+      "start_hour": 18,
+      "end_hour": 20,
+      "qualifier": null,
+      "daylight": false,
+      "description": "Evening time typically for dinner"
+    },
+    "bedtime": {
+      "id": 54,
+      "standard_form": "night",
+      "start_hour": 21,
+      "end_hour": 23,
+      "qualifier": null,
+      "daylight": false,
+      "description": "Evening time typically for going to bed"
+    },
+    "working hours": {
+      "id": 55,
+      "standard_form": "daytime",
+      "start_hour": 9,
+      "end_hour": 17,
+      "qualifier": null,
+      "daylight": true,
+      "description": "Hours during the day typically for work"
+    },
+    "business hours": {
+      "id": 56,
+      "standard_form": "daytime",
+      "start_hour": 9,
+      "end_hour": 17,
+      "qualifier": null,
+      "daylight": true,
+      "description": "Hours during the day when businesses are open"
+    },
+    "daytime": {
+      "id": 57,
+      "standard_form": "daytime",
+      "start_hour": 6,
+      "end_hour": 18,
+      "qualifier": null,
+      "daylight": true,
+      "description": "Period when there is natural light"
+    },
+    "day time": {
+      "id": 58,
+      "standard_form": "daytime",
+      "start_hour": 6,
+      "end_hour": 18,
+      "qualifier": null,
+      "daylight": true,
+      "description": "Period when there is natural light"
+    },
+    "night time": {
+      "id": 60,
+      "standard_form": "night",
+      "start_hour": 18,
+      "end_hour": 6,
+      "qualifier": null,
+      "daylight": false,
+      "description": "Period when it is dark"
+    },
+    "overnight": {
+      "id": 61,
+      "standard_form": "night",
+      "start_hour": 21,
+      "end_hour": 6,
+      "qualifier": null,
+      "daylight": false,
+      "description": "During the night, especially while sleeping"
+    },
+    "first thing in the morning": {
+      "id": 62,
+      "standard_form": "early morning",
+      "start_hour": 6,
+      "end_hour": 8,
+      "qualifier": "early",
+      "daylight": true,
+      "description": "Very first part of the morning"
+    },
+    "last thing at night": {
+      "id": 63,
+      "standard_form": "late night",
+      "start_hour": 21,
+      "end_hour": 23,
+      "qualifier": "late",
+      "daylight": false,
+      "description": "Final part of the day before sleep"
+    },
+    "bright and early": {
+      "id": 64,
+      "standard_form": "early morning",
+      "start_hour": 6,
+      "end_hour": 8,
+      "qualifier": "early",
+      "daylight": true,
+      "description": "Very early in the morning"
+    },
+    "after dark": {
+      "id": 65,
+      "standard_form": "night",
+      "start_hour": 18,
+      "end_hour": 6,
+      "qualifier": null,
+      "daylight": false,
+      "description": "Period after sunset when it's dark"
+    },
+    "before dark": {
+      "id": 66,
+      "standard_form": "evening",
+      "start_hour": 16,
+      "end_hour": 18,
+      "qualifier": null,
+      "daylight": true,
+      "description": "Late afternoon/early evening before sunset"
+    },
+    "as the day ends": {
+      "id": 67,
+      "standard_form": "evening",
+      "start_hour": 17,
+      "end_hour": 19,
+      "qualifier": null,
+      "daylight": false,
+      "description": "Late afternoon/early evening as daylight fades"
+    },
+    "the stroke of midnight": {
+      "id": 68,
+      "standard_form": "midnight",
+      "start_hour": 0,
+      "end_hour": 0,
+      "qualifier": null,
+      "daylight": false,
+      "description": "Exactly 12:00 AM"
+    },
+    "high noon": {
+      "id": 69,
+      "standard_form": "noon",
+      "start_hour": 12,
+      "end_hour": 12,
+      "qualifier": null,
+      "daylight": true,
+      "description": "Exactly 12:00 PM when sun is at highest point"
+    }
+  },
+  "schema_version": "1.0",
+  "last_updated": "2025-05-10"
 }

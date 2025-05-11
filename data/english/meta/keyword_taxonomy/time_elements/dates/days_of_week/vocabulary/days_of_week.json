@@ -10,27 +10,117 @@
     "Sunday"
   ],
   "values": {
-    "Monday": "Monday",
-    "Tuesday": "Tuesday",
-    "Wednesday": "Wednesday",
-    "Thursday": "Thursday",
-    "Friday": "Friday",
-    "Saturday": "Saturday",
-    "Sunday": "Sunday",
-    "Mon": "Monday",
-    "Tue": "Tuesday",
-    "Tues": "Tuesday",
-    "Wed": "Wednesday",
-    "Weds": "Wednesday",
-    "Thu": "Thursday",
-    "Thur": "Thursday",
-    "Thurs": "Thursday",
-    "Fri": "Friday",
-    "Sat": "Saturday",
-    "Sun": "Sunday",
-    "weekday": "weekday",
-    "weekend": "weekend",
-    "workday": "workday",
-    "business day": "business day"
-  }
+    "Monday": {
+      "id": 1,
+      "day_of_week": "Monday",
+      "category": "weekday"
+    },
+    "Tuesday": {
+      "id": 2,
+      "day_of_week": "Tuesday",
+      "category": "weekday"
+    },
+    "Wednesday": {
+      "id": 3,
+      "day_of_week": "Wednesday",
+      "category": "weekday"
+    },
+    "Thursday": {
+      "id": 4,
+      "day_of_week": "Thursday",
+      "category": "weekday"
+    },
+    "Friday": {
+      "id": 5,
+      "day_of_week": "Friday",
+      "category": "weekday"
+    },
+    "Saturday": {
+      "id": 6,
+      "day_of_week": "Saturday",
+      "category": "weekend"
+    },
+    "Sunday": {
+      "id": 7,
+      "day_of_week": "Sunday",
+      "category": "weekend"
+    },
+    "Mon": {
+      "id": 8,
+      "day_of_week": "Monday",
+      "category": "weekday"
+    },
+    "Tue": {
+      "id": 9,
+      "day_of_week": "Tuesday",
+      "category": "weekday"
+    },
+    "Tues": {
+      "id": 10,
+      "day_of_week": "Tuesday",
+      "category": "weekday"
+    },
+    "Wed": {
+      "id": 11,
+      "day_of_week": "Wednesday",
+      "category": "weekday"
+    },
+    "Weds": {
+      "id": 12,
+      "day_of_week": "Wednesday",
+      "category": "weekday"
+    },
+    "Thu": {
+      "id": 13,
+      "day_of_week": "Thursday",
+      "category": "weekday"
+    },
+    "Thur": {
+      "id": 14,
+      "day_of_week": "Thursday",
+      "category": "weekday"
+    },
+    "Thurs": {
+      "id": 15,
+      "day_of_week": "Thursday",
+      "category": "weekday"
+    },
+    "Fri": {
+      "id": 16,
+      "day_of_week": "Friday",
+      "category": "weekday"
+    },
+    "Sat": {
+      "id": 17,
+      "day_of_week": "Saturday",
+      "category": "weekend"
+    },
+    "Sun": {
+      "id": 18,
+      "day_of_week": "Sunday",
+      "category": "weekend"
+    },
+    "weekday": {
+      "id": 19,
+      "day_of_week": "weekday",
+      "category": "weekday_category"
+    },
+    "weekend": {
+      "id": 20,
+      "day_of_week": "weekend",
+      "category": "weekend_category"
+    },
+    "workday": {
+      "id": 21,
+      "day_of_week": "workday",
+      "category": "weekday_category"
+    },
+    "business day": {
+      "id": 22,
+      "day_of_week": "business day",
+      "category": "weekday_category"
+    }
+  },
+  "schema_version": "1.0",
+  "last_updated": "2025-05-10"
 }

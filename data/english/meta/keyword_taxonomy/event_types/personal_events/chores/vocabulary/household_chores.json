@@ -8,372 +8,328 @@
   ],
   "values": {
     "vacuum the floors and carpets": {
-      "description": "vacuuming",
-      "priority": 3
+      "id": 1,
+      "title": "Vacuum Floors and Carpets",
+      "description": "Clean floors and carpets using a vacuum cleaner",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "sweep the floors": {
-      "description": "sweeping",
-      "priority": 3
+      "id": 2,
+      "title": "Sweep Floors",
+      "description": "Clean hard floor surfaces using a broom",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "biweekly",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "mop the floor surfaces": {
-      "description": "mopping",
-      "priority": 3
+      "id": 3,
+      "title": "Mop Floors",
+      "description": "Clean hard floor surfaces using a mop and cleaning solution",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "dust the furniture and surfaces": {
-      "description": "dusting",
-      "priority": 2
-    },
-    "wipe down kitchen counters": {
-      "description": "countertop cleaning",
-      "priority": 3
-    },
-    "scrub the bathtub and shower": {
-      "description": "bathtub cleaning",
-      "priority": 3
+      "id": 4,
+      "title": "Dust Furniture",
+      "description": "Remove dust from furniture and household surfaces",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 2,
+      "importance": "low",
+      "urgency": "low"
     },
     "clean the bathroom toilet": {
-      "description": "toilet cleaning",
-      "priority": 4
-    },
-    "wash the bathroom sink": {
-      "description": "sink cleaning",
-      "priority": 3
-    },
-    "wipe down bathroom surfaces": {
-      "description": "bathroom cleaning",
-      "priority": 3
-    },
-    "clean the kitchen appliances": {
-      "description": "appliance cleaning",
-      "priority": 2
-    },
-    "clean inside the refrigerator": {
-      "description": "fridge cleaning",
-      "priority": 2
-    },
-    "wipe down the stove and oven": {
-      "description": "stove cleaning",
-      "priority": 3
-    },
-    "clean the microwave inside and out": {
-      "description": "microwave cleaning",
-      "priority": 2
-    },
-    "clean the windows and mirrors": {
-      "description": "glass cleaning",
-      "priority": 2
+      "id": 5,
+      "title": "Clean Toilet",
+      "description": "Sanitize and clean the bathroom toilet",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "deep clean the entire house": {
-      "description": "deep cleaning",
-      "priority": 4
-    },
-    "tidy up cluttered areas": {
-      "description": "tidying",
-      "priority": 3
-    },
-    "organize messy spaces": {
-      "description": "organizing",
-      "priority": 2
-    },
-    "declutter living spaces": {
-      "description": "decluttering",
-      "priority": 2
+      "id": 6,
+      "title": "Deep Clean House",
+      "description": "Thoroughly clean all areas of the house",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "monthly",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "sanitize high-touch surfaces": {
-      "description": "sanitizing",
-      "priority": 4
+      "id": 7,
+      "title": "Sanitize Surfaces",
+      "description": "Clean and disinfect frequently touched surfaces",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "daily",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "wash dirty clothes": {
-      "description": "laundry washing",
-      "priority": 4
-    },
-    "dry clean delicate clothing": {
-      "description": "dry cleaning",
-      "priority": 2
+      "id": 8,
+      "title": "Wash Clothes",
+      "description": "Wash clothing in washing machine or by hand",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "fold clean clothes": {
-      "description": "folding laundry",
-      "priority": 2
+      "id": 9,
+      "title": "Fold Laundry",
+      "description": "Fold clean clothes and prepare for storage",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 2,
+      "importance": "medium",
+      "urgency": "low"
     },
     "iron wrinkled clothing": {
-      "description": "ironing",
-      "priority": 2
-    },
-    "put away clean clothes": {
-      "description": "laundry storage",
-      "priority": 2
+      "id": 10,
+      "title": "Iron Clothes",
+      "description": "Remove wrinkles from clothing using an iron",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 2,
+      "importance": "low",
+      "urgency": "low"
     },
     "wash bed sheets and linens": {
-      "description": "bedding laundry",
-      "priority": 3
-    },
-    "wash bath towels": {
-      "description": "towel washing",
-      "priority": 3
-    },
-    "sort laundry by color and type": {
-      "description": "laundry sorting",
-      "priority": 2
-    },
-    "treat stains on clothing": {
-      "description": "stain removal",
-      "priority": 3
-    },
-    "mend torn clothing": {
-      "description": "clothing repair",
-      "priority": 1
+      "id": 11,
+      "title": "Wash Bedding",
+      "description": "Launder bed sheets, pillowcases, and other bedding",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "biweekly",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "wash dirty dishes": {
-      "description": "dish washing",
-      "priority": 4
-    },
-    "load the dishwasher": {
-      "description": "dishwasher loading",
-      "priority": 3
-    },
-    "unload clean dishes": {
-      "description": "dishwasher unloading",
-      "priority": 2
+      "id": 12,
+      "title": "Wash Dishes",
+      "description": "Clean dirty dishes, utensils, and cookware",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "daily",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "prepare meals for the family": {
-      "description": "cooking",
-      "priority": 4
-    },
-    "bake bread or desserts": {
-      "description": "baking",
-      "priority": 2
+      "id": 13,
+      "title": "Cook Meals",
+      "description": "Prepare and cook food for household members",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "daily",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "meal prep for the week": {
-      "description": "meal prepping",
-      "priority": 3
+      "id": 14,
+      "title": "Meal Prep",
+      "description": "Prepare portions of meals in advance for the week",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "clean out expired food": {
-      "description": "fridge purging",
-      "priority": 3
+      "id": 15,
+      "title": "Clean Refrigerator",
+      "description": "Remove and dispose of expired food items",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "take out kitchen garbage": {
-      "description": "garbage disposal",
-      "priority": 4
-    },
-    "wipe down kitchen cabinets": {
-      "description": "cabinet cleaning",
-      "priority": 2
-    },
-    "clean kitchen sink": {
-      "description": "sink cleaning",
-      "priority": 3
-    },
-    "descale coffee maker": {
-      "description": "coffee maker cleaning",
-      "priority": 2
-    },
-    "organize food pantry": {
-      "description": "pantry organization",
-      "priority": 2
+      "id": 16,
+      "title": "Take Out Trash",
+      "description": "Remove and dispose of kitchen garbage",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "daily",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "buy groceries for the week": {
-      "description": "grocery shopping",
-      "priority": 4
+      "id": 17,
+      "title": "Grocery Shopping",
+      "description": "Purchase food and household essentials",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "pick up household essentials": {
-      "description": "essentials shopping",
-      "priority": 4
-    },
-    "shop for cleaning supplies": {
-      "description": "supply shopping",
-      "priority": 3
-    },
-    "restock personal care items": {
-      "description": "toiletry shopping",
-      "priority": 3
-    },
-    "purchase items for special occasions": {
-      "description": "special shopping",
-      "priority": 3
-    },
-    "buy replacement household items": {
-      "description": "replacement shopping",
-      "priority": 3
+      "id": 18,
+      "title": "Buy Household Items",
+      "description": "Purchase necessary household supplies",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "monthly",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "mow the lawn": {
-      "description": "lawn mowing",
-      "priority": 3
-    },
-    "rake fallen leaves": {
-      "description": "leaf raking",
-      "priority": 2
+      "id": 19,
+      "title": "Mow Lawn",
+      "description": "Cut grass in yard using lawn mower",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "shovel snow from walkways": {
-      "description": "snow shoveling",
-      "priority": 4
+      "id": 20,
+      "title": "Shovel Snow",
+      "description": "Clear snow from walkways and driveway",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "as needed",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "water plants and garden": {
-      "description": "plant watering",
-      "priority": 3
-    },
-    "trim hedges and bushes": {
-      "description": "hedge trimming",
-      "priority": 2
-    },
-    "pull weeds from garden": {
-      "description": "weeding",
-      "priority": 2
-    },
-    "clean gutters": {
-      "description": "gutter cleaning",
-      "priority": 3
-    },
-    "sweep porch or patio": {
-      "description": "porch sweeping",
-      "priority": 2
-    },
-    "clean outdoor furniture": {
-      "description": "outdoor furniture cleaning",
-      "priority": 2
-    },
-    "pick up yard debris": {
-      "description": "yard cleanup",
-      "priority": 2
+      "id": 21,
+      "title": "Water Plants",
+      "description": "Provide water to indoor and outdoor plants",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "biweekly",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "feed household pets": {
-      "description": "pet feeding",
-      "priority": 5
+      "id": 22,
+      "title": "Feed Pets",
+      "description": "Provide food and water to household pets",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "daily",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "very high"
     },
     "walk the dog": {
-      "description": "dog walking",
-      "priority": 4
-    },
-    "clean pet areas": {
-      "description": "pet area cleaning",
-      "priority": 3
-    },
-    "change pet bedding": {
-      "description": "pet bedding change",
-      "priority": 3
+      "id": 23,
+      "title": "Walk Dog",
+      "description": "Take dog outside for exercise and bathroom needs",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "daily",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "clean litter box": {
-      "description": "litter box cleaning",
-      "priority": 4
-    },
-    "groom pets": {
-      "description": "pet grooming",
-      "priority": 2
-    },
-    "give pets medication": {
-      "description": "pet medication",
-      "priority": 5
+      "id": 24,
+      "title": "Clean Litter Box",
+      "description": "Remove waste and replace litter in cat litter box",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "daily",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "change air filters": {
-      "description": "filter changing",
-      "priority": 3
+      "id": 25,
+      "title": "Change Air Filters",
+      "description": "Replace HVAC system air filters",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "monthly",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "replace light bulbs": {
-      "description": "bulb replacement",
-      "priority": 3
-    },
-    "unclog drains": {
-      "description": "drain unclogging",
-      "priority": 4
-    },
-    "fix minor household issues": {
-      "description": "minor repairs",
-      "priority": 3
-    },
-    "assemble furniture": {
-      "description": "furniture assembly",
-      "priority": 2
+      "id": 26,
+      "title": "Replace Light Bulbs",
+      "description": "Change burned-out light bulbs",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "change smoke detector batteries": {
-      "description": "battery replacement",
-      "priority": 4
-    },
-    "check and reset circuit breakers": {
-      "description": "electrical checks",
-      "priority": 3
-    },
-    "fix leaky faucets": {
-      "description": "faucet repair",
-      "priority": 3
-    },
-    "take out household trash": {
-      "description": "trash removal",
-      "priority": 4
-    },
-    "take out recycling": {
-      "description": "recycling",
-      "priority": 3
-    },
-    "dispose of food waste": {
-      "description": "compost",
-      "priority": 3
-    },
-    "take trash bins to curb": {
-      "description": "trash bin placement",
-      "priority": 4
-    },
-    "bring in empty trash bins": {
-      "description": "bin retrieval",
-      "priority": 2
-    },
-    "shred and dispose of documents": {
-      "description": "document disposal",
-      "priority": 2
-    },
-    "dispose of hazardous waste": {
-      "description": "hazardous waste disposal",
-      "priority": 4
-    },
-    "put up holiday decorations": {
-      "description": "holiday decorating",
-      "priority": 2
-    },
-    "take down seasonal decorations": {
-      "description": "decoration removal",
-      "priority": 2
-    },
-    "prepare home for winter": {
-      "description": "winterizing",
-      "priority": 3
-    },
-    "clean and store seasonal items": {
-      "description": "seasonal storage",
-      "priority": 2
-    },
-    "prepare yard for changing seasons": {
-      "description": "seasonal yard prep",
-      "priority": 3
-    },
-    "clean and cover outdoor furniture": {
-      "description": "furniture winterizing",
-      "priority": 2
-    },
-    "tidy up children's toys": {
-      "description": "toy cleanup",
-      "priority": 3
-    },
-    "organize children's clothes": {
-      "description": "kids' clothing organization",
-      "priority": 2
-    },
-    "clean children's rooms": {
-      "description": "kids' room cleaning",
-      "priority": 3
-    },
-    "wash children's laundry": {
-      "description": "kids' laundry",
-      "priority": 3
-    },
-    "pack school lunches": {
-      "description": "lunch packing",
-      "priority": 4
-    },
-    "help with homework": {
-      "description": "homework help",
-      "priority": 4
-    },
-    "clean and sanitize toys": {
-      "description": "toy sanitizing",
-      "priority": 3
+      "id": 27,
+      "title": "Replace Smoke Detector Batteries",
+      "description": "Change batteries in smoke and carbon monoxide detectors",
+      "category": "personal",
+      "event_type": "chore",
+      "is_recurring": true,
+      "frequency": "annually",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     }
   },
   "priority_scale": {
@@ -382,5 +338,7 @@
     "3": "Medium - Normal recurring household tasks",
     "4": "High - Essential tasks for health and daily functioning",
     "5": "Very High - Critical tasks that affect health and safety"
-  }
+  },
+  "schema_version": "1.0",
+  "last_updated": "2025-05-10"
 }

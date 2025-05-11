@@ -8,121 +8,697 @@
     "Valentine's Day"
   ],
   "values": {
-    "New Year's": "New Year's",
-    "New Year's Day": "New Year's Day",
-    "New Year's Eve": "New Year's Eve",
-    "Valentine's Day": "Valentine's Day",
-    "St. Patrick's Day": "St. Patrick's Day",
-    "Saint Patrick's Day": "St. Patrick's Day",
-    "Easter": "Easter",
-    "Easter Sunday": "Easter",
-    "Good Friday": "Good Friday",
-    "Easter Monday": "Easter Monday",
-    "April Fools' Day": "April Fools' Day",
-    "April Fool's Day": "April Fools' Day",
-    "Mother's Day": "Mother's Day",
-    "Mothers Day": "Mother's Day",
-    "Memorial Day": "Memorial Day",
-    "Father's Day": "Father's Day",
-    "Fathers Day": "Father's Day",
-    "Independence Day": "Independence Day",
-    "Fourth of July": "Independence Day",
-    "4th of July": "Independence Day",
-    "Labor Day": "Labor Day",
-    "Columbus Day": "Columbus Day",
-    "Indigenous Peoples' Day": "Indigenous Peoples' Day",
-    "Halloween": "Halloween",
-    "All Saints' Day": "All Saints' Day",
-    "Veterans Day": "Veterans Day",
-    "Veteran's Day": "Veterans Day",
-    "Thanksgiving": "Thanksgiving",
-    "Thanksgiving Day": "Thanksgiving",
-    "Black Friday": "Black Friday",
-    "Cyber Monday": "Cyber Monday",
-    "Christmas": "Christmas",
-    "Christmas Eve": "Christmas Eve",
-    "Christmas Day": "Christmas Day",
-    "Boxing Day": "Boxing Day",
-    "Kwanzaa": "Kwanzaa",
-    "Ash Wednesday": "Ash Wednesday",
-    "Palm Sunday": "Palm Sunday",
-    "Maundy Thursday": "Maundy Thursday",
-    "Holy Saturday": "Holy Saturday",
-    "Pentecost": "Pentecost",
-    "Advent": "Advent",
-    "Epiphany": "Epiphany",
-    "Hanukkah": "Hanukkah",
-    "Chanukah": "Hanukkah",
-    "Passover": "Passover",
-    "Rosh Hashanah": "Rosh Hashanah",
-    "Yom Kippur": "Yom Kippur",
-    "Ramadan": "Ramadan",
-    "Eid al-Fitr": "Eid al-Fitr",
-    "Eid al-Adha": "Eid al-Adha",
-    "Groundhog Day": "Groundhog Day",
-    "Super Bowl Sunday": "Super Bowl Sunday",
-    "Super Bowl": "Super Bowl",
-    "Presidents' Day": "Presidents' Day",
-    "Presidents Day": "Presidents' Day",
-    "Earth Day": "Earth Day",
-    "Cinco de Mayo": "Cinco de Mayo",
-    "Juneteenth": "Juneteenth",
-    "Summer Solstice": "Summer Solstice",
-    "Winter Solstice": "Winter Solstice",
-    "Tax Day": "Tax Day",
-    "Daylight Saving Time": "Daylight Saving Time",
-    "Election Day": "Election Day",
-    "birthday": "birthday",
-    "Birthday": "birthday",
-    "anniversary": "anniversary",
-    "Anniversary": "anniversary",
-    "wedding": "wedding",
-    "Wedding": "wedding",
-    "graduation": "graduation",
-    "Graduation": "graduation",
-    "retirement": "retirement",
-    "Retirement": "retirement",
-    "baby shower": "baby shower",
-    "Baby shower": "baby shower",
-    "bridal shower": "bridal shower",
-    "Bridal shower": "bridal shower",
-    "funeral": "funeral",
-    "Funeral": "funeral",
-    "reunion": "reunion",
-    "Reunion": "reunion",
-    "Martin Luther King Jr. Day": "Martin Luther King Jr. Day",
-    "MLK Day": "Martin Luther King Jr. Day",
-    "Arbor Day": "Arbor Day",
-    "Flag Day": "Flag Day",
-    "Mardi Gras": "Mardi Gras",
-    "Fat Tuesday": "Mardi Gras",
-    "St. Valentine's Day": "Valentine's Day",
-    "Saint Valentine's Day": "Valentine's Day",
-    "May Day": "May Day",
-    "International Women's Day": "International Women's Day",
-    "World Health Day": "World Health Day",
-    "World Environment Day": "World Environment Day",
-    "International Children's Day": "International Children's Day",
-    "International Youth Day": "International Youth Day",
-    "World Peace Day": "World Peace Day",
-    "International Day of Peace": "International Day of Peace",
-    "Human Rights Day": "Human Rights Day",
-    "Bastille Day": "Bastille Day",
-    "Guy Fawkes Night": "Guy Fawkes Night",
-    "Bonfire Night": "Guy Fawkes Night",
-    "Remembrance Day": "Remembrance Day",
-    "Anzac Day": "Anzac Day",
-    "Australia Day": "Australia Day",
-    "Canada Day": "Canada Day",
-    "Victoria Day": "Victoria Day",
-    "Oktoberfest": "Oktoberfest",
-    "Burns Night": "Burns Night",
-    "St. George's Day": "St. George's Day",
-    "Saint George's Day": "St. George's Day",
-    "First day of Spring": "First day of Spring",
-    "First day of Summer": "First day of Summer",
-    "First day of Autumn": "First day of Autumn",
-    "First day of Fall": "First day of Fall",
-    "First day of Winter": "First day of Winter"
-  }
+    "New Year's": {
+      "id": 1,
+      "standard_form": "New Year's Day",
+      "date": 1,
+      "month_of_year": 1
+    },
+    "New Year's Day": {
+      "id": 2,
+      "standard_form": "New Year's Day",
+      "date": 1,
+      "month_of_year": 1
+    },
+    "New Year's Eve": {
+      "id": 3,
+      "standard_form": "New Year's Eve",
+      "date": 31,
+      "month_of_year": 12
+    },
+    "Valentine's Day": {
+      "id": 4,
+      "standard_form": "Valentine's Day",
+      "date": 14,
+      "month_of_year": 2
+    },
+    "St. Patrick's Day": {
+      "id": 5,
+      "standard_form": "St. Patrick's Day",
+      "date": 17,
+      "month_of_year": 3
+    },
+    "Saint Patrick's Day": {
+      "id": 6,
+      "standard_form": "St. Patrick's Day",
+      "date": 17,
+      "month_of_year": 3
+    },
+    "Easter": {
+      "id": 7,
+      "standard_form": "Easter",
+      "date": null,
+      "month_of_year": null
+    },
+    "Easter Sunday": {
+      "id": 8,
+      "standard_form": "Easter",
+      "date": null,
+      "month_of_year": null
+    },
+    "Good Friday": {
+      "id": 9,
+      "standard_form": "Good Friday",
+      "date": null,
+      "month_of_year": null
+    },
+    "Easter Monday": {
+      "id": 10,
+      "standard_form": "Easter Monday",
+      "date": null,
+      "month_of_year": null
+    },
+    "April Fools' Day": {
+      "id": 11,
+      "standard_form": "April Fools' Day",
+      "date": 1,
+      "month_of_year": 4
+    },
+    "April Fool's Day": {
+      "id": 12,
+      "standard_form": "April Fools' Day",
+      "date": 1,
+      "month_of_year": 4
+    },
+    "Mother's Day": {
+      "id": 13,
+      "standard_form": "Mother's Day",
+      "date": null,
+      "month_of_year": 5
+    },
+    "Mothers Day": {
+      "id": 14,
+      "standard_form": "Mother's Day",
+      "date": null,
+      "month_of_year": 5
+    },
+    "Memorial Day": {
+      "id": 15,
+      "standard_form": "Memorial Day",
+      "date": null,
+      "month_of_year": 5
+    },
+    "Father's Day": {
+      "id": 16,
+      "standard_form": "Father's Day",
+      "date": null,
+      "month_of_year": 6
+    },
+    "Fathers Day": {
+      "id": 17,
+      "standard_form": "Father's Day",
+      "date": null,
+      "month_of_year": 6
+    },
+    "Independence Day": {
+      "id": 18,
+      "standard_form": "Independence Day",
+      "date": 4,
+      "month_of_year": 7
+    },
+    "Fourth of July": {
+      "id": 19,
+      "standard_form": "Independence Day",
+      "date": 4,
+      "month_of_year": 7
+    },
+    "4th of July": {
+      "id": 20,
+      "standard_form": "Independence Day",
+      "date": 4,
+      "month_of_year": 7
+    },
+    "Labor Day": {
+      "id": 21,
+      "standard_form": "Labor Day",
+      "date": null,
+      "month_of_year": 9
+    },
+    "Columbus Day": {
+      "id": 22,
+      "standard_form": "Columbus Day",
+      "date": null,
+      "month_of_year": 10
+    },
+    "Indigenous Peoples' Day": {
+      "id": 23,
+      "standard_form": "Indigenous Peoples' Day",
+      "date": null,
+      "month_of_year": 10
+    },
+    "Halloween": {
+      "id": 24,
+      "standard_form": "Halloween",
+      "date": 31,
+      "month_of_year": 10
+    },
+    "All Saints' Day": {
+      "id": 25,
+      "standard_form": "All Saints' Day",
+      "date": 1,
+      "month_of_year": 11
+    },
+    "Veterans Day": {
+      "id": 26,
+      "standard_form": "Veterans Day",
+      "date": 11,
+      "month_of_year": 11
+    },
+    "Veteran's Day": {
+      "id": 27,
+      "standard_form": "Veterans Day",
+      "date": 11,
+      "month_of_year": 11
+    },
+    "Thanksgiving": {
+      "id": 28,
+      "standard_form": "Thanksgiving",
+      "date": null,
+      "month_of_year": 11
+    },
+    "Thanksgiving Day": {
+      "id": 29,
+      "standard_form": "Thanksgiving",
+      "date": null,
+      "month_of_year": 11
+    },
+    "Black Friday": {
+      "id": 30,
+      "standard_form": "Black Friday",
+      "date": null,
+      "month_of_year": 11
+    },
+    "Cyber Monday": {
+      "id": 31,
+      "standard_form": "Cyber Monday",
+      "date": null,
+      "month_of_year": 11
+    },
+    "Christmas": {
+      "id": 32,
+      "standard_form": "Christmas",
+      "date": 25,
+      "month_of_year": 12
+    },
+    "Christmas Eve": {
+      "id": 33,
+      "standard_form": "Christmas Eve",
+      "date": 24,
+      "month_of_year": 12
+    },
+    "Christmas Day": {
+      "id": 34,
+      "standard_form": "Christmas",
+      "date": 25,
+      "month_of_year": 12
+    },
+    "Boxing Day": {
+      "id": 35,
+      "standard_form": "Boxing Day",
+      "date": 26,
+      "month_of_year": 12
+    },
+    "Kwanzaa": {
+      "id": 36,
+      "standard_form": "Kwanzaa",
+      "date": 26,
+      "month_of_year": 12
+    },
+    "Ash Wednesday": {
+      "id": 37,
+      "standard_form": "Ash Wednesday",
+      "date": null,
+      "month_of_year": null
+    },
+    "Palm Sunday": {
+      "id": 38,
+      "standard_form": "Palm Sunday",
+      "date": null,
+      "month_of_year": null
+    },
+    "Maundy Thursday": {
+      "id": 39,
+      "standard_form": "Maundy Thursday",
+      "date": null,
+      "month_of_year": null
+    },
+    "Holy Saturday": {
+      "id": 40,
+      "standard_form": "Holy Saturday",
+      "date": null,
+      "month_of_year": null
+    },
+    "Pentecost": {
+      "id": 41,
+      "standard_form": "Pentecost",
+      "date": null,
+      "month_of_year": null
+    },
+    "Advent": {
+      "id": 42,
+      "standard_form": "Advent",
+      "date": null,
+      "month_of_year": 12
+    },
+    "Epiphany": {
+      "id": 43,
+      "standard_form": "Epiphany",
+      "date": 6,
+      "month_of_year": 1
+    },
+    "Hanukkah": {
+      "id": 44,
+      "standard_form": "Hanukkah",
+      "date": null,
+      "month_of_year": null
+    },
+    "Chanukah": {
+      "id": 45,
+      "standard_form": "Hanukkah",
+      "date": null,
+      "month_of_year": null
+    },
+    "Passover": {
+      "id": 46,
+      "standard_form": "Passover",
+      "date": null,
+      "month_of_year": null
+    },
+    "Rosh Hashanah": {
+      "id": 47,
+      "standard_form": "Rosh Hashanah",
+      "date": null,
+      "month_of_year": null
+    },
+    "Yom Kippur": {
+      "id": 48,
+      "standard_form": "Yom Kippur",
+      "date": null,
+      "month_of_year": null
+    },
+    "Ramadan": {
+      "id": 49,
+      "standard_form": "Ramadan",
+      "date": null,
+      "month_of_year": null
+    },
+    "Eid al-Fitr": {
+      "id": 50,
+      "standard_form": "Eid al-Fitr",
+      "date": null,
+      "month_of_year": null
+    },
+    "Eid al-Adha": {
+      "id": 51,
+      "standard_form": "Eid al-Adha",
+      "date": null,
+      "month_of_year": null
+    },
+    "Groundhog Day": {
+      "id": 52,
+      "standard_form": "Groundhog Day",
+      "date": 2,
+      "month_of_year": 2
+    },
+    "Super Bowl Sunday": {
+      "id": 53,
+      "standard_form": "Super Bowl Sunday",
+      "date": null,
+      "month_of_year": 2
+    },
+    "Super Bowl": {
+      "id": 54,
+      "standard_form": "Super Bowl Sunday",
+      "date": null,
+      "month_of_year": 2
+    },
+    "Presidents' Day": {
+      "id": 55,
+      "standard_form": "Presidents' Day",
+      "date": null,
+      "month_of_year": 2
+    },
+    "Presidents Day": {
+      "id": 56,
+      "standard_form": "Presidents' Day",
+      "date": null,
+      "month_of_year": 2
+    },
+    "Earth Day": {
+      "id": 57,
+      "standard_form": "Earth Day",
+      "date": 22,
+      "month_of_year": 4
+    },
+    "Cinco de Mayo": {
+      "id": 58,
+      "standard_form": "Cinco de Mayo",
+      "date": 5,
+      "month_of_year": 5
+    },
+    "Juneteenth": {
+      "id": 59,
+      "standard_form": "Juneteenth",
+      "date": 19,
+      "month_of_year": 6
+    },
+    "Summer Solstice": {
+      "id": 60,
+      "standard_form": "Summer Solstice",
+      "date": null,
+      "month_of_year": 6
+    },
+    "Winter Solstice": {
+      "id": 61,
+      "standard_form": "Winter Solstice",
+      "date": null,
+      "month_of_year": 12
+    },
+    "Tax Day": {
+      "id": 62,
+      "standard_form": "Tax Day",
+      "date": 15,
+      "month_of_year": 4
+    },
+    "Election Day": {
+      "id": 63,
+      "standard_form": "Election Day",
+      "date": null,
+      "month_of_year": 11
+    },
+    "birthday": {
+      "id": 64,
+      "standard_form": "Birthday",
+      "date": null,
+      "month_of_year": null
+    },
+    "Birthday": {
+      "id": 65,
+      "standard_form": "Birthday",
+      "date": null,
+      "month_of_year": null
+    },
+    "anniversary": {
+      "id": 66,
+      "standard_form": "Anniversary",
+      "date": null,
+      "month_of_year": null
+    },
+    "Anniversary": {
+      "id": 67,
+      "standard_form": "Anniversary",
+      "date": null,
+      "month_of_year": null
+    },
+    "wedding": {
+      "id": 68,
+      "standard_form": "Wedding",
+      "date": null,
+      "month_of_year": null
+    },
+    "Wedding": {
+      "id": 69,
+      "standard_form": "Wedding",
+      "date": null,
+      "month_of_year": null
+    },
+    "graduation": {
+      "id": 70,
+      "standard_form": "Graduation",
+      "date": null,
+      "month_of_year": null
+    },
+    "Graduation": {
+      "id": 71,
+      "standard_form": "Graduation",
+      "date": null,
+      "month_of_year": null
+    },
+    "retirement": {
+      "id": 72,
+      "standard_form": "Retirement",
+      "date": null,
+      "month_of_year": null
+    },
+    "Retirement": {
+      "id": 73,
+      "standard_form": "Retirement",
+      "date": null,
+      "month_of_year": null
+    },
+    "baby shower": {
+      "id": 74,
+      "standard_form": "Baby Shower",
+      "date": null,
+      "month_of_year": null
+    },
+    "Baby shower": {
+      "id": 75,
+      "standard_form": "Baby Shower",
+      "date": null,
+      "month_of_year": null
+    },
+    "bridal shower": {
+      "id": 76,
+      "standard_form": "Bridal Shower",
+      "date": null,
+      "month_of_year": null
+    },
+    "Bridal shower": {
+      "id": 77,
+      "standard_form": "Bridal Shower",
+      "date": null,
+      "month_of_year": null
+    },
+    "funeral": {
+      "id": 78,
+      "standard_form": "Funeral",
+      "date": null,
+      "month_of_year": null
+    },
+    "Funeral": {
+      "id": 79,
+      "standard_form": "Funeral",
+      "date": null,
+      "month_of_year": null
+    },
+    "reunion": {
+      "id": 80,
+      "standard_form": "Reunion",
+      "date": null,
+      "month_of_year": null
+    },
+    "Reunion": {
+      "id": 81,
+      "standard_form": "Reunion",
+      "date": null,
+      "month_of_year": null
+    },
+    "Martin Luther King Jr. Day": {
+      "id": 82,
+      "standard_form": "Martin Luther King Jr. Day",
+      "date": null,
+      "month_of_year": 1
+    },
+    "MLK Day": {
+      "id": 83,
+      "standard_form": "Martin Luther King Jr. Day",
+      "date": null,
+      "month_of_year": 1
+    },
+    "Arbor Day": {
+      "id": 84,
+      "standard_form": "Arbor Day",
+      "date": null,
+      "month_of_year": 4
+    },
+    "Flag Day": {
+      "id": 85,
+      "standard_form": "Flag Day",
+      "date": 14,
+      "month_of_year": 6
+    },
+    "Mardi Gras": {
+      "id": 86,
+      "standard_form": "Mardi Gras",
+      "date": null,
+      "month_of_year": null
+    },
+    "Fat Tuesday": {
+      "id": 87,
+      "standard_form": "Mardi Gras",
+      "date": null,
+      "month_of_year": null
+    },
+    "St. Valentine's Day": {
+      "id": 88,
+      "standard_form": "Valentine's Day",
+      "date": 14,
+      "month_of_year": 2
+    },
+    "Saint Valentine's Day": {
+      "id": 89,
+      "standard_form": "Valentine's Day",
+      "date": 14,
+      "month_of_year": 2
+    },
+    "May Day": {
+      "id": 90,
+      "standard_form": "May Day",
+      "date": 1,
+      "month_of_year": 5
+    },
+    "International Women's Day": {
+      "id": 91,
+      "standard_form": "International Women's Day",
+      "date": 8,
+      "month_of_year": 3
+    },
+    "World Health Day": {
+      "id": 92,
+      "standard_form": "World Health Day",
+      "date": 7,
+      "month_of_year": 4
+    },
+    "World Environment Day": {
+      "id": 93,
+      "standard_form": "World Environment Day",
+      "date": 5,
+      "month_of_year": 6
+    },
+    "International Children's Day": {
+      "id": 94,
+      "standard_form": "International Children's Day",
+      "date": 1,
+      "month_of_year": 6
+    },
+    "International Youth Day": {
+      "id": 95,
+      "standard_form": "International Youth Day",
+      "date": 12,
+      "month_of_year": 8
+    },
+    "World Peace Day": {
+      "id": 96,
+      "standard_form": "International Day of Peace",
+      "date": 21,
+      "month_of_year": 9
+    },
+    "International Day of Peace": {
+      "id": 97,
+      "standard_form": "International Day of Peace",
+      "date": 21,
+      "month_of_year": 9
+    },
+    "Human Rights Day": {
+      "id": 98,
+      "standard_form": "Human Rights Day",
+      "date": 10,
+      "month_of_year": 12
+    },
+    "Bastille Day": {
+      "id": 99,
+      "standard_form": "Bastille Day",
+      "date": 14,
+      "month_of_year": 7
+    },
+    "Guy Fawkes Night": {
+      "id": 100,
+      "standard_form": "Guy Fawkes Night",
+      "date": 5,
+      "month_of_year": 11
+    },
+    "Bonfire Night": {
+      "id": 101,
+      "standard_form": "Guy Fawkes Night",
+      "date": 5,
+      "month_of_year": 11
+    },
+    "Remembrance Day": {
+      "id": 102,
+      "standard_form": "Remembrance Day",
+      "date": 11,
+      "month_of_year": 11
+    },
+    "Anzac Day": {
+      "id": 103,
+      "standard_form": "Anzac Day",
+      "date": 25,
+      "month_of_year": 4
+    },
+    "Australia Day": {
+      "id": 104,
+      "standard_form": "Australia Day",
+      "date": 26,
+      "month_of_year": 1
+    },
+    "Canada Day": {
+      "id": 105,
+      "standard_form": "Canada Day",
+      "date": 1,
+      "month_of_year": 7
+    },
+    "Victoria Day": {
+      "id": 106,
+      "standard_form": "Victoria Day",
+      "date": null,
+      "month_of_year": 5
+    },
+    "Oktoberfest": {
+      "id": 107,
+      "standard_form": "Oktoberfest",
+      "date": null,
+      "month_of_year": 9
+    },
+    "Burns Night": {
+      "id": 108,
+      "standard_form": "Burns Night",
+      "date": 25,
+      "month_of_year": 1
+    },
+    "St. George's Day": {
+      "id": 109,
+      "standard_form": "St. George's Day",
+      "date": 23,
+      "month_of_year": 4
+    },
+    "Saint George's Day": {
+      "id": 110,
+      "standard_form": "St. George's Day",
+      "date": 23,
+      "month_of_year": 4
+    },
+    "First day of Spring": {
+      "id": 111,
+      "standard_form": "First day of Spring",
+      "date": null,
+      "month_of_year": 3
+    },
+    "First day of Summer": {
+      "id": 112,
+      "standard_form": "First day of Summer",
+      "date": null,
+      "month_of_year": 6
+    },
+    "First day of Autumn": {
+      "id": 113,
+      "standard_form": "First day of Autumn",
+      "date": null,
+      "month_of_year": 9
+    },
+    "First day of Fall": {
+      "id": 114,
+      "standard_form": "First day of Fall",
+      "date": null,
+      "month_of_year": 9
+    },
+    "First day of Winter": {
+      "id": 115,
+      "standard_form": "First day of Winter",
+      "date": null,
+      "month_of_year": 12
+    }
+  },
+  "schema_version": "1.0",
+  "last_updated": "2025-05-10"
 }

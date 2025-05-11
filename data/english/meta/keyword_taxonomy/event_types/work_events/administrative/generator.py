@@ -1,119 +1,460 @@
 import json
+import os
+from datetime import datetime
 
 def generate_administrative_tasks_json():
     """
     Generate a JSON file with administrative task expressions as commonly spoken.
     Each key is a longer verbal reference to an administrative task, and the value is an object
-    containing a description (shorter standardized term) and a priority level.
+    containing the primary task attributes requested.
     """
-    administrative_tasks = {
-        # Paperwork
-        "complete required forms": {"description": "paperwork", "priority": 3},
-        "fill out necessary documentation": {"description": "documentation", "priority": 3},
-        "process incoming documents": {"description": "document processing", "priority": 3},
-        "organize office files": {"description": "file organization", "priority": 2},
-        "prepare legal documents": {"description": "legal paperwork", "priority": 5},
-        "maintain physical records": {"description": "record keeping", "priority": 3},
-        "update company policies": {"description": "policy updates", "priority": 4},
-        "digitize paper documents": {"description": "document digitization", "priority": 2},
-        "archive old files": {"description": "archiving", "priority": 2},
-        
-        # Financial administration
-        "submit expense report": {"description": "expense report", "priority": 3},
-        "reconcile credit card statements": {"description": "card reconciliation", "priority": 3},
-        "process reimbursement claims": {"description": "reimbursements", "priority": 3},
-        "create financial reports": {"description": "financial reporting", "priority": 4},
-        "review department budget": {"description": "budget review", "priority": 4},
-        "prepare budget forecast": {"description": "budget forecasting", "priority": 4},
-        "approve team expenses": {"description": "expense approval", "priority": 3},
-        "track project spending": {"description": "cost tracking", "priority": 4},
-        "process accounts payable": {"description": "accounts payable", "priority": 4},
-        "manage accounts receivable": {"description": "accounts receivable", "priority": 4},
-        "create invoices for clients": {"description": "invoicing", "priority": 4},
-        "process incoming payments": {"description": "payment processing", "priority": 4},
-        "prepare tax documentation": {"description": "tax preparation", "priority": 5},
-        
-        # Time tracking
-        "submit timesheet": {"description": "timesheet", "priority": 3},
-        "track billable hours": {"description": "time tracking", "priority": 4},
-        "log project hours": {"description": "time logging", "priority": 3},
-        "review employee time entries": {"description": "timesheet review", "priority": 3},
-        "approve team timesheets": {"description": "timesheet approval", "priority": 3},
-        "report overtime hours": {"description": "overtime reporting", "priority": 3},
-        "allocate time to projects": {"description": "time allocation", "priority": 3},
-        
-        # HR administration
-        "update employee records": {"description": "employee records", "priority": 4},
-        "process new hire paperwork": {"description": "onboarding paperwork", "priority": 4},
-        "manage benefits enrollment": {"description": "benefits administration", "priority": 4},
-        "coordinate performance reviews": {"description": "review coordination", "priority": 4},
-        "update org chart": {"description": "org chart update", "priority": 2},
-        "track employee attendance": {"description": "attendance tracking", "priority": 3},
-        "process leave requests": {"description": "leave processing", "priority": 3},
-        "document disciplinary actions": {"description": "disciplinary documentation", "priority": 5},
-        "coordinate offboarding process": {"description": "offboarding", "priority": 4},
-        "manage employee training records": {"description": "training records", "priority": 3},
-        "verify employment eligibility": {"description": "eligibility verification", "priority": 5},
-        
-        # Office management
-        "order office supplies": {"description": "supply ordering", "priority": 2},
-        "manage office inventory": {"description": "inventory management", "priority": 2},
-        "coordinate office maintenance": {"description": "maintenance coordination", "priority": 3},
-        "manage office seating plan": {"description": "seating management", "priority": 2},
-        "book meeting rooms": {"description": "room booking", "priority": 2},
-        "arrange catering for meetings": {"description": "catering arrangement", "priority": 2},
-        "coordinate office events": {"description": "event coordination", "priority": 3},
-        "manage office subscriptions": {"description": "subscription management", "priority": 2},
-        "update office equipment": {"description": "equipment updates", "priority": 3},
-        "manage office access cards": {"description": "access management", "priority": 3},
-        
-        # Communication administration
-        "manage email distribution lists": {"description": "list management", "priority": 2},
-        "update contact information": {"description": "contact updates", "priority": 2},
-        "coordinate internal communications": {"description": "internal comms", "priority": 3},
-        "distribute company announcements": {"description": "announcements", "priority": 3},
-        "take meeting minutes": {"description": "minute taking", "priority": 3},
-        "maintain company directory": {"description": "directory maintenance", "priority": 2},
-        "manage shared calendars": {"description": "calendar management", "priority": 3},
-        
-        # Travel administration
-        "book business travel": {"description": "travel booking", "priority": 3},
-        "arrange accommodations": {"description": "accommodation booking", "priority": 3},
-        "process travel authorizations": {"description": "travel authorization", "priority": 3},
-        "coordinate international travel documents": {"description": "travel documents", "priority": 4},
-        "reconcile travel expenses": {"description": "travel reconciliation", "priority": 3},
-        "create travel itineraries": {"description": "itinerary creation", "priority": 3},
-        "arrange ground transportation": {"description": "transport arrangement", "priority": 3},
-        
-        # Compliance and reporting
-        "complete compliance training": {"description": "compliance training", "priority": 4},
-        "submit regulatory reports": {"description": "regulatory reporting", "priority": 5},
-        "document safety procedures": {"description": "safety documentation", "priority": 4},
-        "manage audit documentation": {"description": "audit preparation", "priority": 5},
-        "maintain license renewals": {"description": "license maintenance", "priority": 5},
-        "track compliance deadlines": {"description": "compliance tracking", "priority": 4},
-        "create compliance reports": {"description": "compliance reporting", "priority": 5},
-        "maintain contract records": {"description": "contract management", "priority": 4},
-        
-        # Project administration
-        "update project tracking system": {"description": "project updates", "priority": 3},
-        "collect project metrics": {"description": "metrics collection", "priority": 3},
-        "prepare status reports": {"description": "status reporting", "priority": 3},
-        "document project changes": {"description": "change documentation", "priority": 4},
-        "maintain project documentation": {"description": "project documentation", "priority": 3},
-        "update task management system": {"description": "task updates", "priority": 3},
-        "track project milestones": {"description": "milestone tracking", "priority": 4},
-        "prepare project presentations": {"description": "presentation prep", "priority": 4},
-        
-        # IT administration
-        "request system access": {"description": "access request", "priority": 3},
-        "reset user passwords": {"description": "password reset", "priority": 3},
-        "update software licenses": {"description": "license updates", "priority": 3},
-        "manage user accounts": {"description": "account management", "priority": 3},
-        "track IT assets": {"description": "asset tracking", "priority": 3},
-        "document system configurations": {"description": "system documentation", "priority": 4},
-        "coordinate software updates": {"description": "update coordination", "priority": 3}
-    }
+    # Counter for simple ID generation
+    id_counter = 1
+    
+    administrative_tasks = {}
+    
+    # Helper function to add an item with incremented ID
+    def add_task(key, title, description, category, event_type, is_recurring, frequency, priority, importance, urgency):
+        nonlocal id_counter
+        administrative_tasks[key] = {
+            "id": id_counter,
+            "title": title,
+            "description": description,
+            "category": category,
+            "event_type": event_type,
+            "is_recurring": is_recurring,
+            "frequency": frequency,
+            "priority": priority,
+            "importance": importance,
+            "urgency": urgency
+        }
+        id_counter += 1
+    
+    # Paperwork
+    add_task(
+        "complete required forms",
+        "Complete Forms",
+        "Fill out necessary forms and documentation",
+        "work",
+        "administrative",
+        False,
+        "as needed",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_task(
+        "fill out necessary documentation",
+        "Complete Documentation",
+        "Prepare and fill out required documentation",
+        "work",
+        "administrative",
+        False,
+        "as needed",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_task(
+        "process incoming documents",
+        "Process Documents",
+        "Review and process incoming documents and files",
+        "work",
+        "administrative",
+        True,
+        "daily",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_task(
+        "organize office files",
+        "Organize Files",
+        "Sort, label, and arrange office files and documents",
+        "work",
+        "administrative",
+        True,
+        "monthly",
+        2,
+        "low",
+        "low"
+    )
+    
+    add_task(
+        "prepare legal documents",
+        "Prepare Legal Documents",
+        "Draft or complete legal forms and documentation",
+        "work",
+        "administrative",
+        False,
+        "as needed",
+        5,
+        "very high",
+        "high"
+    )
+    
+    # Financial administration
+    add_task(
+        "submit expense report",
+        "Submit Expenses",
+        "Complete and submit expense report for reimbursement",
+        "work",
+        "administrative",
+        True,
+        "monthly",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_task(
+        "reconcile credit card statements",
+        "Reconcile Credit Cards",
+        "Check and verify credit card transactions against records",
+        "work",
+        "administrative",
+        True,
+        "monthly",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_task(
+        "create financial reports",
+        "Financial Reporting",
+        "Generate reports on financial performance and metrics",
+        "work",
+        "administrative",
+        True,
+        "monthly",
+        4,
+        "high",
+        "high"
+    )
+    
+    add_task(
+        "review department budget",
+        "Budget Review",
+        "Analyze and evaluate departmental spending against budget",
+        "work",
+        "administrative",
+        True,
+        "quarterly",
+        4,
+        "high",
+        "medium"
+    )
+    
+    add_task(
+        "prepare tax documentation",
+        "Tax Preparation",
+        "Gather and organize documents needed for tax filing",
+        "work",
+        "administrative",
+        True,
+        "annually",
+        5,
+        "very high",
+        "high"
+    )
+    
+    # Time tracking
+    add_task(
+        "submit timesheet",
+        "Submit Timesheet",
+        "Record and submit hours worked for payment processing",
+        "work",
+        "administrative",
+        True,
+        "weekly",
+        3,
+        "medium",
+        "high"
+    )
+    
+    add_task(
+        "track billable hours",
+        "Track Billable Hours",
+        "Record time spent on client or billable project work",
+        "work",
+        "administrative",
+        True,
+        "daily",
+        4,
+        "high",
+        "high"
+    )
+    
+    add_task(
+        "approve team timesheets",
+        "Approve Timesheets",
+        "Review and approve time records for team members",
+        "work",
+        "administrative",
+        True,
+        "weekly",
+        3,
+        "medium",
+        "high"
+    )
+    
+    # HR administration
+    add_task(
+        "update employee records",
+        "Update Employee Records",
+        "Maintain current information in employee files and systems",
+        "work",
+        "administrative",
+        True,
+        "as needed",
+        4,
+        "high",
+        "medium"
+    )
+    
+    add_task(
+        "process new hire paperwork",
+        "Process Onboarding",
+        "Complete documentation for newly hired employees",
+        "work",
+        "administrative",
+        False,
+        "as needed",
+        4,
+        "high",
+        "high"
+    )
+    
+    add_task(
+        "manage benefits enrollment",
+        "Manage Benefits",
+        "Administer employee benefits program and enrollment",
+        "work",
+        "administrative",
+        True,
+        "annually",
+        4,
+        "high",
+        "medium"
+    )
+    
+    add_task(
+        "document disciplinary actions",
+        "Document Disciplinary Actions",
+        "Record formal disciplinary measures taken with employees",
+        "work",
+        "administrative",
+        False,
+        "as needed",
+        5,
+        "very high",
+        "high"
+    )
+    
+    # Office management
+    add_task(
+        "order office supplies",
+        "Order Supplies",
+        "Purchase necessary supplies for office operations",
+        "work",
+        "administrative",
+        True,
+        "monthly",
+        2,
+        "low",
+        "low"
+    )
+    
+    add_task(
+        "coordinate office maintenance",
+        "Coordinate Maintenance",
+        "Schedule and oversee office repairs and maintenance",
+        "work",
+        "administrative",
+        True,
+        "as needed",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_task(
+        "book meeting rooms",
+        "Book Meeting Rooms",
+        "Reserve appropriate spaces for meetings and events",
+        "work",
+        "administrative",
+        True,
+        "as needed",
+        2,
+        "low",
+        "medium"
+    )
+    
+    # Communication administration
+    add_task(
+        "take meeting minutes",
+        "Take Minutes",
+        "Record discussions and decisions during meetings",
+        "work",
+        "administrative",
+        True,
+        "as needed",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_task(
+        "distribute company announcements",
+        "Distribute Announcements",
+        "Share important company information with employees",
+        "work",
+        "administrative",
+        True,
+        "as needed",
+        3,
+        "medium",
+        "high"
+    )
+    
+    # Travel administration
+    add_task(
+        "book business travel",
+        "Book Travel",
+        "Arrange transportation for business trips",
+        "work",
+        "administrative",
+        False,
+        "as needed",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_task(
+        "coordinate international travel documents",
+        "Coordinate Travel Documents",
+        "Ensure proper documentation for international business travel",
+        "work",
+        "administrative",
+        False,
+        "as needed",
+        4,
+        "high",
+        "high"
+    )
+    
+    # Compliance and reporting
+    add_task(
+        "complete compliance training",
+        "Complete Compliance Training",
+        "Finish required regulatory or compliance education",
+        "work",
+        "administrative",
+        True,
+        "annually",
+        4,
+        "high",
+        "medium"
+    )
+    
+    add_task(
+        "submit regulatory reports",
+        "Submit Regulatory Reports",
+        "File required reports with governing agencies",
+        "work",
+        "administrative",
+        True,
+        "quarterly",
+        5,
+        "very high",
+        "high"
+    )
+    
+    add_task(
+        "maintain license renewals",
+        "Maintain Licenses",
+        "Ensure timely renewal of required business licenses",
+        "work",
+        "administrative",
+        True,
+        "annually",
+        5,
+        "very high",
+        "high"
+    )
+    
+    # Project administration
+    add_task(
+        "update project tracking system",
+        "Update Project Tracking",
+        "Maintain current information in project management tools",
+        "work",
+        "administrative",
+        True,
+        "weekly",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_task(
+        "prepare status reports",
+        "Prepare Status Reports",
+        "Create updates on project progress and metrics",
+        "work",
+        "administrative",
+        True,
+        "weekly",
+        3,
+        "medium",
+        "high"
+    )
+    
+    add_task(
+        "track project milestones",
+        "Track Milestones",
+        "Monitor and record project progress against key milestones",
+        "work",
+        "administrative",
+        True,
+        "weekly",
+        4,
+        "high",
+        "medium"
+    )
+    
+    # IT administration
+    add_task(
+        "update software licenses",
+        "Update Software Licenses",
+        "Renew and maintain software licensing for organization",
+        "work",
+        "administrative",
+        True,
+        "annually",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_task(
+        "manage user accounts",
+        "Manage User Accounts",
+        "Create, update, or deactivate system user accounts",
+        "work",
+        "administrative",
+        True,
+        "as needed",
+        3,
+        "medium",
+        "medium"
+    )
     
     # Create the final JSON object
     administrative_tasks_json = {
@@ -126,7 +467,9 @@ def generate_administrative_tasks_json():
             "3": "Medium - Regular operational administrative tasks",
             "4": "High - Important administrative requirements",
             "5": "Very High - Critical compliance or regulatory tasks"
-        }
+        },
+        "schema_version": "1.0",
+        "last_updated": datetime.now().strftime("%Y-%m-%d")
     }
     
     return administrative_tasks_json
@@ -135,7 +478,9 @@ def generate_administrative_tasks_json():
 json_data = generate_administrative_tasks_json()
 
 # Write to a file
-with open('data/english/meta/keyword_taxonomy/event_types/work_events/administrative/vocabulary/administrative_tasks.json', 'w', encoding='utf-8') as f:
+output_path = 'data/english/meta/keyword_taxonomy/event_types/work_events/administrative/vocabulary/administrative_tasks.json'
+os.makedirs(os.path.dirname(output_path), exist_ok=True)  # Create directories if they don't exist
+with open(output_path, 'w', encoding='utf-8') as f:
     json.dump(json_data, f, indent=2)
 
 print(f"Generated {len(json_data['values'])} administrative task expressions and saved to administrative_tasks.json")
@@ -147,11 +492,3 @@ sample_keys = ["submit expense report", "update employee records", "book busines
 for key in sample_keys:
     if key in json_data["values"]:
         print(f'"{key}": {json.dumps(json_data["values"][key], indent=2)}')
-
-# If you want to see the raw JSON output
-print("\nFull JSON structure:")
-print(json.dumps({"administrative": {
-    "description": "Work administration tasks",
-    "examples": ["paperwork", "expense report", "timesheet", "budget review"],
-    "vocab": "administrative_tasks.json"
-}}, indent=2))

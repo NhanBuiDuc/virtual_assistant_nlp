@@ -7,320 +7,436 @@
   ],
   "values": {
     "final date for project completion": {
-      "description": "project deadline",
-      "priority": 5
+      "id": 1,
+      "title": "Project Deadline",
+      "description": "Date by which all project deliverables must be completed",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "project-based",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "very high"
     },
     "last day to submit project deliverables": {
-      "description": "project due date",
-      "priority": 5
+      "id": 2,
+      "title": "Project Submission",
+      "description": "Final day for submitting completed project work",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "project-based",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "very high"
     },
     "cutoff date for project submission": {
-      "description": "project cutoff",
-      "priority": 5
+      "id": 3,
+      "title": "Project Cutoff",
+      "description": "Final acceptable date for project completion",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "project-based",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "very high"
     },
     "target date for finishing project": {
-      "description": "project target",
-      "priority": 4
-    },
-    "date by which project must be completed": {
-      "description": "project completion date",
-      "priority": 5
-    },
-    "end of project timeline": {
-      "description": "project end date",
-      "priority": 5
+      "id": 4,
+      "title": "Project Target",
+      "description": "Desired completion date for project work",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "project-based",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "approaching project completion date": {
-      "description": "upcoming deadline",
-      "priority": 4
-    },
-    "date approaching for project submission": {
-      "description": "deadline approaching",
-      "priority": 4
-    },
-    "time remaining until project is due": {
-      "description": "time left",
-      "priority": 3
+      "id": 5,
+      "title": "Upcoming Deadline",
+      "description": "Project deadline that is coming up soon",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "project-based",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "last date for client deliverable": {
-      "description": "delivery deadline",
-      "priority": 5
+      "id": 6,
+      "title": "Delivery Deadline",
+      "description": "Final date for providing deliverables to client",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "project-based",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "very high"
     },
     "date promised to deliver work": {
-      "description": "promised delivery",
-      "priority": 5
+      "id": 7,
+      "title": "Promised Delivery",
+      "description": "Date committed to client for work completion",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "project-based",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "contractual date for delivery": {
-      "description": "contractual deadline",
-      "priority": 5
-    },
-    "final submission time for deliverable": {
-      "description": "submission deadline",
-      "priority": 5
-    },
-    "date work must be handed over": {
-      "description": "handover date",
-      "priority": 5
-    },
-    "target for client delivery": {
-      "description": "delivery target",
-      "priority": 4
-    },
-    "timeframe to deliver all requirements": {
-      "description": "delivery window",
-      "priority": 4
+      "id": 8,
+      "title": "Contractual Deadline",
+      "description": "Legally binding date for work completion",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "contract-based",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "very high"
     },
     "end of quarterly review period": {
-      "description": "quarterly review",
-      "priority": 4
+      "id": 9,
+      "title": "Quarterly Review",
+      "description": "Deadline for quarterly performance or business evaluation",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": true,
+      "frequency": "quarterly",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "annual review submission deadline": {
-      "description": "annual review",
-      "priority": 4
+      "id": 10,
+      "title": "Annual Review",
+      "description": "Deadline for yearly performance review documentation",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": true,
+      "frequency": "annually",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "performance review due date": {
-      "description": "performance review",
-      "priority": 4
+      "id": 11,
+      "title": "Performance Review",
+      "description": "Date for completing employee performance evaluation",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": true,
+      "frequency": "annually",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "deadline for peer reviews": {
-      "description": "peer review deadline",
-      "priority": 3
-    },
-    "last day to submit feedback": {
-      "description": "feedback deadline",
-      "priority": 3
-    },
-    "code review response timeframe": {
-      "description": "code review deadline",
-      "priority": 4
-    },
-    "document review turnaround time": {
-      "description": "review turnaround",
-      "priority": 3
+      "id": 12,
+      "title": "Peer Review Deadline",
+      "description": "Final date to submit peer evaluation feedback",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": true,
+      "frequency": "quarterly",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "final date for job application": {
-      "description": "application deadline",
-      "priority": 5
+      "id": 13,
+      "title": "Application Deadline",
+      "description": "Last day to submit job application materials",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "grant proposal submission date": {
-      "description": "grant deadline",
-      "priority": 5
-    },
-    "last day to apply for position": {
-      "description": "application cutoff",
-      "priority": 5
-    },
-    "deadline to submit resume": {
-      "description": "resume deadline",
-      "priority": 5
-    },
-    "closing date for job posting": {
-      "description": "posting closure",
-      "priority": 4
-    },
-    "application window closing date": {
-      "description": "application window",
-      "priority": 4
+      "id": 14,
+      "title": "Grant Deadline",
+      "description": "Due date for submitting grant application",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "grant cycle",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "tax filing due date": {
-      "description": "tax deadline",
-      "priority": 5
+      "id": 15,
+      "title": "Tax Deadline",
+      "description": "Required date for tax document submission",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": true,
+      "frequency": "annually",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "very high"
     },
     "invoice payment due date": {
-      "description": "payment due",
-      "priority": 5
+      "id": 16,
+      "title": "Payment Due",
+      "description": "Date by which payment must be received",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": true,
+      "frequency": "monthly",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "expense report submission deadline": {
-      "description": "expense deadline",
-      "priority": 4
-    },
-    "budget request cutoff date": {
-      "description": "budget deadline",
-      "priority": 4
+      "id": 17,
+      "title": "Expense Deadline",
+      "description": "Final date to submit expense documentation",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": true,
+      "frequency": "monthly",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "medium"
     },
     "fiscal year close date": {
-      "description": "fiscal close",
-      "priority": 5
+      "id": 18,
+      "title": "Fiscal Close",
+      "description": "End of financial reporting year",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": true,
+      "frequency": "annually",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "very high"
     },
     "quarterly financial report due": {
-      "description": "quarterly filing",
-      "priority": 5
-    },
-    "annual financial statement deadline": {
-      "description": "annual filing",
-      "priority": 5
-    },
-    "reimbursement claim deadline": {
-      "description": "reimbursement deadline",
-      "priority": 3
-    },
-    "assignment due date": {
-      "description": "assignment deadline",
-      "priority": 4
-    },
-    "paper submission deadline": {
-      "description": "paper deadline",
-      "priority": 5
-    },
-    "research proposal due date": {
-      "description": "proposal deadline",
-      "priority": 5
-    },
-    "thesis submission deadline": {
-      "description": "thesis deadline",
-      "priority": 5
-    },
-    "coursework completion date": {
-      "description": "coursework deadline",
-      "priority": 4
-    },
-    "final exam date": {
-      "description": "exam date",
-      "priority": 5
-    },
-    "application for graduation deadline": {
-      "description": "graduation application",
-      "priority": 4
+      "id": 19,
+      "title": "Quarterly Filing",
+      "description": "Due date for quarterly financial statements",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": true,
+      "frequency": "quarterly",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "timesheet submission deadline": {
-      "description": "timesheet due",
-      "priority": 3
+      "id": 20,
+      "title": "Timesheet Due",
+      "description": "Date by which work hours must be reported",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": true,
+      "frequency": "weekly",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "high"
     },
     "vacation request deadline": {
-      "description": "vacation request",
-      "priority": 2
-    },
-    "leave application cutoff date": {
-      "description": "leave request",
-      "priority": 2
+      "id": 21,
+      "title": "Vacation Request",
+      "description": "Last day to submit time-off requests",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 2,
+      "importance": "low",
+      "urgency": "low"
     },
     "benefits enrollment deadline": {
-      "description": "benefits enrollment",
-      "priority": 4
-    },
-    "form submission due date": {
-      "description": "form deadline",
-      "priority": 3
-    },
-    "required training completion date": {
-      "description": "training deadline",
-      "priority": 4
+      "id": 22,
+      "title": "Benefits Enrollment",
+      "description": "Final date to select employee benefits options",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": true,
+      "frequency": "annually",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "certification renewal deadline": {
-      "description": "certification deadline",
-      "priority": 5
-    },
-    "compliance document due date": {
-      "description": "compliance deadline",
-      "priority": 5
+      "id": 23,
+      "title": "Certification Deadline",
+      "description": "Date by which professional certification must be renewed",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": true,
+      "frequency": "annually",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "publication submission deadline": {
-      "description": "submission deadline",
-      "priority": 5
-    },
-    "abstract submission due date": {
-      "description": "abstract deadline",
-      "priority": 4
-    },
-    "journal article submission cutoff": {
-      "description": "article deadline",
-      "priority": 5
-    },
-    "book manuscript due date": {
-      "description": "manuscript deadline",
-      "priority": 5
-    },
-    "editorial revisions due date": {
-      "description": "revisions deadline",
-      "priority": 4
+      "id": 24,
+      "title": "Submission Deadline",
+      "description": "Final date for submitting content for publication",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "conference paper deadline": {
-      "description": "conference deadline",
-      "priority": 5
-    },
-    "print material submission date": {
-      "description": "print deadline",
-      "priority": 5
+      "id": 25,
+      "title": "Conference Deadline",
+      "description": "Due date for academic conference submission",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "annual conference",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "fast approaching deadline": {
-      "description": "urgent deadline",
-      "priority": 5
-    },
-    "immediate deliverable required": {
-      "description": "immediate deadline",
-      "priority": 5
+      "id": 26,
+      "title": "Urgent Deadline",
+      "description": "Any deadline requiring immediate attention",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "very high"
     },
     "time-sensitive deliverable": {
-      "description": "time-sensitive",
-      "priority": 5
+      "id": 27,
+      "title": "Time-Sensitive",
+      "description": "Task with tight time constraints",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "very high"
     },
     "work due as soon as possible": {
-      "description": "ASAP",
-      "priority": 5
+      "id": 28,
+      "title": "ASAP",
+      "description": "Task requiring immediate completion",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "very high"
     },
     "work needed by end of day": {
-      "description": "EOD",
-      "priority": 4
-    },
-    "due by close of business today": {
-      "description": "COB",
-      "priority": 4
-    },
-    "needed by end of business": {
-      "description": "EOB",
-      "priority": 4
-    },
-    "work required by end of week": {
-      "description": "EOW",
-      "priority": 3
+      "id": 29,
+      "title": "EOD",
+      "description": "Task that must be completed by day's end",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "deadline extended by one week": {
-      "description": "extended deadline",
-      "priority": 3
+      "id": 30,
+      "title": "Extended Deadline",
+      "description": "Task with deadline pushed to a later date",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 3,
+      "importance": "medium",
+      "urgency": "medium"
     },
     "hard deadline with no extensions": {
-      "description": "hard deadline",
-      "priority": 5
+      "id": 31,
+      "title": "Hard Deadline",
+      "description": "Absolutely final date with no possibility of extension",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "very high"
     },
     "flexible completion date": {
-      "description": "soft deadline",
-      "priority": 2
-    },
-    "target date rather than deadline": {
-      "description": "target date",
-      "priority": 2
-    },
-    "approaching point of no return": {
-      "description": "critical deadline",
-      "priority": 5
+      "id": 32,
+      "title": "Soft Deadline",
+      "description": "Target date that can be adjusted if needed",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 2,
+      "importance": "low",
+      "urgency": "low"
     },
     "team submission deadline": {
-      "description": "team deadline",
-      "priority": 4
-    },
-    "department reporting deadline": {
-      "description": "department deadline",
-      "priority": 4
+      "id": 33,
+      "title": "Team Deadline",
+      "description": "Due date for work from an entire team",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "project-based",
+      "priority": 4,
+      "importance": "high",
+      "urgency": "high"
     },
     "organization-wide deadline": {
-      "description": "company deadline",
-      "priority": 5
-    },
-    "multi-team project deadline": {
-      "description": "cross-team deadline",
-      "priority": 5
-    },
-    "deadline affecting all stakeholders": {
-      "description": "stakeholder deadline",
-      "priority": 5
+      "id": 34,
+      "title": "Company Deadline",
+      "description": "Deadline affecting the entire organization",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "as needed",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "client-imposed deadline": {
-      "description": "client deadline",
-      "priority": 5
+      "id": 35,
+      "title": "Client Deadline",
+      "description": "Due date set by client requirements",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": false,
+      "frequency": "client-determined",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "high"
     },
     "regulatory compliance deadline": {
-      "description": "regulatory deadline",
-      "priority": 5
+      "id": 36,
+      "title": "Regulatory Deadline",
+      "description": "Due date mandated by law or regulation",
+      "category": "work",
+      "event_type": "deadline",
+      "is_recurring": true,
+      "frequency": "varies",
+      "priority": 5,
+      "importance": "very high",
+      "urgency": "very high"
     }
   },
   "priority_scale": {
@@ -329,5 +445,7 @@
     "3": "Medium - Noticeable impact if missed",
     "4": "High - Significant consequences if not met",
     "5": "Very High - Critical, must not be missed"
-  }
+  },
+  "schema_version": "1.0",
+  "last_updated": "2025-05-10"
 }

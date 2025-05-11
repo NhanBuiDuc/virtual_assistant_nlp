@@ -1,0 +1,361 @@
+{
+  "description": "Time quantities as commonly expressed in conversation",
+  "examples": [
+    "one minute",
+    "two hours",
+    "three days",
+    "four weeks"
+  ],
+  "values": {
+    "one second": {
+      "id": 1,
+      "value": 1,
+      "unit": "second",
+      "standard_form": "1 second"
+    },
+    "two seconds": {
+      "id": 2,
+      "value": 2,
+      "unit": "second",
+      "standard_form": "2 seconds"
+    },
+    "five seconds": {
+      "id": 3,
+      "value": 5,
+      "unit": "second",
+      "standard_form": "5 seconds"
+    },
+    "ten seconds": {
+      "id": 4,
+      "value": 10,
+      "unit": "second",
+      "standard_form": "10 seconds"
+    },
+    "thirty seconds": {
+      "id": 5,
+      "value": 30,
+      "unit": "second",
+      "standard_form": "30 seconds"
+    },
+    "half a minute": {
+      "id": 6,
+      "value": 30,
+      "unit": "second",
+      "standard_form": "30 seconds"
+    },
+    "one minute": {
+      "id": 7,
+      "value": 1,
+      "unit": "minute",
+      "standard_form": "1 minute"
+    },
+    "two minutes": {
+      "id": 8,
+      "value": 2,
+      "unit": "minute",
+      "standard_form": "2 minutes"
+    },
+    "five minutes": {
+      "id": 9,
+      "value": 5,
+      "unit": "minute",
+      "standard_form": "5 minutes"
+    },
+    "ten minutes": {
+      "id": 10,
+      "value": 10,
+      "unit": "minute",
+      "standard_form": "10 minutes"
+    },
+    "fifteen minutes": {
+      "id": 11,
+      "value": 15,
+      "unit": "minute",
+      "standard_form": "15 minutes"
+    },
+    "quarter hour": {
+      "id": 12,
+      "value": 15,
+      "unit": "minute",
+      "standard_form": "15 minutes"
+    },
+    "half hour": {
+      "id": 13,
+      "value": 30,
+      "unit": "minute",
+      "standard_form": "30 minutes"
+    },
+    "thirty minutes": {
+      "id": 14,
+      "value": 30,
+      "unit": "minute",
+      "standard_form": "30 minutes"
+    },
+    "forty-five minutes": {
+      "id": 15,
+      "value": 45,
+      "unit": "minute",
+      "standard_form": "45 minutes"
+    },
+    "an hour": {
+      "id": 16,
+      "value": 60,
+      "unit": "minute",
+      "standard_form": "60 minutes"
+    },
+    "one hour": {
+      "id": 17,
+      "value": 1,
+      "unit": "hour",
+      "standard_form": "1 hour"
+    },
+    "two hours": {
+      "id": 18,
+      "value": 2,
+      "unit": "hour",
+      "standard_form": "2 hours"
+    },
+    "three hours": {
+      "id": 19,
+      "value": 3,
+      "unit": "hour",
+      "standard_form": "3 hours"
+    },
+    "four hours": {
+      "id": 20,
+      "value": 4,
+      "unit": "hour",
+      "standard_form": "4 hours"
+    },
+    "six hours": {
+      "id": 21,
+      "value": 6,
+      "unit": "hour",
+      "standard_form": "6 hours"
+    },
+    "eight hours": {
+      "id": 22,
+      "value": 8,
+      "unit": "hour",
+      "standard_form": "8 hours"
+    },
+    "twelve hours": {
+      "id": 23,
+      "value": 12,
+      "unit": "hour",
+      "standard_form": "12 hours"
+    },
+    "twenty-four hours": {
+      "id": 24,
+      "value": 24,
+      "unit": "hour",
+      "standard_form": "24 hours"
+    },
+    "a day": {
+      "id": 25,
+      "value": 24,
+      "unit": "hour",
+      "standard_form": "24 hours"
+    },
+    "one day": {
+      "id": 26,
+      "value": 1,
+      "unit": "day",
+      "standard_form": "1 day"
+    },
+    "two days": {
+      "id": 27,
+      "value": 2,
+      "unit": "day",
+      "standard_form": "2 days"
+    },
+    "three days": {
+      "id": 28,
+      "value": 3,
+      "unit": "day",
+      "standard_form": "3 days"
+    },
+    "a few days": {
+      "id": 29,
+      "value": 3,
+      "unit": "day",
+      "standard_form": "3 days"
+    },
+    "four days": {
+      "id": 30,
+      "value": 4,
+      "unit": "day",
+      "standard_form": "4 days"
+    },
+    "five days": {
+      "id": 31,
+      "value": 5,
+      "unit": "day",
+      "standard_form": "5 days"
+    },
+    "a week": {
+      "id": 32,
+      "value": 7,
+      "unit": "day",
+      "standard_form": "7 days"
+    },
+    "seven days": {
+      "id": 33,
+      "value": 7,
+      "unit": "day",
+      "standard_form": "7 days"
+    },
+    "one week": {
+      "id": 34,
+      "value": 1,
+      "unit": "week",
+      "standard_form": "1 week"
+    },
+    "two weeks": {
+      "id": 35,
+      "value": 2,
+      "unit": "week",
+      "standard_form": "2 weeks"
+    },
+    "a fortnight": {
+      "id": 36,
+      "value": 2,
+      "unit": "week",
+      "standard_form": "2 weeks"
+    },
+    "three weeks": {
+      "id": 37,
+      "value": 3,
+      "unit": "week",
+      "standard_form": "3 weeks"
+    },
+    "four weeks": {
+      "id": 38,
+      "value": 4,
+      "unit": "week",
+      "standard_form": "4 weeks"
+    },
+    "a month": {
+      "id": 39,
+      "value": 4,
+      "unit": "week",
+      "standard_form": "4 weeks"
+    },
+    "one month": {
+      "id": 40,
+      "value": 1,
+      "unit": "month",
+      "standard_form": "1 month"
+    },
+    "two months": {
+      "id": 41,
+      "value": 2,
+      "unit": "month",
+      "standard_form": "2 months"
+    },
+    "three months": {
+      "id": 42,
+      "value": 3,
+      "unit": "month",
+      "standard_form": "3 months"
+    },
+    "a quarter": {
+      "id": 43,
+      "value": 3,
+      "unit": "month",
+      "standard_form": "3 months"
+    },
+    "six months": {
+      "id": 44,
+      "value": 6,
+      "unit": "month",
+      "standard_form": "6 months"
+    },
+    "half a year": {
+      "id": 45,
+      "value": 6,
+      "unit": "month",
+      "standard_form": "6 months"
+    },
+    "nine months": {
+      "id": 46,
+      "value": 9,
+      "unit": "month",
+      "standard_form": "9 months"
+    },
+    "twelve months": {
+      "id": 47,
+      "value": 12,
+      "unit": "month",
+      "standard_form": "12 months"
+    },
+    "a year": {
+      "id": 48,
+      "value": 12,
+      "unit": "month",
+      "standard_form": "12 months"
+    },
+    "one year": {
+      "id": 49,
+      "value": 1,
+      "unit": "year",
+      "standard_form": "1 year"
+    },
+    "two years": {
+      "id": 50,
+      "value": 2,
+      "unit": "year",
+      "standard_form": "2 years"
+    },
+    "three years": {
+      "id": 51,
+      "value": 3,
+      "unit": "year",
+      "standard_form": "3 years"
+    },
+    "five years": {
+      "id": 52,
+      "value": 5,
+      "unit": "year",
+      "standard_form": "5 years"
+    },
+    "a decade": {
+      "id": 53,
+      "value": 10,
+      "unit": "year",
+      "standard_form": "10 years"
+    },
+    "ten years": {
+      "id": 54,
+      "value": 10,
+      "unit": "year",
+      "standard_form": "10 years"
+    },
+    "twenty years": {
+      "id": 55,
+      "value": 20,
+      "unit": "year",
+      "standard_form": "20 years"
+    },
+    "fifty years": {
+      "id": 56,
+      "value": 50,
+      "unit": "year",
+      "standard_form": "50 years"
+    },
+    "a century": {
+      "id": 57,
+      "value": 100,
+      "unit": "year",
+      "standard_form": "100 years"
+    },
+    "a hundred years": {
+      "id": 58,
+      "value": 100,
+      "unit": "year",
+      "standard_form": "100 years"
+    }
+  },
+  "schema_version": "1.0",
+  "last_updated": "2025-05-10"
+}

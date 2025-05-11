@@ -1,106 +1,393 @@
 import json
+import os
+from datetime import datetime
 
 def generate_errands_json():
     """
     Generate a JSON file with errand expressions as commonly spoken.
     Each key is a longer verbal reference to an errand, and the value is an object
-    containing a description (shorter standardized term) and a priority level.
+    containing the primary task attributes requested.
     """
-    errands = {
-        # Pick Up Activities
-        "pick up dry cleaning": {"description": "dry cleaning pickup", "priority": 3},
-        "pick up prescription medication": {"description": "prescription pickup", "priority": 5},
-        "pick up package from post office": {"description": "package pickup", "priority": 3},
-        "pick up takeout food": {"description": "food pickup", "priority": 2},
-        "pick up kids from school": {"description": "school pickup", "priority": 5},
-        "pick up children from daycare": {"description": "daycare pickup", "priority": 5},
-        "pick up children from extracurricular activities": {"description": "activity pickup", "priority": 4},
-        "pick up ordered items from store": {"description": "store pickup", "priority": 3},
-        "pick up party supplies": {"description": "supply pickup", "priority": 3},
-        "pick up pet from groomer": {"description": "pet pickup", "priority": 3},
-        "pick up gift for special occasion": {"description": "gift pickup", "priority": 3},
-        
-        # Drop Off Activities
-        "drop off package at post office": {"description": "mail dropoff", "priority": 3},
-        "drop off library books": {"description": "library return", "priority": 2},
-        "drop off dry cleaning": {"description": "laundry dropoff", "priority": 2},
-        "drop off children at school": {"description": "school dropoff", "priority": 5},
-        "drop off kids at daycare": {"description": "daycare dropoff", "priority": 5},
-        "drop off children at activities": {"description": "activity dropoff", "priority": 4},
-        "drop off rental items": {"description": "rental return", "priority": 4},
-        "drop off payment or check": {"description": "payment dropoff", "priority": 4},
-        "drop off donation items": {"description": "donation dropoff", "priority": 2},
-        "drop off recycling": {"description": "recycling dropoff", "priority": 3},
-        "drop off pet at groomer": {"description": "pet dropoff", "priority": 3},
-        "drop off car for service": {"description": "car service dropoff", "priority": 4},
-        
-        # Return Items
-        "return purchased item to store": {"description": "store return", "priority": 3},
-        "return online purchase": {"description": "online return", "priority": 3},
-        "return borrowed item to friend": {"description": "borrowed item return", "priority": 3},
-        "return rented equipment": {"description": "equipment return", "priority": 4},
-        "return defective product": {"description": "defective return", "priority": 3},
-        "return unwanted gift": {"description": "gift return", "priority": 2},
-        "return textbooks at end of term": {"description": "textbook return", "priority": 3},
-        
-        # Banking Activities
-        "deposit check at bank": {"description": "check deposit", "priority": 4},
-        "withdraw cash from ATM": {"description": "cash withdrawal", "priority": 3},
-        "meet with bank representative": {"description": "bank appointment", "priority": 4},
-        "apply for loan in person": {"description": "loan application", "priority": 4},
-        "make loan payment in person": {"description": "loan payment", "priority": 4},
-        "get cashier's check": {"description": "cashier's check", "priority": 4},
-        "exchange currency": {"description": "currency exchange", "priority": 3},
-        "open new account": {"description": "account opening", "priority": 3},
-        "address account issues": {"description": "account servicing", "priority": 4},
-        "get documents notarized": {"description": "notary service", "priority": 4},
-        "access safe deposit box": {"description": "safe deposit access", "priority": 3},
-        
-        # Shopping Errands
-        "purchase groceries at store": {"description": "grocery run", "priority": 4},
-        "buy specific item at specialty store": {"description": "specialty shopping", "priority": 3},
-        "shop for clothing": {"description": "clothes shopping", "priority": 2},
-        "purchase personal care items": {"description": "personal care shopping", "priority": 3},
-        "buy gift for specific event": {"description": "gift shopping", "priority": 3},
-        "shop for home improvement supplies": {"description": "hardware store run", "priority": 3},
-        "purchase electronics or appliances": {"description": "electronics shopping", "priority": 2},
-        "shop for seasonal items": {"description": "seasonal shopping", "priority": 2},
-        
-        # Services and Appointments
-        "attend medical appointment": {"description": "medical appointment", "priority": 5},
-        "go to dental checkup": {"description": "dental appointment", "priority": 4},
-        "visit hair salon": {"description": "hair appointment", "priority": 2},
-        "get vehicle serviced": {"description": "car service", "priority": 4},
-        "meet with tax preparer": {"description": "tax appointment", "priority": 4},
-        "attend legal consultation": {"description": "legal appointment", "priority": 5},
-        "go to therapy session": {"description": "therapy appointment", "priority": 4},
-        "attend parent-teacher conference": {"description": "school conference", "priority": 4},
-        "visit government office": {"description": "government office visit", "priority": 4},
-        "get car washed": {"description": "car wash", "priority": 1},
-        "get vehicle emissions test": {"description": "emissions test", "priority": 4},
-        
-        # Government and Official Errands
-        "renew driver's license": {"description": "license renewal", "priority": 5},
-        "register to vote": {"description": "voter registration", "priority": 4},
-        "apply for passport": {"description": "passport application", "priority": 4},
-        "renew vehicle registration": {"description": "vehicle registration", "priority": 5},
-        "apply for permits": {"description": "permit application", "priority": 4},
-        "pay traffic ticket": {"description": "ticket payment", "priority": 4},
-        "attend court appearance": {"description": "court appearance", "priority": 5},
-        "file paperwork at city hall": {"description": "document filing", "priority": 4},
-        
-        # Miscellaneous Errands
-        "fill car with gas": {"description": "gas fillup", "priority": 4},
-        "take item for repair": {"description": "repair dropoff", "priority": 3},
-        "mail letters or packages": {"description": "mailing items", "priority": 3},
-        "purchase postage stamps": {"description": "stamp purchase", "priority": 2},
-        "collect contact lenses": {"description": "contact lens pickup", "priority": 4},
-        "go to gym or fitness class": {"description": "fitness visit", "priority": 2},
-        "attend religious service": {"description": "religious service", "priority": 3},
-        "pick up tickets for event": {"description": "ticket pickup", "priority": 3},
-        "take pet to veterinarian": {"description": "vet visit", "priority": 5},
-        "charge electric vehicle": {"description": "vehicle charging", "priority": 4}
-    }
+    # Counter for simple ID generation
+    id_counter = 1
+    
+    errands = {}
+    
+    # Helper function to add an item with incremented ID
+    def add_errand(key, title, description, category, event_type, is_recurring, frequency, priority, importance, urgency):
+        nonlocal id_counter
+        errands[key] = {
+            "id": id_counter,
+            "title": title,
+            "description": description,
+            "category": category,
+            "event_type": event_type,
+            "is_recurring": is_recurring,
+            "frequency": frequency,
+            "priority": priority,
+            "importance": importance,
+            "urgency": urgency
+        }
+        id_counter += 1
+    
+    # Pick Up Activities
+    add_errand(
+        "pick up dry cleaning",
+        "Pick Up Dry Cleaning",
+        "Collect cleaned clothes from dry cleaner",
+        "personal",
+        "errand",
+        False,
+        "as needed",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_errand(
+        "pick up prescription medication",
+        "Get Prescription",
+        "Collect prescribed medication from pharmacy",
+        "personal",
+        "errand",
+        True,
+        "monthly",
+        5,
+        "very high",
+        "high"
+    )
+    
+    add_errand(
+        "pick up package from post office",
+        "Pick Up Package",
+        "Collect package from post office or delivery center",
+        "personal",
+        "errand",
+        False,
+        "as needed",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_errand(
+        "pick up kids from school",
+        "School Pickup",
+        "Collect children from school at the end of the day",
+        "personal",
+        "errand",
+        True,
+        "weekdays",
+        5,
+        "very high",
+        "very high"
+    )
+    
+    add_errand(
+        "pick up takeout food",
+        "Takeout Pickup",
+        "Collect pre-ordered food from restaurant",
+        "personal",
+        "errand",
+        False,
+        "as needed",
+        2,
+        "low",
+        "medium"
+    )
+    
+    # Drop Off Activities
+    add_errand(
+        "drop off package at post office",
+        "Mail Package",
+        "Send package via postal service or carrier",
+        "personal",
+        "errand",
+        False,
+        "as needed",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_errand(
+        "drop off library books",
+        "Return Library Books",
+        "Return borrowed books to the library",
+        "personal",
+        "errand",
+        False,
+        "as needed",
+        2,
+        "low",
+        "medium"
+    )
+    
+    add_errand(
+        "drop off children at school",
+        "School Dropoff",
+        "Take children to school in the morning",
+        "personal",
+        "errand",
+        True,
+        "weekdays",
+        5,
+        "very high",
+        "very high"
+    )
+    
+    add_errand(
+        "drop off car for service",
+        "Car Service Dropoff",
+        "Leave car at service center for maintenance or repair",
+        "personal",
+        "errand",
+        True,
+        "quarterly",
+        4,
+        "high",
+        "medium"
+    )
+    
+    # Return Items
+    add_errand(
+        "return purchased item to store",
+        "Store Return",
+        "Return item to retail location for refund or exchange",
+        "personal",
+        "errand",
+        False,
+        "as needed",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_errand(
+        "return online purchase",
+        "Online Order Return",
+        "Return item purchased online via shipping service",
+        "personal",
+        "errand",
+        False,
+        "as needed",
+        3,
+        "medium",
+        "low"
+    )
+    
+    add_errand(
+        "return borrowed item to friend",
+        "Return Borrowed Item",
+        "Give back item borrowed from friend or family member",
+        "personal",
+        "errand",
+        False,
+        "as needed",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    # Banking Activities
+    add_errand(
+        "deposit check at bank",
+        "Bank Deposit",
+        "Deposit check at bank branch or ATM",
+        "personal",
+        "errand",
+        False,
+        "as needed",
+        4,
+        "high",
+        "high"
+    )
+    
+    add_errand(
+        "withdraw cash from ATM",
+        "ATM Withdrawal",
+        "Get cash from automated teller machine",
+        "personal",
+        "errand",
+        False,
+        "as needed",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_errand(
+        "meet with bank representative",
+        "Bank Appointment",
+        "Scheduled meeting with banking staff",
+        "personal",
+        "errand",
+        False,
+        "as needed",
+        4,
+        "high",
+        "high"
+    )
+    
+    # Shopping Errands
+    add_errand(
+        "purchase groceries at store",
+        "Grocery Shopping",
+        "Buy food and household necessities at supermarket",
+        "personal",
+        "errand",
+        True,
+        "weekly",
+        4,
+        "high",
+        "high"
+    )
+    
+    add_errand(
+        "buy specific item at specialty store",
+        "Specialty Shopping",
+        "Purchase specific item from a specialized retailer",
+        "personal",
+        "errand",
+        False,
+        "as needed",
+        3,
+        "medium",
+        "medium"
+    )
+    
+    add_errand(
+        "shop for clothing",
+        "Clothes Shopping",
+        "Purchase apparel, shoes, or accessories",
+        "personal",
+        "errand",
+        False,
+        "as needed",
+        2,
+        "low",
+        "low"
+    )
+    
+    # Services and Appointments
+    add_errand(
+        "attend medical appointment",
+        "Medical Appointment",
+        "Visit doctor, specialist, or healthcare provider",
+        "personal",
+        "errand",
+        True,
+        "quarterly",
+        5,
+        "very high",
+        "high"
+    )
+    
+    add_errand(
+        "go to dental checkup",
+        "Dental Appointment",
+        "Visit dentist for examination or procedure",
+        "personal",
+        "errand",
+        True,
+        "biannually",
+        4,
+        "high",
+        "medium"
+    )
+    
+    add_errand(
+        "get vehicle serviced",
+        "Car Service",
+        "Take vehicle for maintenance or repairs",
+        "personal",
+        "errand",
+        True,
+        "quarterly",
+        4,
+        "high",
+        "medium"
+    )
+    
+    # Government and Official Errands
+    add_errand(
+        "renew driver's license",
+        "License Renewal",
+        "Update driver's license at government office",
+        "personal",
+        "errand",
+        True,
+        "every few years",
+        5,
+        "very high",
+        "high"
+    )
+    
+    add_errand(
+        "register to vote",
+        "Voter Registration",
+        "Complete voter registration process",
+        "personal",
+        "errand",
+        False,
+        "once",
+        4,
+        "high",
+        "medium"
+    )
+    
+    add_errand(
+        "renew vehicle registration",
+        "Vehicle Registration",
+        "Update vehicle registration with government",
+        "personal",
+        "errand",
+        True,
+        "annually",
+        5,
+        "very high",
+        "high"
+    )
+    
+    # Miscellaneous Errands
+    add_errand(
+        "fill car with gas",
+        "Gas Fillup",
+        "Refuel vehicle at gas station",
+        "personal",
+        "errand",
+        True,
+        "weekly",
+        4,
+        "high",
+        "high"
+    )
+    
+    add_errand(
+        "take pet to veterinarian",
+        "Vet Visit",
+        "Bring pet for medical examination or treatment",
+        "personal",
+        "errand",
+        True,
+        "annually",
+        5,
+        "very high",
+        "medium"
+    )
+    
+    add_errand(
+        "attend court appearance",
+        "Court Appearance",
+        "Appear in court for legal proceedings",
+        "personal",
+        "errand",
+        False,
+        "as needed",
+        5,
+        "very high",
+        "very high"
+    )
     
     # Create the final JSON object
     errands_json = {
@@ -113,7 +400,9 @@ def generate_errands_json():
             "3": "Medium - Should be completed in a reasonable timeframe",
             "4": "High - Important errands with potential consequences if delayed",
             "5": "Very High - Critical errands that affect health, legal status, or major responsibilities"
-        }
+        },
+        "schema_version": "1.0",
+        "last_updated": datetime.now().strftime("%Y-%m-%d")
     }
     
     return errands_json
@@ -122,7 +411,9 @@ def generate_errands_json():
 json_data = generate_errands_json()
 
 # Write to a file
-with open('data/english/meta/keyword_taxonomy/event_types/personal_events/errands/vocabulary/errands.json', 'w', encoding='utf-8') as f:
+output_path = 'data/english/meta/keyword_taxonomy/event_types/personal_events/errands/vocabulary/errands.json'
+os.makedirs(os.path.dirname(output_path), exist_ok=True)  # Create directories if they don't exist
+with open(output_path, 'w', encoding='utf-8') as f:
     json.dump(json_data, f, indent=2)
 
 print(f"Generated {len(json_data['values'])} errand expressions and saved to errands.json")
@@ -134,11 +425,3 @@ sample_keys = ["pick up prescription medication", "drop off children at school",
 for key in sample_keys:
     if key in json_data["values"]:
         print(f'"{key}": {json.dumps(json_data["values"][key], indent=2)}')
-
-# If you want to see the raw JSON output
-print("\nFull JSON structure:")
-print(json.dumps({"errands": {
-    "description": "Tasks that require going out",
-    "examples": ["pick up", "drop off", "return item", "banking"],
-    "vocab": "errands.json"
-}}, indent=2))
