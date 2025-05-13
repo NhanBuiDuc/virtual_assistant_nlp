@@ -1,62 +1,97 @@
 import json
-from transformers import pipeline, set_seed
 import random
+import time
+from tqdm import tqdm
+from transformers import pipeline, set_seed
+import torch
 
 # Set seed for reproducibility
 set_seed(42)
 random.seed(42)
 
-# Load the combinations file
-with open('combinations.json', 'r', encoding='utf-8') as f:
-    combinations_data = json.load(f)
+# Define batch size for processing
+BATCH_SIZE = 32  # Process this many examples at once
+MAX_COMBINATIONS = None  # Set to a number for testing, None for all combinations
 
-# Initialize the text generation pipeline using a pre-trained model
-generator = pipeline('text-generation', model='gpt2-medium')
+def load_combinations(file_path='combinations.json', limit=None):
+    """Load combinations from file with optional limit for testing"""
+    print(f"Loading combinations from {file_path}...")
+    with open(file_path, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    
+    combinations = data["combinations"]
+    if limit:
+        combinations = combinations[:limit]
+        print(f"Limited to {limit} combinations for testing")
+    else:
+        print(f"Loaded {len(combinations)} combinations")
+    
+    return data, combinations
 
-def generate_coherent_sentence(combination_elements):
-    """
-    Generate a coherent sentence that incorporates all elements in the combination.
-    Uses a pre-trained model to ensure fluency and naturalness.
-    """
-    # Create a prompt that encourages the model to use all elements in a single sentence
-    prompt = f"Create a single sentence using these phrases: {', '.join(combination_elements)}. Sentence:"
+def initialize_generator():
+    """Initialize the text generation pipeline with optimizations"""
+    print("Initializing transformer model...")
+    
+    # Check if GPU is available
+    device = 'cuda:3'
+    
+    # Initialize with optimized settings
+    generator = pipeline(
+        'text-generation', 
+        model='gpt2-medium',
+        device=device,
+        framework="pt"  # Use PyTorch
+    )
+    
+    return generator
+
+def generate_coherent_sentence(element_list, generator):
+    """Generate a coherent sentence using a transformer model"""
+    # Create a prompt that encourages the model to use all elements
+    prompt = f"Create a single sentence using these phrases: {', '.join(element_list)}. Sentence:"
     
     # Generate text using the model
-    result = generator(prompt, max_length=100, num_return_sequences=1, temperature=0.7, 
-                      top_p=0.9, do_sample=True)
+    result = generator(
+        prompt, 
+        max_length=100, 
+        num_return_sequences=1, 
+        temperature=0.7,
+        top_p=0.9, 
+        do_sample=True,
+        return_full_text=False  # Only return the newly generated text
+    )
     
-    # Extract the generated text and clean it up
-    generated_text = result[0]['generated_text']
+    # Extract the generated text
+    generated_text = result[0]["generated_text"]
     
-    # Extract just the sentence part (after "Sentence:")
+    # Try to extract just the sentence
     try:
-        sentence = generated_text.split("Sentence:")[1].strip()
-        # Remove any extra sentences if the model generated more than one
+        # First try to get text after "Sentence:"
+        if "Sentence:" in prompt + generated_text:
+            sentence = (prompt + generated_text).split("Sentence:")[1].strip()
+        else:
+            sentence = generated_text.strip()
+        
+        # Clean up the sentence
         if "." in sentence:
             sentence = sentence.split(".")[0] + "."
+        if sentence.startswith('"') and sentence.endswith('"'):
+            sentence = sentence[1:-1]
     except:
-        # Fallback if the splitting didn't work as expected
-        sentence = manual_sentence_construction(combination_elements)
+        # Fallback if extraction fails
+        sentence = manual_sentence_construction(element_list)
     
-    # Make sure all elements are included
-    if not all(element.lower() in sentence.lower() for element in combination_elements):
-        sentence = manual_sentence_construction(combination_elements)
-        
+    # Verify all elements are included, fall back if not
+    if not all(element.lower() in sentence.lower() for element in element_list):
+        sentence = manual_sentence_construction(element_list)
+    
     return sentence
 
 def manual_sentence_construction(elements):
-    """Fallback function to manually construct a sentence if the model fails."""
-    # For task/event elements (usually the first one)
+    """Fallback function to manually construct a sentence"""
     task = elements[0]
+    time_parts = elements[1:]
     
-    # Initialize sentence parts
-    time_parts = []
-    
-    # Add remaining elements as time/date/deadline specifications
-    for element in elements[1:]:
-        time_parts.append(element)
-    
-    # Construct the sentence
     if time_parts:
         time_phrase = " ".join(time_parts)
         sentence = f"I need to {task} {time_phrase}."
@@ -65,19 +100,65 @@ def manual_sentence_construction(elements):
     
     return sentence
 
-# Process each combination and add a sentence
-for combination in combinations_data["combinations"]:
-    elements = combination["combination"]
-    sentence = generate_coherent_sentence(elements)
-    combination["sentence"] = sentence
+def batch_process_combinations(combinations, generator, batch_size=32):
+    """Process combinations in batches for efficiency"""
+    total = len(combinations)
+    processed = []
+    
+    # Create a progress bar
+    with tqdm(total=total, desc="Generating sentences") as pbar:
+        for i in range(0, total, batch_size):
+            # Get the current batch
+            batch = combinations[i:min(i+batch_size, total)]
+            
+            # Process each item in the batch
+            for combination in batch:
+                elements = combination["combination"]
+                sentence = generate_coherent_sentence(elements, generator)
+                combination["sentence"] = sentence
+                processed.append(combination)
+                pbar.update(1)
+            
+            # Optional: Add a small delay to prevent GPU overheating on long runs
+            # time.sleep(0.1)
+    
+    return processed
 
-# Save the updated data
-with open('combinations_with_sentences.json', 'w', encoding='utf-8') as f:
-    json.dump(combinations_data, f, indent=2)
+def main():
+    start_time = time.time()
+    
+    # Load combinations
+    data, combinations = load_combinations(limit=MAX_COMBINATIONS)
+    
+    # Initialize the transformer model
+    generator = initialize_generator()
+    
+    # Process combinations in batches
+    processed_combinations = batch_process_combinations(
+        combinations, generator, batch_size=BATCH_SIZE
+    )
+    
+    # Update the data object
+    data["combinations"] = processed_combinations
+    
+    # Save the updated data
+    output_file = 'combinations_with_sentences.json'
+    with open(output_file, 'w', encoding='utf-8') as f:
+        json.dump(data, f, indent=2)
+    
+    # Print some examples
+    print("\nSample generated sentences:")
+    for i in range(min(5, len(processed_combinations))):
+        combo = processed_combinations[i]
+        print(f"ID {combo['id']}: {combo['sentence']}")
+        print(f"  Original elements: {', '.join(combo['combination'])}\n")
+    
+    # Report total processing time
+    elapsed_time = time.time() - start_time
+    print(f"Total processing time: {elapsed_time:.2f} seconds")
+    print(f"Processed {len(processed_combinations)} combinations")
+    print(f"Average time per combination: {elapsed_time/len(processed_combinations):.2f} seconds")
+    print(f"Results saved to: {output_file}")
 
-# Print some examples of the generated sentences
-print("Sample generated sentences:")
-for i in range(min(5, len(combinations_data["combinations"]))):
-    combo = combinations_data["combinations"][i]
-    print(f"ID {combo['id']}: {combo['sentence']}")
-    print(f"  Original elements: {', '.join(combo['combination'])}\n")
+if __name__ == "__main__":
+    main()

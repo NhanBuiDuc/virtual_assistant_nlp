@@ -48,7 +48,7 @@ def predict(sentence, model_path="./task_parser_final"):
 
 # Example usage
 if __name__ == "__main__":
-    test_sentence = "I want to take some rest tommorow"
+    test_sentence = "I want to do gym t 2pm"
     result = predict(test_sentence)
     print(f"Input: {test_sentence}")
     print(f"Output: {result}")

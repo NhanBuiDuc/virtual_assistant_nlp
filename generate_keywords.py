@@ -25,10 +25,6 @@ file_categories = {
         f"{base_path}/event_types/work_events/meetings/vocabulary/work_meetings.json",
         f"{base_path}/event_types/personal_events/celebrations/vocabulary/celebrations.json"
     ],
-    "deadlines": [
-        f"{base_path}/event_types/work_events/deadlines/vocabulary/work_deadlines.json",
-        f"{base_path}/time_elements/deadlines/vocabulary/deadlines.json"
-    ],
     "time_elements": [
         f"{base_path}/time_elements/frequency/vocabulary/frequency.json",
         f"{base_path}/time_elements/durations/vocabulary/durations.json",
@@ -39,6 +35,9 @@ file_categories = {
         f"{base_path}/time_elements/dates/relative_dates/vocabulary/relative_dates.json",
         f"{base_path}/time_elements/dates/months/vocabulary/months.json",
         f"{base_path}/time_elements/dates/days_of_week/vocabulary/days_of_week.json"
+    ],
+    "specific_times": [
+        f"{base_path}/time_elements/specific_times/vocabulary/specific_time.json"
     ]
 }
 
@@ -74,7 +73,7 @@ def generate_labeled_combinations(num_combinations=100, combinations_file="combi
         num_additional_elements = random.randint(1, 3)
         
         # Choose which additional categories to include
-        available_categories = ["deadlines", "time_elements", "date_elements"]
+        available_categories = ["time_elements", "date_elements", "specific_times"]
         selected_categories = random.sample(available_categories, min(num_additional_elements, len(available_categories)))
         
         # Build the combination
@@ -89,11 +88,10 @@ def generate_labeled_combinations(num_combinations=100, combinations_file="combi
                 "month": 0,
                 "year": 0,
                 "period": None,
-                "start_time": None,
-                "end_time": None,
                 "frequency": None,
                 "duration": None,
-                "deadline": None
+                "specific_time": None,
+                "second": 0
             },
             "detail": {
                 "priority": primary_value.get("priority", None),
@@ -118,9 +116,7 @@ def generate_labeled_combinations(num_combinations=100, combinations_file="combi
             combination_texts.append(key)
             
             # Extract relevant labels
-            if category == "deadlines":
-                update_deadline_labels(combination_labels, value)
-            elif category == "time_elements":
+            if category == "time_elements":
                 if subcategory == "frequency":
                     update_frequency_labels(combination_labels, value)
                 elif subcategory == "durations":
@@ -136,6 +132,8 @@ def generate_labeled_combinations(num_combinations=100, combinations_file="combi
                     update_month_labels(combination_labels, value)
                 elif subcategory == "days_of_week":
                     update_days_of_week_labels(combination_labels, value)
+            elif category == "specific_times":
+                update_specific_time_labels(combination_labels, value)
         
         # Add to our separate lists with the same ID
         combinations.append({
@@ -179,21 +177,6 @@ def extract_task_labels(task_value, category, subcategory):
     }
     return task_labels
 
-def update_deadline_labels(labels, deadline_value):
-    """Update time labels with deadline information."""
-    labels["time"]["deadline"] = deadline_value.get("standard_form", None)
-    
-    # Extract time components if available
-    if deadline_value.get("hour") is not None:
-        labels["time"]["hour"] = deadline_value.get("hour", 0)
-    
-    if deadline_value.get("day") is not None:
-        labels["time"]["day"] = deadline_value.get("day", 0)
-    
-    # Update urgency from deadline
-    if deadline_value.get("urgency") is not None:
-        labels["detail"]["urgency"] = deadline_value.get("urgency", None)
-
 def update_frequency_labels(labels, frequency_value):
     """Update time labels with frequency information."""
     labels["time"]["frequency"] = frequency_value.get("standard_form", None)
@@ -223,17 +206,22 @@ def update_time_period_labels(labels, period_value):
     """Update time labels with time period information."""
     labels["time"]["period"] = period_value.get("standard_form", None)
     
-    # Set start and end times if available
-    if period_value.get("start_hour") is not None:
-        labels["time"]["start_time"] = f"{period_value.get('start_hour', 0)}:00"
+    # Add information about start and end hours to the period field
+    if period_value.get("start_hour") is not None and period_value.get("end_hour") is not None:
+        start_hour = period_value.get("start_hour", 0)
+        end_hour = period_value.get("end_hour", 0)
+        if labels["time"]["period"]:
+            labels["time"]["period"] += f" ({start_hour}:00-{end_hour}:00)"
     
-    if period_value.get("end_hour") is not None:
-        labels["time"]["end_time"] = f"{period_value.get('end_hour', 0)}:00"
+    # Set hour if available (use start_hour as a reference)
+    if period_value.get("start_hour") is not None:
+        labels["time"]["hour"] = period_value.get("start_hour", 0)
 
 def update_special_day_labels(labels, special_day_value):
     """Update time labels with special day information."""
     # Set date to special day
-    labels["time"]["date"] = special_day_value.get("standard_form", None)
+    if special_day_value.get("standard_form") is not None:
+        labels["time"]["period"] = special_day_value.get("standard_form", None)
     
     # Set month if available
     if special_day_value.get("month_of_year") is not None:
@@ -249,6 +237,10 @@ def update_relative_date_labels(labels, relative_date_value):
     for unit in ["second", "minute", "hour", "day", "week", "month", "year"]:
         if relative_date_value.get(unit) is not None:
             labels["time"][unit] = relative_date_value.get(unit, 0)
+    
+    # Add to period if available
+    if relative_date_value.get("standard_form") is not None:
+        labels["time"]["period"] = relative_date_value.get("standard_form", None)
 
 def update_month_labels(labels, month_value):
     """Update time labels with month information."""
@@ -256,13 +248,21 @@ def update_month_labels(labels, month_value):
 
 def update_days_of_week_labels(labels, day_value):
     """Update time labels with day of week information."""
-    # Set day of week
+    # Set day of week as period
     if day_value.get("standard_form") is not None:
-        labels["time"]["day_of_week"] = day_value.get("standard_form", None)
+        labels["time"]["period"] = day_value.get("standard_form", None)
+
+def update_specific_time_labels(labels, specific_time_value):
+    """Update time labels with specific time information."""
+    # Set specific_time to the standard form
+    labels["time"]["specific_time"] = specific_time_value.get("standard_form", None)
     
-    # Determine if it's a weekday or weekend
-    if day_value.get("category") is not None:
-        labels["time"]["is_weekday"] = (day_value.get("category") == "weekday")
+    # Set day and month if available
+    if specific_time_value.get("day") is not None:
+        labels["time"]["day"] = specific_time_value.get("day", 0)
+    
+    if specific_time_value.get("month") is not None:
+        labels["time"]["month"] = specific_time_value.get("month", 0)
 
 # Generate and save combinations and labels to separate files
 combinations, labels = generate_labeled_combinations(10000, "combinations.json", "labels.json")
